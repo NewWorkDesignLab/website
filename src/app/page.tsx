@@ -1,18 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
 import texts from "../content/texts.json";
+import { FLAGS, useLang, type Lang } from "./useLang";
 
-type Lang = keyof typeof texts;
-
-
-const FLAGS: Record<Lang, { emoji: string; label: string }> = {
-  de: { emoji: "🇩🇪", label: "Deutsch" },
-  en: { emoji: "🇬🇧", label: "English" },
-};
+const DATENSCHUTZ_URL = "https://www.fh-dresden.eu/de/datenschutz/";
 
 export default function Home() {
-  const [lang, setLang] = useState<Lang>("de");
+  const { lang, setLang } = useLang();
   const t = texts[lang];
 
   const nextLang: Lang = lang === "de" ? "en" : "de";
@@ -55,6 +50,16 @@ export default function Home() {
           <strong>{t.descLine2}</strong>
         </p>
       </section>
+
+      <footer className="footer">
+        <Link href="/legal-note">{t.footerImpressum}</Link>
+        <span className="footer-sep" aria-hidden="true">
+          ·
+        </span>
+        <a href={DATENSCHUTZ_URL} target="_blank" rel="noopener noreferrer">
+          {t.footerDatenschutz}
+        </a>
+      </footer>
     </main>
   );
 }

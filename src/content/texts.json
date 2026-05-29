@@ -8,7 +8,28 @@
     "descBrand": "New Work Design Lab",
     "descLine1": " forscht und entwickelt im Schnittgebiet von User Experience Design, Gamification, Softwareentwicklung und kognitiver Ergonomie.",
     "descLine2": "Unsere neue Website entsteht gerade.",
-    "linkedin": "Folge uns auf LinkedIn"
+    "linkedin": "Folge uns auf LinkedIn",
+    "footerImpressum": "Impressum",
+    "footerDatenschutz": "Datenschutz",
+    "impressum": {
+      "title": "Impressum",
+      "intro": "Das New Work Design Lab befindet sich an der:",
+      "company": "Fachhochschule Dresden - Private Fachhochschule GmbH",
+      "street": "Güntzstraße 1",
+      "city": "01069 Dresden",
+      "register": "Handelsregister: HRB 26182",
+      "court": "Registergericht: Amtsgericht Dresden",
+      "vat": "Umsatzsteuer-ID: DE257337421",
+      "representedByTitle": "Vertreten durch:",
+      "representedBy": "Günter Kahle, Tom Kahle",
+      "contactTitle": "Kontakt",
+      "phone": "Telefon: +49 351 4445-400",
+      "fax": "Telefax: +49 351 4445-410",
+      "email": "E-Mail: info@fh-dresden.eu",
+      "editorTitle": "Redaktionell Verantwortlicher:",
+      "editor": "Prof. Dr. Marius Brade",
+      "back": "Zurück zur Startseite"
+    }
   },
   "en": {
     "badge": "Coming soon",
@@ -19,7 +40,28 @@
     "descBrand": "New Work Design Lab",
     "descLine1": " researches and builds at the intersection of user experience design, gamification, software development and cognitive ergonomics.",
     "descLine2": "Our new website is on its way.",
-    "linkedin": "Follow us on LinkedIn"
+    "linkedin": "Follow us on LinkedIn",
+    "footerImpressum": "Legal Note",
+    "footerDatenschutz": "Privacy",
+    "impressum": {
+      "title": "Imprint",
+      "intro": "The New Work Design Lab is located at:",
+      "company": "Fachhochschule Dresden - Private Fachhochschule GmbH",
+      "street": "Güntzstraße 1",
+      "city": "01069 Dresden",
+      "register": "Commercial register: HRB 26182",
+      "court": "Register court: Amtsgericht Dresden",
+      "vat": "VAT ID: DE257337421",
+      "representedByTitle": "Represented by:",
+      "representedBy": "Tom Kahle",
+      "contactTitle": "Contact",
+      "phone": "Phone: +49 351 4445-400",
+      "fax": "Fax: +49 351 4445-410",
+      "email": "Email: info@fh-dresden.eu",
+      "editorTitle": "Responsible for content:",
+      "editor": "Prof. Dr. Marius Brade",
+      "back": "Back to home"
+    }
   }
 }
 
