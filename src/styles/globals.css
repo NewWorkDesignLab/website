@@ -81,6 +81,7 @@ button {
   padding-right: var(--corner);
   padding-bottom: 0;
   padding-left: var(--edge);
+  gap: 0.875rem;
 }
 
 .topbar-left {
@@ -117,6 +118,7 @@ button {
   backdrop-filter: blur(6px);
   box-shadow: 0 0.375rem 1.125rem rgba(20, 33, 61, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
 }
 
 .lang-flag:hover {
@@ -125,20 +127,23 @@ button {
 }
 
 .lang-flag .flag {
-  font-size: 1.4rem;
-  line-height: 1;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.3rem;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 0.0625rem 0.1875rem rgba(20, 33, 61, 0.25);
 }
 
 .linkedin {
   display: inline-flex;
   align-items: center;
-  gap: 0.625rem;
-  padding: 0.6875rem 1.25rem;
-  border-radius: 999px;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
   background: var(--blue);
   color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem;
   box-shadow: 0 0.75rem 1.75rem rgba(58, 111, 216, 0.32);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -149,8 +154,8 @@ button {
 }
 
 .linkedin svg {
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .content {

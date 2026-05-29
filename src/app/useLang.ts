@@ -7,9 +7,9 @@ export type Lang = keyof typeof texts;
 
 const STORAGE_KEY = "nwdl-lang";
 
-export const FLAGS: Record<Lang, { emoji: string; label: string }> = {
-  de: { emoji: "🇩🇪", label: "Deutsch" },
-  en: { emoji: "🇬🇧", label: "English" },
+export const FLAGS: Record<Lang, { src: string; label: string }> = {
+  de: { src: "/flag-de.svg", label: "Deutsch" },
+  en: { src: "/flag-gb.svg", label: "English" },
 };
 
 
