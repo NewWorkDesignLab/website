@@ -29,9 +29,13 @@ export default function ImpressumPage() {
           aria-label={`Switch language to ${FLAGS[nextLang].label}`}
           title={FLAGS[nextLang].label}
         >
-          <span className="flag" aria-hidden="true">
-            {FLAGS[lang].emoji}
-          </span>
+          <img
+            className="flag"
+            src={FLAGS[nextLang].src}
+            alt={FLAGS[nextLang].label}
+            width={44}
+            height={44}
+          />
         </button>
       </header>
 
