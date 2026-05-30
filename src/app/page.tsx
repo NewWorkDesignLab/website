@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import texts from "../content/texts.json";
-import { FLAGS, useLang, type Lang } from "./useLang";
+import { FLAGS, getLangSwitchLabel, useLang, type Lang } from "./useLang";
 
 const DATENSCHUTZ_URL = "https://www.fh-dresden.eu/de/datenschutz/";
 const LINKEDIN_URL = "https://www.linkedin.com/company/new-work-design-lab-fhd";
@@ -12,6 +13,7 @@ export default function Home() {
   const t = texts[lang];
 
   const nextLang: Lang = lang === "de" ? "en" : "de";
+  const switchLabel = getLangSwitchLabel(lang, nextLang);
 
   return (
     <main className="placeholder">
@@ -41,13 +43,13 @@ export default function Home() {
           type="button"
           className="lang-flag"
           onClick={() => setLang(nextLang)}
-          aria-label={`Switch language to ${FLAGS[nextLang].label}`}
-          title={FLAGS[nextLang].label}
+          aria-label={switchLabel}
+          title={switchLabel}
         >
-          <img
+          <Image
             className="flag"
             src={FLAGS[nextLang].src}
-            alt={FLAGS[nextLang].label}
+            alt=""
             width={44}
             height={44}
           />
@@ -80,4 +82,3 @@ export default function Home() {
     </main>
   );
 }
-

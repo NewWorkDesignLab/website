@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import texts from "../../content/texts.json";
-import { FLAGS, useLang, type Lang } from "../useLang";
+import { FLAGS, getLangSwitchLabel, useLang, type Lang } from "../useLang";
 
 export default function ImpressumPage() {
   const { lang, setLang } = useLang();
@@ -10,6 +11,7 @@ export default function ImpressumPage() {
   const im = t.impressum;
 
   const nextLang: Lang = lang === "de" ? "en" : "de";
+  const switchLabel = getLangSwitchLabel(lang, nextLang);
 
   return (
     <main className="placeholder placeholder--page">
@@ -26,13 +28,13 @@ export default function ImpressumPage() {
           type="button"
           className="lang-flag"
           onClick={() => setLang(nextLang)}
-          aria-label={`Switch language to ${FLAGS[nextLang].label}`}
-          title={FLAGS[nextLang].label}
+          aria-label={switchLabel}
+          title={switchLabel}
         >
-          <img
+          <Image
             className="flag"
             src={FLAGS[nextLang].src}
-            alt={FLAGS[nextLang].label}
+            alt=""
             width={44}
             height={44}
           />
@@ -96,4 +98,3 @@ export default function ImpressumPage() {
     </main>
   );
 }
-
