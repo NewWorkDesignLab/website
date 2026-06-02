@@ -78,6 +78,10 @@ export default function Home() {
         <a href={DATENSCHUTZ_URL} target="_blank" rel="noopener noreferrer">
           {t.footerDatenschutz}
         </a>
+        <span className="footer-sep" aria-hidden="true">
+          ·
+        </span>
+        <span>© {new Date().getFullYear()}</span>
       </footer>
     </main>
   );
