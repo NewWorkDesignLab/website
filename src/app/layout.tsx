@@ -17,18 +17,18 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://newworkdesignlab.org"),
   title: {
-    default: "New Work Design Lab",
-    template: "%s · New Work Design Lab",
+    default: "NewWorkDesignLab",
+    template: "%s · NewWorkDesignLab",
   },
   description:
-    "Das transdisziplinäre New Work Design Lab forscht und gestaltet im Schnittgebiet von User Experience Design, Gamification, Softwareentwicklung und kognitiver Ergonomie.",
+    "Das transdisziplinäre NewWorkDesignLab forscht und gestaltet im Schnittgebiet von User Experience Design, Gamification, Softwareentwicklung und kognitiver Ergonomie.",
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
   keywords: [
-    "New Work Design Lab",
+    "NewWorkDesignLab",
     "User Experience Design",
     "Gamification",
     "Kognitive Ergonomie",
@@ -36,17 +36,17 @@ export const metadata: Metadata = {
     "FH Dresden",
   ],
   openGraph: {
-    title: "New Work Design Lab",
+    title: "NewWorkDesignLab",
     description:
       "Forschung und Entwicklung für ein Erlebnis des Flow beim Arbeiten, Denken und Lernen.",
     url: "https://newworkdesignlab.org",
-    siteName: "New Work Design Lab",
+    siteName: "NewWorkDesignLab",
     locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "New Work Design Lab",
+    title: "NewWorkDesignLab",
     description:
       "Forschung und Entwicklung für ein Erlebnis des Flow beim Arbeiten, Denken und Lernen.",
   },
