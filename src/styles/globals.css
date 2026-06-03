@@ -1060,8 +1060,13 @@ a.team-card:hover {
   html,
   body {
     height: auto;
-    overflow-x: hidden;
-    overflow-y: auto;
+    /* `clip` hides horizontal overflow WITHOUT turning the element into a
+       scroll container — unlike `hidden`, which made <body> independently
+       scrollable (a stray ~60px from the decorative blob) and broke touch
+       scroll chaining: the first swipe stalled on <body>, then a second
+       swipe scrolled the viewport. With `clip` only the viewport scrolls. */
+    overflow-x: clip;
+    overflow-y: visible;
   }
 
   .placeholder {
