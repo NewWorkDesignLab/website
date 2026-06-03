@@ -53,6 +53,12 @@ body {
   overflow: hidden;
 }
 
+/* Match the page's ending colour so over-scroll / rubber-band on mobile shows
+   --bg-soft instead of a white stripe behind the body. */
+html {
+  background: var(--bg-soft);
+}
+
 body {
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
   color: var(--ink);
@@ -711,7 +717,7 @@ button {
 .project-card {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.88);
   border: 1px solid var(--border);
   border-radius: var(--corner);
   overflow: hidden;
@@ -1218,6 +1224,7 @@ a.team-card:hover {
     transform: translateX(-50%);
     flex-direction: row;
     align-items: center;
+    background: rgba(255, 255, 255, 0.88);
     border-radius: 999px;
     padding: 0.35rem;
   }
