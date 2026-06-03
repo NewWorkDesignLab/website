@@ -101,6 +101,22 @@ button {
   height: 5rem;
 }
 
+/* Desktop/tablet: the home footer flows at the bottom of the scroll content
+   instead of being absolutely positioned. Absolute positioning detached it
+   from the (taller-than-viewport) content and floated it mid-page on scroll.
+   Mobile already keeps the footer in flow (see the mobile block). */
+@media (min-width: 769px) {
+  .placeholder:not(.placeholder--page) {
+    padding-bottom: var(--corner);
+  }
+
+  .placeholder:not(.placeholder--page) .footer {
+    position: static;
+    left: auto;
+    bottom: auto;
+  }
+}
+
 .topbar {
   position: absolute;
   top: 0;
