@@ -84,10 +84,13 @@ button {
   padding-left: var(--edge);
 }
 
-/* Home hero: vertically centred, but scrolls instead of clipping when the
-   content is taller than the viewport. */
+/* Home hero: anchored in the upper third (instead of dead-centre) so it sits
+   close under the logo; margin-bottom:auto keeps the footer pinned to the
+   bottom and lets the content scroll instead of clipping when it's taller
+   than the viewport. */
 .placeholder:not(.placeholder--page) > .content {
-  margin-block: auto;
+  margin-top: clamp(1rem, 7vh, 5rem);
+  margin-bottom: auto;
 }
 
 /* Home brand sits at the same top offset as the sub-page header
@@ -1118,6 +1121,16 @@ a.team-card:hover {
   .content {
     gap: 2rem;
     max-width: 100%;
+  }
+
+  /* Mobile home: pull the headline + lead up closer to the logo, while the
+     CTA keeps its position (the extra gap opens up between lead and button). */
+  .placeholder:not(.placeholder--page) > .content {
+    margin-top: 1rem;
+  }
+
+  .placeholder:not(.placeholder--page) .cta {
+    margin-top: 2.5rem;
   }
 
   .content h1 {
