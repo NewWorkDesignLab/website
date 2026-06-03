@@ -90,6 +90,17 @@ button {
   margin-block: auto;
 }
 
+/* Home brand sits at the same top offset as the sub-page header
+   (2.25rem) despite the home's larger 4.5rem padding, but the wordmark
+   is given more presence on the landing page. */
+.placeholder:not(.placeholder--page) .page-brand {
+  margin-top: -2.25rem;
+}
+
+.placeholder:not(.placeholder--page) .page-brand-logo img {
+  height: 5rem;
+}
+
 .topbar {
   position: absolute;
   top: 0;
@@ -1219,6 +1230,10 @@ a.team-card:hover {
 
   .page-brand-logo img {
     height: 2.5rem;
+  }
+
+  .placeholder:not(.placeholder--page) .page-brand-logo img {
+    height: 3.5rem;
   }
 }
 

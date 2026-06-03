@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import texts from "../content/texts.json";
 import { useLang } from "./useLang";
@@ -15,6 +16,18 @@ export default function Home() {
     <main className="placeholder">
       <Background />
       <Sidebar />
+
+      <div className="page-brand">
+        <span className="page-brand-logo" aria-label="New Work Design Lab">
+          <Image
+            src="/nwdl_logo.png"
+            alt="New Work Design Lab"
+            width={244}
+            height={244}
+            priority
+          />
+        </span>
+      </div>
 
       <section className="content">
         <h1>
