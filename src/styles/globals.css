@@ -413,6 +413,9 @@ button {
   border-radius: 46% 54% 60% 40% / 48% 42% 58% 52%;
   filter: drop-shadow(0 1.25rem 2.75rem rgba(20, 33, 61, 0.18));
   animation: morph 14s ease-in-out infinite;
+  /* Own compositor layer so the drop-shadow is rasterised once and the
+     animation just moves the texture — no per-frame repaint while scrolling. */
+  will-change: transform;
 }
 
 .blob.purple {
@@ -456,16 +459,18 @@ button {
   border: 0.125rem dashed rgba(58, 111, 216, 0.25);
   border-radius: 50%;
   animation: spin 40s linear infinite;
+  will-change: transform;
 }
 
+/* Transform-only: animating border-radius forces a repaint every frame and
+   is the main cause of scroll stutter on phones. Drift + rotate keep the
+   blobs feeling alive while staying fully GPU-composited. */
 @keyframes morph {
   0%,
   100% {
-    border-radius: 46% 54% 60% 40% / 48% 42% 58% 52%;
     transform: translate(0, 0) rotate(0deg);
   }
   50% {
-    border-radius: 60% 40% 42% 58% / 54% 60% 40% 46%;
     transform: translate(0, -1rem) rotate(8deg);
   }
 }
