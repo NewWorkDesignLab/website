@@ -1,46 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import texts from "../../content/texts.json";
-import { FLAGS, getLangSwitchLabel, useLang, type Lang } from "../useLang";
+import { useLang } from "../useLang";
+import { PageShell } from "../../components/PageShell";
 
 export default function ImpressumPage() {
-  const { lang, setLang } = useLang();
-  const t = texts[lang];
-  const im = t.impressum;
-
-  const nextLang: Lang = lang === "de" ? "en" : "de";
-  const switchLabel = getLangSwitchLabel(lang, nextLang);
+  const { lang } = useLang();
+  const im = texts[lang].impressum;
 
   return (
-    <main className="placeholder placeholder--page">
-      <div className="bg-visual" aria-hidden="true">
-        <span className="ring" />
-        <span className="blob purple" />
-        <span className="blob blue" />
-        <span className="blob orange" />
-        <span className="blob green" />
-      </div>
-
-      <header className="topbar">
-        <button
-          type="button"
-          className="lang-flag"
-          onClick={() => setLang(nextLang)}
-          aria-label={switchLabel}
-          title={switchLabel}
-        >
-          <Image
-            className="flag"
-            src={FLAGS[nextLang].src}
-            alt=""
-            width={44}
-            height={44}
-          />
-        </button>
-      </header>
-
+    <PageShell>
       <section className="content content--legal">
         <h1>{im.title}</h1>
 
@@ -95,6 +65,6 @@ export default function ImpressumPage() {
           ← {im.back}
         </Link>
       </section>
-    </main>
+    </PageShell>
   );
 }

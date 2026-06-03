@@ -1,16 +1,57 @@
 {
   "de": {
-    "badge": "Demnächst verfügbar",
+    "badge": "New Work Design Lab",
     "titleLead": "Wir gestalten",
     "titleAccent": "Flow",
     "titleTail": "beim Arbeiten, Denken & Lernen.",
     "descBefore": "Das ",
     "descBrand": "New Work Design Lab",
     "descLine1": " forscht und entwickelt im Schnittgebiet von User Experience Design, Gamification, Softwareentwicklung und kognitiver Ergonomie.",
-    "descLine2": "Unsere neue Website entsteht gerade.",
+    "descLine2": "Entdecke unsere Projekte aus VR, AR, Forschung und KI.",
     "linkedin": "Folge uns auf LinkedIn",
     "footerImpressum": "Impressum",
     "footerDatenschutz": "Datenschutz",
+    "nav": {
+      "home": "Home",
+      "projects": "Projekte",
+      "team": "Team",
+      "contact": "Kontakt"
+    },
+    "cta": {
+      "projects": "Projekte ansehen"
+    },
+    "projectsPage": {
+      "title": "Projekte",
+      "intro": "Ein Überblick über unsere Projekte aus Virtual Reality, Augmented Reality, Forschung und Künstlicher Intelligenz."
+    },
+    "projectMeta": {
+      "categories": {
+        "vr": "VR",
+        "ar": "AR",
+        "research": "Forschung",
+        "ai": "KI"
+      },
+      "status": {
+        "ongoing": "Laufend",
+        "completed": "Abgeschlossen"
+      },
+      "fundingTitle": "Gefördert durch",
+      "backToProjects": "Zurück zu den Projekten",
+      "visit": "Projekt-Website öffnen"
+    },
+    "teamPage": {
+      "title": "Team",
+      "intro": "Die Menschen hinter dem New Work Design Lab – aktuell und ehemals.",
+      "current": "Aktuelles Team",
+      "alumni": "Ehemalige"
+    },
+    "contactPage": {
+      "title": "Kontakt",
+      "intro": "Du hast Interesse an einer Zusammenarbeit oder eine Frage zu einem unserer Projekte? Wir freuen uns auf deine Nachricht.",
+      "person": "Prof. Dr. Marius Brade",
+      "role": "Ansprechpartner New Work Design Lab",
+      "emailCta": "E-Mail schreiben"
+    },
     "impressum": {
       "title": "Impressum",
       "intro": "Das New Work Design Lab befindet sich an der:",
@@ -32,17 +73,58 @@
     }
   },
   "en": {
-    "badge": "Coming soon",
+    "badge": "New Work Design Lab",
     "titleLead": "We design",
     "titleAccent": "flow",
     "titleTail": "for working, thinking & learning.",
     "descBefore": "The ",
     "descBrand": "New Work Design Lab",
     "descLine1": " researches and builds at the intersection of user experience design, gamification, software development and cognitive ergonomics.",
-    "descLine2": "Our new website is on its way.",
+    "descLine2": "Discover our projects across VR, AR, research and AI.",
     "linkedin": "Follow us on LinkedIn",
     "footerImpressum": "Legal Note",
     "footerDatenschutz": "Privacy",
+    "nav": {
+      "home": "Home",
+      "projects": "Projects",
+      "team": "Team",
+      "contact": "Contact"
+    },
+    "cta": {
+      "projects": "View projects"
+    },
+    "projectsPage": {
+      "title": "Projects",
+      "intro": "An overview of our projects across virtual reality, augmented reality, research and artificial intelligence."
+    },
+    "projectMeta": {
+      "categories": {
+        "vr": "VR",
+        "ar": "AR",
+        "research": "Research",
+        "ai": "AI"
+      },
+      "status": {
+        "ongoing": "Ongoing",
+        "completed": "Completed"
+      },
+      "fundingTitle": "Funded by",
+      "backToProjects": "Back to projects",
+      "visit": "Open project website"
+    },
+    "teamPage": {
+      "title": "Team",
+      "intro": "The people behind the New Work Design Lab – current and former.",
+      "current": "Current team",
+      "alumni": "Alumni"
+    },
+    "contactPage": {
+      "title": "Contact",
+      "intro": "Interested in working together or have a question about one of our projects? We look forward to hearing from you.",
+      "person": "Prof. Dr. Marius Brade",
+      "role": "Contact, New Work Design Lab",
+      "emailCta": "Send an email"
+    },
     "impressum": {
       "title": "Legal Note",
       "intro": "The New Work Design Lab is located at:",
@@ -64,4 +146,3 @@
     }
   }
 }
-
