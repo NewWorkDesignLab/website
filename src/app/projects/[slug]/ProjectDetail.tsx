@@ -40,7 +40,7 @@ export function ProjectDetail({ project }: { project: Project }) {
               alt=""
               fill
               priority
-              sizes="(max-width: 980px) 100vw, 50rem"
+              sizes="(max-width: 980px) 100vw, 72rem"
             />
           </div>
 
