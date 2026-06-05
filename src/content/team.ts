@@ -43,13 +43,13 @@ export const team: Member[] = [
    {
     name: "Philip Ahlers",
     role: { de: "Studentische Hilfskraft", en: "Student Assistant" },
-    photo: "/team/philip-ahlers.png", // ← Datei liegt unter public/team/philip-ahlers.jpg
+    photo: "/team/placeholder.svg", // ← Datei liegt unter public/team/philip-ahlers.jpg
     status: "current",
   },
    {
     name: "Philipp Wittig",
     role: { de: "Studentische Hilfskraft", en: "Student Assistant" },
-    photo: "/team/philipp-wittig.png", // ← Datei liegt unter public/team/philipp-wittig.jpg
+    photo: "/team/placeholder.svg", // ← Datei liegt unter public/team/philipp-wittig.jpg
     status: "current",
   },
 
@@ -103,9 +103,9 @@ export const team: Member[] = [
     status: "alumni",
   },
    {
-    name: "Tobis Bohn",
+    name: "Tobias Bohn",
     role: { de: "Ehemaliger Mitarbeiter", en: "Former team member" },
-    photo: "/team/former-member/tobis-bohn.jpg", // ← Datei liegt unter public/team/former-member/tobis-bohn.jpg
+    photo: "/team/former-member/tobias-bohn.jpg", // ← Datei liegt unter public/team/former-member/tobis-bohn.jpg
     status: "alumni",
   },
 ];
