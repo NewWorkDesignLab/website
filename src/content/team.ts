@@ -62,7 +62,7 @@ export const team: Member[] = [
   },
     {
     name: "Cora Marie Lenz",
-    role: { de: "Ehemalige Wissenschaftliche Mitarbeiterin", en: "Former research associate" },
+    role: { de: "Ehemalige Studentische Hilfskraft", en: "Former student assistant" },
     photo: "/team/former-member/cora-marie-lenz.jpg", // ← Datei liegt unter public/team/former-member/cora-marie-lenz.jpg
     status: "alumni",
   },
@@ -74,7 +74,7 @@ export const team: Member[] = [
   },
    {
     name: "Lama Mtit",
-    role: { de: "EhemaligeStudentische Hilfskraft", en: "Former student assistant" },
+    role: { de: "Ehemalige Studentische Hilfskraft", en: "Former student assistant" },
     photo: "/team/former-member/lama-mtit.jpg", // ← Datei liegt unter public/team/former-member/lama-mtit.jpg
     status: "alumni",
   },
@@ -92,13 +92,13 @@ export const team: Member[] = [
   },
    {
     name: "Friedrich Malz",
-    role: { de: "Ehemaliger Studentische Hilfskraft / Praktikant", en: "Former student assistant" },
+    role: { de: "Ehemalige Studentische Hilfskraft / Praktikant", en: "Former student assistant" },
     photo: "/team/former-member/friedrich-malz.jpg", // ← Datei liegt unter public/team/former-member/friedrich-malz.jpg
     status: "alumni",
   },
    {
     name: "Lenny Keil",
-    role: { de: "Ehemaliger Studentische Hilfskraft / Praktikant", en: "Former student assistant" },
+    role: { de: "Ehemalige Studentische Hilfskraft / Praktikant", en: "Former student assistant" },
     photo: "/team/former-member/lenny-keil.jpg", // ← Datei liegt unter public/team/former-member/lenny-keil.jpg
     status: "alumni",
   },
