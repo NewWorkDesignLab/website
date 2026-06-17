@@ -29,6 +29,32 @@
       "heading": "Wir sind dabei.",
       "intro": "Ob Messe, Konferenz oder Branchentreffen – wir sind gern vor Ort, zeigen, woran wir arbeiten, und kommen mit Menschen ins Gespräch."
     },
+    "homeContact": {
+      "heading": "Lass uns sprechen.",
+      "intro": "Lust auf eine Zusammenarbeit oder eine Frage zu einem unserer Projekte? Wir freuen uns auf deine Nachricht.",
+      "orgName": "NewWorkDesignLab",
+      "orgLines": [
+        "an der Fachhochschule Dresden (FHD)",
+        "Campus Straßburger Platz",
+        "Güntzstr. 1, 01069 Dresden"
+      ],
+      "websiteLabel": "www.fh-dresden.eu",
+      "websiteUrl": "https://www.fh-dresden.eu",
+      "phoneLabel": "Telefonkontakt",
+      "phones": ["+49 351 44 45 466", "+49 351 44 45-409"],
+      "emailLabel": "E-Mail",
+      "person": "Prof. Dr. Marius Brade",
+      "email": "m.brade@fh-dresden.eu",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Dein Name",
+        "email": "E-Mail",
+        "emailPlaceholder": "deine@adresse.de",
+        "message": "Nachricht",
+        "messagePlaceholder": "Worum geht es?",
+        "submit": "Nachricht senden"
+      }
+    },
     "pillarsHeading": "Was uns antreibt.",
     "pillarsIntro": "Hinter Forschung, Transfer und Beratung steht für uns immer dasselbe: Begeisterung für das, was Menschen wirklich weiterbringt. In Projekten zu AR, VR und KI geht es uns nie allein um die Technologie, sondern um Erstaunen, Verbindung und echten Wert für Menschen – darum, Flow erlebbar zu machen und Dinge umzusetzen, die am Ende spürbar einen Nutzen bringen.",
     "pillars": [
@@ -129,6 +155,32 @@
     "events": {
       "heading": "We're there.",
       "intro": "Whether it's a trade fair, conference or industry meet-up – we love being on site, showing what we work on and getting into conversation with people."
+    },
+    "homeContact": {
+      "heading": "Let's talk.",
+      "intro": "Keen to collaborate or have a question about one of our projects? We look forward to hearing from you.",
+      "orgName": "NewWorkDesignLab",
+      "orgLines": [
+        "at the University of Applied Sciences Dresden (FHD)",
+        "Campus Straßburger Platz",
+        "Güntzstr. 1, 01069 Dresden"
+      ],
+      "websiteLabel": "www.fh-dresden.eu",
+      "websiteUrl": "https://www.fh-dresden.eu",
+      "phoneLabel": "Phone",
+      "phones": ["+49 351 44 45 466", "+49 351 44 45-409"],
+      "emailLabel": "Email",
+      "person": "Prof. Dr. Marius Brade",
+      "email": "m.brade@fh-dresden.eu",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Your name",
+        "email": "Email",
+        "emailPlaceholder": "you@address.com",
+        "message": "Message",
+        "messagePlaceholder": "What's it about?",
+        "submit": "Send message"
+      }
     },
     "pillarsHeading": "What drives us.",
     "pillarsIntro": "Behind research, transfer and consulting, the same thing always drives us: a passion for what truly moves people forward. In our AR, VR and AI projects it is never just about the technology, but about wonder, connection and real value for people – about making flow tangible and building things that deliver a genuine, noticeable benefit.",
