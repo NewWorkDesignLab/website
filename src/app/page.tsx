@@ -51,6 +51,7 @@ export default function Home() {
       <section className="pillars">
         <div className="pillars-intro">
           <h2 className="pillars-heading">{t.pillarsHeading}</h2>
+          <p className="pillars-lead">{t.pillarsIntro}</p>
         </div>
         <div className="pillars-grid">
           {(["blue", "purple", "orange"] as const).map((color, i) => {
