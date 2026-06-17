@@ -1182,26 +1182,35 @@ button {
   background: linear-gradient(90deg, var(--orange), #ffcf6b);
 }
 
-.pillar-num {
+/* Soft gradient shape anchored in the bottom-right corner, clipped by the
+   card's overflow:hidden so it reads as a quiet, voluminous watermark behind
+   the text. The pillar colour comes from `color`; `opacity` keeps it subtle. */
+.pillar-shape {
   position: absolute;
   bottom: -2rem;
-  right: 1.25rem;
-  font-family: var(--font-display);
-  font-size: 12rem;
-  font-weight: 700;
-  line-height: 1;
+  right: -2rem;
+  width: 11.5rem;
+  height: 11.5rem;
+  opacity: 0.18;
   pointer-events: none;
   user-select: none;
 }
 
-.pillar-card--blue .pillar-num {
-  color: rgba(58, 111, 216, 0.07);
+.pillar-shape svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
-.pillar-card--purple .pillar-num {
-  color: rgba(106, 47, 181, 0.07);
+
+.pillar-card--blue .pillar-shape {
+  color: var(--blue);
 }
-.pillar-card--orange .pillar-num {
-  color: rgba(246, 166, 35, 0.1);
+.pillar-card--purple .pillar-shape {
+  color: var(--purple);
+}
+.pillar-card--orange .pillar-shape {
+  color: var(--orange);
+  opacity: 0.24;
 }
 
 .pillar-title {
@@ -1868,9 +1877,11 @@ button {
   .pillar-title {
     font-size: 1.9rem;
   }
-  .pillar-num {
-    font-size: 9rem;
+  .pillar-shape {
+    width: 8.5rem;
+    height: 8.5rem;
     bottom: -1.25rem;
+    right: -1.25rem;
   }
 
   /* Featured projects */
