@@ -18,7 +18,12 @@
       "contact": "Kontakt"
     },
     "cta": {
-      "projects": "Projekte ansehen"
+      "contact": "Nimm Kontakt mit uns auf"
+    },
+    "featured": {
+      "heading": "Projekte",
+      "intro": "Mit unseren wirkungsvollen Projekten treiben wir Veränderungsprozesse aktiv voran. Unser Team arbeitet mit starkem Fokus auf anwendungsbezogene Forschung und Entwicklung im Schnittgebiet von User Experience Design, Gamification, Softwareentwicklung und kognitiver Ergonomie. Unsere Partner kommen aus den unterschiedlichsten Bereichen der Forschung.",
+      "more": "Mehr ansehen"
     },
     "pillarsHeading": "Was uns antreibt.",
     "pillarsIntro": "Hinter Forschung, Transfer und Beratung steht für uns immer dasselbe: Begeisterung für das, was Menschen wirklich weiterbringt. In Projekten zu AR, VR und KI geht es uns nie allein um die Technologie, sondern um Erstaunen, Verbindung und echten Wert für Menschen – darum, Flow erlebbar zu machen und Dinge umzusetzen, die am Ende spürbar einen Nutzen bringen.",
@@ -110,7 +115,12 @@
       "contact": "Contact"
     },
     "cta": {
-      "projects": "View projects"
+      "contact": "Get in touch with us"
+    },
+    "featured": {
+      "heading": "Projects",
+      "intro": "With our impactful projects we actively drive change forward. Our team works with a strong focus on applied research and development at the intersection of user experience design, gamification, software development and cognitive ergonomics. Our partners come from the most diverse fields of research.",
+      "more": "View all"
     },
     "pillarsHeading": "What drives us.",
     "pillarsIntro": "Behind research, transfer and consulting, the same thing always drives us: a passion for what truly moves people forward. In our AR, VR and AI projects it is never just about the technology, but about wonder, connection and real value for people – about making flow tangible and building things that deliver a genuine, noticeable benefit.",

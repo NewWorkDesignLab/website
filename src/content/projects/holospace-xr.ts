@@ -10,7 +10,7 @@ export const holospaceXr: Project = {
   categories: ["vr", "research"],
   status: "ongoing",
   year: "2023–2025",
-  cover: "/projects/holospace-xr/cover.svg",
+  cover: "/projects/holospace-xr/holospacexr_cover.webp",
   funding: ["freistaat-sachsen", "efre", "eu"],
   sections: [
     {

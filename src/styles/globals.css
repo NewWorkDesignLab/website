@@ -1244,6 +1244,110 @@ button {
 }
 
 /* ------------------------------------------------------------------ */
+/* Home: featured projects                                            */
+/* ------------------------------------------------------------------ */
+.home-projects {
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  width: 100%;
+  max-width: 72rem;
+  padding-top: 9rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+}
+
+.home-projects-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.home-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* Image-dominant tile: cover fills the card, the title sits over a soft
+   gradient at the bottom. Distinct from the project-overview cards. */
+.home-project-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--corner);
+  overflow: hidden;
+  box-shadow: 0 0.75rem 2.5rem rgba(20, 33, 61, 0.12);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.home-project-tile:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 2rem 4.5rem rgba(20, 33, 61, 0.2);
+}
+
+.home-project-tile-img {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.home-project-tile:hover .home-project-tile-img {
+  transform: scale(1.04);
+}
+
+.home-project-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(11, 18, 38, 0.88) 0%,
+    rgba(11, 18, 38, 0.35) 42%,
+    rgba(11, 18, 38, 0) 68%
+  );
+  z-index: 0;
+}
+
+.home-project-tile-content {
+  position: relative;
+  z-index: 1;
+  padding: 1.6rem 1.6rem 1.5rem;
+}
+
+.home-project-tile-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.home-projects-more {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--blue);
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.home-projects-more:hover {
+  gap: 0.85rem;
+  color: var(--blue-deep);
+}
+
+.home-projects-more svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ------------------------------------------------------------------ */
 /* Tablet                                                             */
 /* ------------------------------------------------------------------ */
 @media (max-width: 860px) and (min-width: 769px) {
@@ -1416,6 +1520,22 @@ button {
   .pillar-num {
     font-size: 9rem;
     bottom: -1.25rem;
+  }
+
+  /* Featured projects */
+  .home-projects {
+    padding-top: 3.5rem;
+    gap: 2.5rem;
+  }
+  .home-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .home-project-tile {
+    aspect-ratio: 16 / 10;
+  }
+  .home-project-tile-title {
+    font-size: 1.6rem;
   }
 
   /* Footer flows at the end on every page (no overlap with the bar). */

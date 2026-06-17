@@ -7,10 +7,18 @@ import { useLang } from "./useLang";
 import { Background } from "../components/Background";
 import { Sidebar } from "../components/Sidebar";
 import { SiteFooter } from "../components/SiteFooter";
+import { getProject } from "../content/projects";
+import type { Project } from "../content/types";
+
+const FEATURED_SLUGS = ["holospace-xr", "lern-mit-ki", "zeiss-factory"];
 
 export default function Home() {
   const { lang } = useLang();
   const t = texts[lang];
+
+  const featured = FEATURED_SLUGS
+    .map(getProject)
+    .filter((p): p is Project => Boolean(p));
 
   return (
     <main className="placeholder">
@@ -42,8 +50,8 @@ export default function Home() {
             <br />
             {t.descLine2}
           </p>
-          <Link href="/projects" className="cta">
-            {t.cta.projects}
+          <Link href="/contact" className="cta">
+            {t.cta.contact}
           </Link>
         </div>
       </section>
@@ -64,6 +72,41 @@ export default function Home() {
               </article>
             );
           })}
+        </div>
+      </section>
+
+      <section className="home-projects">
+        <div className="pillars-intro">
+          <h2 className="pillars-heading">{t.featured.heading}</h2>
+          <p className="pillars-lead">{t.featured.intro}</p>
+        </div>
+        <div className="home-projects-body">
+          <div className="home-projects-grid">
+            {featured.map((p) => (
+              <Link
+                key={p.slug}
+                href={`/projects/${p.slug}`}
+                className="home-project-tile"
+              >
+                <Image
+                  className="home-project-tile-img"
+                  src={p.cover}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 860px) 100vw, 22rem"
+                />
+                <span className="home-project-tile-content">
+                  <span className="home-project-tile-title">{p.title}</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+          <Link href="/projects" className="home-projects-more">
+            {t.featured.more}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
         </div>
       </section>
 
