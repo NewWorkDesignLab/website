@@ -16,18 +16,6 @@ export function PageShell({ children }: { children: ReactNode }) {
       <Background />
 
       <div className="page-brand">
-        <Link href="/" className="page-brand-home" aria-label="Home">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            aria-hidden="true"
-          >
-            <path d="M3 11.5 12 4l9 7.5" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M5.5 10v9.5h13V10" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </Link>
         <Link
           href="/"
           className="page-brand-logo"
@@ -36,8 +24,8 @@ export function PageShell({ children }: { children: ReactNode }) {
           <Image
             src="/nwdl_logo.png"
             alt="New Work Design Lab"
-            width={104}
-            height={104}
+            width={244}
+            height={244}
             priority
           />
         </Link>

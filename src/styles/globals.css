@@ -330,33 +330,6 @@ button {
   margin-bottom: 2.75rem;
 }
 
-.page-brand-home {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.9rem;
-  height: 2.9rem;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 0.75rem 2rem rgba(20, 33, 61, 0.14);
-  color: var(--ink-soft);
-  transition: transform 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.page-brand-home:hover {
-  transform: translateY(-2px);
-  color: var(--blue);
-  box-shadow: 0 1rem 2.25rem rgba(20, 33, 61, 0.2);
-}
-
-.page-brand-home svg {
-  width: 1.4rem;
-  height: 1.4rem;
-}
-
 .page-brand-logo {
   display: inline-flex;
   align-items: center;
@@ -368,7 +341,7 @@ button {
 }
 
 .page-brand-logo img {
-  height: 3.25rem;
+  height: 5rem;
   width: auto;
   display: block;
 }
@@ -1988,16 +1961,7 @@ button {
     gap: 0.5rem;
   }
 
-  .page-brand-home {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
   .page-brand-logo img {
-    height: 2.5rem;
-  }
-
-  .placeholder:not(.placeholder--page) .page-brand-logo img {
     height: 3.5rem;
   }
 }
