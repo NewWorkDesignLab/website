@@ -987,6 +987,11 @@ button {
   gap: 1.2rem;
 }
 
+/* Extra breathing room between the "current" and "alumni" team groups. */
+.team-section + .team-section {
+  margin-top: 2.5rem;
+}
+
 .team-section-title {
   font-family: var(--font-body);
   font-size: 1.05rem;
