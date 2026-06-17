@@ -37,6 +37,15 @@ export interface Project {
   sections: Block[];
 }
 
+export interface EventItem {
+  /** /events/<slug>.jpg (Datei in public/events/) */
+  image: string;
+  /** Infozeile, immer sichtbar */
+  title: Localized;
+  /** kurzer Zusatztext, beim Hover sichtbar */
+  blurb: Localized;
+}
+
 export interface Member {
   name: string;
   role: Localized;

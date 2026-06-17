@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Platzhalter Eventfoto">
+  <rect width="640" height="480" fill="#e8eef8"/>
+  <circle cx="232" cy="196" r="44" fill="#b9c6df"/>
+  <path d="M150 340c0-45 37-74 82-74s82 29 82 74z" fill="#b9c6df"/>
+  <rect x="360" y="150" width="150" height="150" rx="12" fill="#cdd8ec"/>
+  <path d="M360 268l46-46 34 34 40-40 30 30v54H360z" fill="#b9c6df"/>
+  <circle cx="404" cy="186" r="16" fill="#b9c6df"/>
+</svg>

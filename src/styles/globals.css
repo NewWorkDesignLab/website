@@ -1348,6 +1348,111 @@ button {
 }
 
 /* ------------------------------------------------------------------ */
+/* Home: events / presence strip                                      */
+/* ------------------------------------------------------------------ */
+.home-events {
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  width: 100%;
+  max-width: 72rem;
+  padding-top: 9rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* Horizontal, swipeable strip. The right-edge mask hints that more cards
+   follow; padding keeps the lift/shadow and scrollbar from being clipped. */
+.event-strip {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0 1.25rem;
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  -webkit-mask-image: linear-gradient(to right, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 92%, transparent 100%);
+}
+
+.event-card {
+  position: relative;
+  flex: 0 0 clamp(18rem, 28vw, 24rem);
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+  border-radius: var(--corner);
+  overflow: hidden;
+  box-shadow: 0 0.75rem 2.5rem rgba(20, 33, 61, 0.12);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1.75rem 4rem rgba(20, 33, 61, 0.2);
+}
+
+.event-card-img {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.event-card:hover .event-card-img {
+  transform: scale(1.04);
+}
+
+.event-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(11, 18, 38, 0.9) 0%,
+    rgba(11, 18, 38, 0.45) 38%,
+    rgba(11, 18, 38, 0) 70%
+  );
+  z-index: 0;
+}
+
+.event-card-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.4rem 1.5rem 1.5rem;
+  color: #fff;
+}
+
+.event-card-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+/* Blurb is revealed on hover/focus (desktop); collapsed by default so the
+   image stays the focus. Touch devices show it permanently (see mobile block). */
+.event-card-blurb {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+.event-card:hover .event-card-blurb,
+.event-card:focus-within .event-card-blurb {
+  max-height: 9rem;
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------------ */
 /* Tablet                                                             */
 /* ------------------------------------------------------------------ */
 @media (max-width: 860px) and (min-width: 769px) {
@@ -1536,6 +1641,21 @@ button {
   }
   .home-project-tile-title {
     font-size: 1.6rem;
+  }
+
+  /* Events strip */
+  .home-events {
+    padding-top: 3.5rem;
+    gap: 2.5rem;
+  }
+  .event-card {
+    flex-basis: 80vw;
+    aspect-ratio: 4 / 3;
+  }
+  /* No hover on touch — keep the blurb visible. */
+  .event-card-blurb {
+    max-height: none;
+    opacity: 1;
   }
 
   /* Footer flows at the end on every page (no overlap with the bar). */

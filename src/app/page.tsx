@@ -7,6 +7,7 @@ import { useLang } from "./useLang";
 import { Background } from "../components/Background";
 import { Sidebar } from "../components/Sidebar";
 import { SiteFooter } from "../components/SiteFooter";
+import { EventStrip } from "../components/EventStrip";
 import { getProject } from "../content/projects";
 import type { Project } from "../content/types";
 
@@ -108,6 +109,14 @@ export default function Home() {
             </svg>
           </Link>
         </div>
+      </section>
+
+      <section className="home-events">
+        <div className="pillars-intro">
+          <h2 className="pillars-heading">{t.events.heading}</h2>
+          <p className="pillars-lead">{t.events.intro}</p>
+        </div>
+        <EventStrip />
       </section>
 
       <SiteFooter />
