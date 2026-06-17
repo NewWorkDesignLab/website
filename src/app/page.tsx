@@ -8,6 +8,7 @@ import { Background } from "../components/Background";
 import { Sidebar } from "../components/Sidebar";
 import { SiteFooter } from "../components/SiteFooter";
 import { EventStrip } from "../components/EventStrip";
+import { ContactBlock } from "../components/ContactBlock";
 import { getProject } from "../content/projects";
 import type { Project } from "../content/types";
 
@@ -128,101 +129,7 @@ export default function Home() {
         <EventStrip />
       </section>
 
-      <section id="contact" className="home-contact">
-        <div className="pillars-intro">
-          <h2 className="pillars-heading">{t.homeContact.heading}</h2>
-          <p className="pillars-lead">{t.homeContact.intro}</p>
-        </div>
-
-        <div className="home-contact-panel">
-          <div className="home-contact-info">
-            <div className="home-contact-block">
-              <strong>{t.homeContact.orgName}</strong>
-              {t.homeContact.orgLines.map((line) => (
-                <span key={line}>{line}</span>
-              ))}
-              <a
-                className="home-contact-link"
-                href={t.homeContact.websiteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t.homeContact.websiteLabel}
-              </a>
-            </div>
-
-            <div className="home-contact-block">
-              <span className="home-contact-block-label">
-                {t.homeContact.phoneLabel}
-              </span>
-              {t.homeContact.phones.map((phone) => (
-                <a
-                  key={phone}
-                  className="home-contact-link"
-                  href={`tel:${phone.replace(/[^+\d]/g, "")}`}
-                >
-                  {phone}
-                </a>
-              ))}
-            </div>
-
-            <div className="home-contact-block">
-              <span className="home-contact-block-label">
-                {t.homeContact.emailLabel}
-              </span>
-              <span>{t.homeContact.person}</span>
-              <a
-                className="home-contact-link"
-                href={`mailto:${t.homeContact.email}`}
-              >
-                {t.homeContact.email}
-              </a>
-            </div>
-          </div>
-
-          {/* Form is presentational for now – wiring follows once our own
-              server endpoint is ready. */}
-          <form
-            className="home-contact-form"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <div className="home-contact-field">
-              <label htmlFor="contact-name">{t.homeContact.form.name}</label>
-              <input
-                id="contact-name"
-                name="name"
-                type="text"
-                placeholder={t.homeContact.form.namePlaceholder}
-                autoComplete="name"
-              />
-            </div>
-            <div className="home-contact-field">
-              <label htmlFor="contact-email">{t.homeContact.form.email}</label>
-              <input
-                id="contact-email"
-                name="email"
-                type="email"
-                placeholder={t.homeContact.form.emailPlaceholder}
-                autoComplete="email"
-              />
-            </div>
-            <div className="home-contact-field">
-              <label htmlFor="contact-message">
-                {t.homeContact.form.message}
-              </label>
-              <textarea
-                id="contact-message"
-                name="message"
-                rows={4}
-                placeholder={t.homeContact.form.messagePlaceholder}
-              />
-            </div>
-            <button type="submit" className="cta home-contact-submit">
-              {t.homeContact.form.submit}
-            </button>
-          </form>
-        </div>
-      </section>
+      <ContactBlock />
 
       <SiteFooter />
     </main>

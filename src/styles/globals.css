@@ -1469,6 +1469,13 @@ button {
   gap: 3.5rem;
 }
 
+/* On the dedicated contact page the block stands on its own (no preceding
+   sections), so drop the large top whitespace and let it sit just below the
+   page brand. */
+.home-contact--standalone {
+  padding-top: 0;
+}
+
 /* The "bunte viereckige" element: a vivid brand-gradient panel that lifts the
    contact block off the page and rounds the homepage off. */
 .home-contact-panel {
