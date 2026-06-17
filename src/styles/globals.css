@@ -437,7 +437,7 @@ button {
   position: absolute;
   z-index: 0;
   top: 50%;
-  right: clamp(1.5rem, 4vw, 6rem);
+  right: clamp(6rem, 16vw, 18rem);
   width: min(45vw, 36.25rem);
   height: min(45vw, 36.25rem);
   transform: translateY(-50%);
@@ -590,7 +590,7 @@ button {
   z-index: 20;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 0.6rem;
   border: 1px solid var(--border);
   border-radius: 1.4rem;
   background: rgba(255, 255, 255, 0.72);
@@ -616,6 +616,7 @@ button {
 }
 
 .sidebar-item {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -639,43 +640,68 @@ button {
   background: rgba(58, 111, 216, 0.12);
 }
 
+/* Aktiv-Indikator: farbiger Strich am rechten Rand des aktiven Items, damit die
+   aktuelle Seite auch ohne Label sofort erkennbar ist. */
+.sidebar-item.is-active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -0.6rem;
+  transform: translateY(-50%);
+  width: 0.2rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  background: var(--blue);
+}
+
 .sidebar-icon {
   flex: 0 0 auto;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 .sidebar-icon svg {
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .sidebar-icon--flag img {
-  width: 1.65rem;
-  height: 1.65rem;
+  width: 1.9rem;
+  height: 1.9rem;
   border-radius: 0.35rem;
   object-fit: cover;
   display: block;
 }
 
+/* Label erscheint als schwebende Pill links neben dem Icon (die Leiste klebt am
+   rechten Rand) — nur beim Hover/Focus des EINZELNEN Items, kein Layout-Sprung. */
 .sidebar-label {
-  max-width: 0;
-  opacity: 0;
-  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-right: 0.5rem;
+  transform: translateY(-50%) translateX(0.4rem);
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0.5rem 1.25rem rgba(20, 33, 61, 0.16);
   white-space: nowrap;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
-  transition: max-width 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+  color: var(--ink-soft);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.sidebar:hover .sidebar-label,
-.sidebar:focus-within .sidebar-label {
-  max-width: 9rem;
+.sidebar-item:hover .sidebar-label,
+.sidebar-item:focus-visible .sidebar-label {
   opacity: 1;
-  padding-right: 0.9rem;
+  transform: translateY(-50%) translateX(0);
 }
 
 /* ------------------------------------------------------------------ */
@@ -1079,6 +1105,137 @@ button {
 }
 
 /* ------------------------------------------------------------------ */
+/* Home pillars section                                               */
+/* ------------------------------------------------------------------ */
+.pillars {
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  width: 100%;
+  max-width: 72rem;
+  padding-top: 8rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.pillars-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.9rem;
+}
+
+.pillars-heading {
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+.pillar-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 3.25rem 2.5rem 3rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--border);
+  border-radius: var(--corner);
+  box-shadow: 0 0.75rem 2.5rem rgba(20, 33, 61, 0.09);
+  overflow: hidden;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 2rem 4.5rem rgba(20, 33, 61, 0.18);
+}
+
+.pillar-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0.3rem;
+  border-radius: var(--corner) var(--corner) 0 0;
+}
+
+.pillar-card--blue::before {
+  background: linear-gradient(90deg, var(--blue-deep), var(--blue-bright));
+}
+.pillar-card--purple::before {
+  background: linear-gradient(90deg, var(--purple), #9b5de5);
+}
+.pillar-card--orange::before {
+  background: linear-gradient(90deg, var(--orange), #ffcf6b);
+}
+
+.pillar-num {
+  position: absolute;
+  bottom: -2rem;
+  right: 1.25rem;
+  font-family: var(--font-display);
+  font-size: 12rem;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.pillar-card--blue .pillar-num {
+  color: rgba(58, 111, 216, 0.07);
+}
+.pillar-card--purple .pillar-num {
+  color: rgba(106, 47, 181, 0.07);
+}
+.pillar-card--orange .pillar-num {
+  color: rgba(246, 166, 35, 0.1);
+}
+
+.pillar-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  position: relative;
+  z-index: 1;
+}
+
+.pillar-card--blue .pillar-title {
+  color: var(--blue-deep);
+}
+.pillar-card--purple .pillar-title {
+  color: var(--purple);
+}
+.pillar-card--orange .pillar-title {
+  color: #7a5202;
+}
+
+.pillar-body {
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  line-height: 1.78;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ------------------------------------------------------------------ */
 /* Tablet                                                             */
 /* ------------------------------------------------------------------ */
 @media (max-width: 860px) and (min-width: 769px) {
@@ -1089,6 +1246,16 @@ button {
   .page-head h1,
   .contact h1 {
     font-size: 2.6rem;
+  }
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+  .pillars-heading {
+    font-size: 2.6rem;
+  }
+  .pillar-card {
+    padding: 2.75rem 2.25rem 2.5rem;
   }
 }
 
@@ -1214,6 +1381,28 @@ button {
     gap: 1.25rem;
   }
 
+  /* Pillars */
+  .pillars {
+    padding-top: 3.5rem;
+  }
+  .pillars-heading {
+    font-size: 2.2rem;
+  }
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .pillar-card {
+    padding: 2.5rem 1.75rem 2.25rem;
+  }
+  .pillar-title {
+    font-size: 1.9rem;
+  }
+  .pillar-num {
+    font-size: 9rem;
+    bottom: -1.25rem;
+  }
+
   /* Footer flows at the end on every page (no overlap with the bar). */
   .placeholder .footer {
     position: static;
@@ -1257,8 +1446,13 @@ button {
 
   /* Labels can't expand sideways in the bar — keep it icon-only. */
   .sidebar-label,
-  .sidebar:hover .sidebar-label,
-  .sidebar:focus-within .sidebar-label {
+  .sidebar-item:hover .sidebar-label,
+  .sidebar-item:focus-visible .sidebar-label {
+    display: none;
+  }
+
+  /* No active-indicator stripe in the horizontal bottom bar. */
+  .sidebar-item.is-active::before {
     display: none;
   }
 

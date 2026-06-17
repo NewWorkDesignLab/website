@@ -48,6 +48,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="pillars">
+        <div className="pillars-intro">
+          <h2 className="pillars-heading">{t.pillarsHeading}</h2>
+        </div>
+        <div className="pillars-grid">
+          {(["blue", "purple", "orange"] as const).map((color, i) => {
+            const p = t.pillars[i];
+            return (
+              <article key={p.title} className={`pillar-card pillar-card--${color}`}>
+                <span className="pillar-num" aria-hidden="true">{p.num}</span>
+                <h3 className="pillar-title">{p.title}</h3>
+                <p className="pillar-body">{p.body}</p>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
       <SiteFooter />
     </main>
   );

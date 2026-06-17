@@ -20,6 +20,24 @@
     "cta": {
       "projects": "Projekte ansehen"
     },
+    "pillarsHeading": "Was uns antreibt.",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Forschung",
+        "body": "Wir unterstützen in Projekten als Forschungs- und Umsetzungspartner bei der Prototypenentwicklung bis zur vorwettbewerblichen Realisierung durch nutzergetriebene, testbasierte Vorgehensweise."
+      },
+      {
+        "num": "02",
+        "title": "Transfer",
+        "body": "Zentrales Ziel unserer Forschungs- und Entwicklungstätigkeit ist es, die Ergebnisse zur Anwendung zu bringen und damit den Transfer von der Idee bis zur Verwertung zu begleiten."
+      },
+      {
+        "num": "03",
+        "title": "Beratung",
+        "body": "Wir beraten zu den Prozessen und Methoden bei der Produktentwicklung hinsichtlich nutzergetriebener, testbasierter Vorgehensweisen für ein zielgruppenkonformes Benutzungserlebnis."
+      }
+    ],
     "projectsPage": {
       "title": "Projekte",
       "intro": "Ein Überblick über unsere Projekte aus Virtual Reality, Augmented Reality, Forschung und Künstlicher Intelligenz."
@@ -93,6 +111,24 @@
     "cta": {
       "projects": "View projects"
     },
+    "pillarsHeading": "What drives us.",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Research",
+        "body": "We support projects as a research and implementation partner — from prototype development through to pre-competitive realisation using user-driven, test-based approaches."
+      },
+      {
+        "num": "02",
+        "title": "Transfer",
+        "body": "A central goal of our research and development work is to bring results into application — accompanying the transfer from idea to impact."
+      },
+      {
+        "num": "03",
+        "title": "Consulting",
+        "body": "We advise on processes and methods in product development with respect to user-driven, test-based approaches for a target-group-appropriate user experience."
+      }
+    ],
     "projectsPage": {
       "title": "Projects",
       "intro": "An overview of our projects across virtual reality, augmented reality, research and artificial intelligence."
