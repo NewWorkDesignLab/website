@@ -25,7 +25,7 @@ export default function Home() {
             width={244}
             height={244}
             priority
-          />
+          /> 
         </span>
       </div>
 
