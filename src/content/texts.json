@@ -42,7 +42,7 @@
       "websiteUrl": "https://www.fh-dresden.eu",
       "phoneLabel": "Telefonkontakt",
       "phones": ["+49 351 44 45 466", "+49 351 44 45-409"],
-      "emailLabel": "E-Mail",
+      "personLabel": "Ansprechpartner",
       "person": "Prof. Dr. Marius Brade",
       "email": "m.brade@fh-dresden.eu",
       "form": {
@@ -104,7 +104,8 @@
       "intro": "Du hast Interesse an einer Zusammenarbeit oder eine Frage zu einem unserer Projekte? Wir freuen uns auf deine Nachricht.",
       "person": "Prof. Dr. Marius Brade",
       "role": "Ansprechpartner New Work Design Lab",
-      "emailCta": "E-Mail schreiben"
+      "titleFhd": "Professor für Medieninformatik · Prorektor für Forschung, Innovation und nachhaltigen Transfer",
+      "bio": "Prof. Dr. Marius Brade leitet das NewWorkDesignLab an der Fachhochschule Dresden. Ihn treibt eine Frage an: Wie lässt sich Technologie so gestalten, dass sie uns Menschen wirklich hilft? Seit über einem Jahrzehnt forscht er im Schnittgebiet von Interaktionsdesign, Informatik und Kognitionspsychologie – immer mit dem Blick darauf, wie wir Arbeiten und Zusammenleben im Sinne von New Work neu denken können."
     },
     "impressum": {
       "title": "Impressum",
@@ -169,7 +170,7 @@
       "websiteUrl": "https://www.fh-dresden.eu",
       "phoneLabel": "Phone",
       "phones": ["+49 351 44 45 466", "+49 351 44 45-409"],
-      "emailLabel": "Email",
+      "personLabel": "Contact",
       "person": "Prof. Dr. Marius Brade",
       "email": "m.brade@fh-dresden.eu",
       "form": {
@@ -231,7 +232,8 @@
       "intro": "Interested in working together or have a question about one of our projects? We look forward to hearing from you.",
       "person": "Prof. Dr. Marius Brade",
       "role": "Contact, New Work Design Lab",
-      "emailCta": "Send an email"
+      "titleFhd": "Professor of Media Informatics · Vice-Rector for Research, Innovation and Sustainable Transfer",
+      "bio": "Prof. Dr. Marius Brade heads the NewWorkDesignLab at the University of Applied Sciences Dresden. He is driven by one question: how can technology be designed so that it genuinely helps people? For more than a decade he has been researching at the intersection of interaction design, computer science and cognitive psychology – always with an eye on how we might rethink the way we work and live together in the spirit of New Work."
     },
     "impressum": {
       "title": "Legal Note",

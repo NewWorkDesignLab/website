@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import texts from "../content/texts.json";
 import { useLang } from "../app/useLang";
 
@@ -12,16 +13,23 @@ import { useLang } from "../app/useLang";
  * <h1>, while the homepage keeps it an <h2> below the hero headline.
  * `standalone` trims the large top whitespace that only makes sense when the
  * block follows other homepage sections.
+ * `contactPage` switches the block into its dedicated-page guise: the heading
+ * reads "Kontakt" instead of the homepage's hero line, and Marius Brade is
+ * introduced as the lab's named point of contact. The homepage section keeps
+ * its original wording.
  */
 export function ContactBlock({
   headingTag: Heading = "h2",
   standalone = false,
+  contactPage = false,
 }: {
   headingTag?: "h1" | "h2";
   standalone?: boolean;
+  contactPage?: boolean;
 }) {
   const { lang } = useLang();
   const c = texts[lang].homeContact;
+  const cp = texts[lang].contactPage;
 
   return (
     <section
@@ -29,9 +37,30 @@ export function ContactBlock({
       className={`home-contact${standalone ? " home-contact--standalone" : ""}`}
     >
       <div className="pillars-intro">
-        <Heading className="pillars-heading">{c.heading}</Heading>
+        <Heading className="pillars-heading">
+          {contactPage ? cp.title : c.heading}
+        </Heading>
         <p className="pillars-lead">{c.intro}</p>
       </div>
+
+      {contactPage ? (
+        <div className="contact-spotlight">
+          <div className="contact-spotlight-photo">
+            <Image
+              src="/team/marius-brade.jpg"
+              alt={cp.person}
+              fill
+              sizes="(max-width: 768px) 8rem, 11rem"
+            />
+          </div>
+          <div className="contact-spotlight-text">
+            <span className="contact-spotlight-role">{cp.role}</span>
+            <strong className="contact-spotlight-name">{cp.person}</strong>
+            <span className="contact-spotlight-title">{cp.titleFhd}</span>
+            <p className="contact-spotlight-bio">{cp.bio}</p>
+          </div>
+        </div>
+      ) : null}
 
       <div className="home-contact-panel">
         <div className="home-contact-info">
@@ -64,8 +93,8 @@ export function ContactBlock({
           </div>
 
           <div className="home-contact-block">
-            <span className="home-contact-block-label">{c.emailLabel}</span>
-            <span>{c.person}</span>
+            <span className="home-contact-block-label">{c.personLabel}</span>
+            <strong className="home-contact-person">{c.person}</strong>
             <a className="home-contact-link" href={`mailto:${c.email}`}>
               {c.email}
             </a>
