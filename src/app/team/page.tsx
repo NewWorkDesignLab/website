@@ -15,30 +15,32 @@ export default function TeamPage() {
 
   return (
     <PageShell>
-      <section className="content page-head">
-        <h1>{t.title}</h1>
-        <p className="lead">{t.intro}</p>
-      </section>
+      <div className="page-column">
+        <section className="content page-head">
+          <h1>{t.title}</h1>
+          <p className="lead">{t.intro}</p>
+        </section>
 
-      <section className="team-section">
-        <h2 className="team-section-title">{t.current}</h2>
-        <div className="team-grid">
-          {current.map((m, i) => (
-            <TeamCard key={i} member={m} lang={lang} />
-          ))}
-        </div>
-      </section>
-
-      {alumni.length > 0 ? (
         <section className="team-section">
-          <h2 className="team-section-title">{t.alumni}</h2>
+          <h2 className="team-section-title">{t.current}</h2>
           <div className="team-grid">
-            {alumni.map((m, i) => (
+            {current.map((m, i) => (
               <TeamCard key={i} member={m} lang={lang} />
             ))}
           </div>
         </section>
-      ) : null}
+
+        {alumni.length > 0 ? (
+          <section className="team-section">
+            <h2 className="team-section-title">{t.alumni}</h2>
+            <div className="team-grid">
+              {alumni.map((m, i) => (
+                <TeamCard key={i} member={m} lang={lang} />
+              ))}
+            </div>
+          </section>
+        ) : null}
+      </div>
     </PageShell>
   );
 }

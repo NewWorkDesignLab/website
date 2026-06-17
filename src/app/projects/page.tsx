@@ -11,12 +11,14 @@ export default function ProjectsPage() {
 
   return (
     <PageShell>
-      <section className="content page-head">
-        <h1>{t.title}</h1>
-        <p className="lead">{t.intro}</p>
-      </section>
+      <div className="page-column">
+        <section className="content page-head">
+          <h1>{t.title}</h1>
+          <p className="lead">{t.intro}</p>
+        </section>
 
-      <ProjectGrid />
+        <ProjectGrid />
+      </div>
     </PageShell>
   );
 }

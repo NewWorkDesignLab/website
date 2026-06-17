@@ -692,6 +692,17 @@ button {
   padding-top: 3rem;
 }
 
+/* Centred content column for sub-pages, mirroring the homepage sections
+   (.pillars / .home-projects / .home-contact) so the page sits in the middle
+   of the available width instead of hugging the left edge. */
+.page-column {
+  align-self: center;
+  width: 100%;
+  max-width: 72rem;
+  display: flex;
+  flex-direction: column;
+}
+
 .page-head {
   gap: 1rem;
   max-width: 47.5rem;
@@ -802,6 +813,7 @@ button {
 .project-detail {
   position: relative;
   z-index: 3;
+  align-self: center;
   width: 100%;
   max-width: 55rem;
   display: flex;
