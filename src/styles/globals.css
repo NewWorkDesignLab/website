@@ -917,10 +917,12 @@ button {
   padding-right: 6rem;
 }
 
-/* On content pages, push the footer to the very bottom on short pages so it
-   still closes the viewport. */
-.placeholder--page .footer {
-  margin-top: auto;
+/* On content pages, let the content block absorb the free space so the footer
+   is pushed to the bottom on short pages, while the footer keeps its fixed top
+   gap (base margin-top) on tall pages — mirrors the homepage mechanism and
+   avoids content sticking to the footer line. */
+.placeholder--page > *:has(+ .footer) {
+  margin-bottom: auto;
 }
 
 /* Centred content column for sub-pages, mirroring the homepage sections
