@@ -12,6 +12,13 @@ export function SiteFooter() {
 
   return (
     <footer className="footer">
+      {/* Mobile-only: kräftige Farbkugeln im Footer (ersetzen die flachen
+          Hero-Blobs, die mobil nach unten rutschten). Auf Desktop versteckt. */}
+      <span className="footer-orbs" aria-hidden="true">
+        <span className="footer-orb purple" />
+        <span className="footer-orb blue" />
+        <span className="footer-orb orange" />
+      </span>
       <Link href="/legal-note">{t.footerImpressum}</Link>
       <span className="footer-sep" aria-hidden="true">
         ·

@@ -317,6 +317,47 @@ button {
   color: var(--border);
 }
 
+/* Kräftige Farbkugeln im Footer — nur mobil sichtbar (eingeblendet + positioniert
+   im Mobile-Block). Ersetzen die flachen Hero-Blobs, die mobil nach unten in den
+   Footerbereich rutschten. Statisch (keine Animation) für die Mobile-Performance. */
+.footer-orbs {
+  display: none;
+}
+
+.footer-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: drop-shadow(0 0.5rem 1.5rem rgba(20, 33, 61, 0.22));
+}
+
+.footer-orb.purple {
+  width: 7rem;
+  height: 7rem;
+  right: 0.25rem;
+  bottom: 0;
+  background: radial-gradient(circle at 32% 28%, #b98cff, var(--purple));
+}
+
+.footer-orb.blue {
+  width: 4.5rem;
+  height: 4.5rem;
+  right: 4.5rem;
+  bottom: 3.75rem;
+  background: radial-gradient(
+    circle at 32% 28%,
+    var(--blue-bright),
+    var(--blue-deep)
+  );
+}
+
+.footer-orb.orange {
+  width: 3.5rem;
+  height: 3.5rem;
+  right: 7rem;
+  bottom: 0.75rem;
+  background: radial-gradient(circle at 32% 28%, #ffd98a, var(--orange));
+}
+
 /* ------------------------------------------------------------------ */
 /* Fixed top-left brand + home button (content sub-pages)              */
 /* ------------------------------------------------------------------ */
@@ -431,7 +472,9 @@ button {
 
 .blob {
   position: absolute;
-  border-radius: 46% 54% 60% 40% / 48% 42% 58% 52%;
+  /* Runde Kugeln (radialer 3D-Glanz, s. u.) statt der früheren flachen,
+     organischen Blobs — gleicher Stil wie die Farbtupfer-Orbs. */
+  border-radius: 50%;
   filter: drop-shadow(0 1.25rem 2.75rem rgba(20, 33, 61, 0.18));
   animation: morph 14s ease-in-out infinite;
   /* Own compositor layer so the drop-shadow is rasterised once and the
@@ -442,7 +485,7 @@ button {
 .blob.purple {
   width: 56%;
   height: 56%;
-  background: linear-gradient(135deg, var(--purple), #9b5de5);
+  background: radial-gradient(circle at 32% 28%, #b98cff, var(--purple));
   top: 6%;
   right: 8%;
 }
@@ -450,7 +493,11 @@ button {
 .blob.blue {
   width: 40%;
   height: 40%;
-  background: linear-gradient(135deg, var(--blue-deep), var(--blue-bright));
+  background: radial-gradient(
+    circle at 32% 28%,
+    var(--blue-bright),
+    var(--blue-deep)
+  );
   bottom: 2%;
   left: 6%;
   animation-delay: -4s;
@@ -459,7 +506,7 @@ button {
 .blob.orange {
   width: 24%;
   height: 24%;
-  background: linear-gradient(135deg, var(--orange), #ffcf6b);
+  background: radial-gradient(circle at 32% 28%, #ffd98a, var(--orange));
   bottom: 14%;
   right: 2%;
   animation-delay: -7s;
@@ -468,7 +515,7 @@ button {
 .blob.green {
   width: 19%;
   height: 19%;
-  background: linear-gradient(135deg, var(--green), #b8ecca);
+  background: radial-gradient(circle at 32% 28%, #b8ecca, var(--green));
   top: 2%;
   left: 24%;
   animation-delay: -10s;
@@ -1862,16 +1909,14 @@ button {
     --edge: 1.25rem;
   }
 
-  /* Background is barely visible while scrolling on a phone — stop animating it
-     entirely and release its compositor layers to save battery/CPU. */
-  .blob,
-  .ring,
+  /* Die flachen Hero-Blobs rutschten mobil nach unten in den Footerbereich.
+     Mobil blenden wir .bg-visual ganz aus — den Akzent übernehmen oben die
+     Farbtupfer (.mobile-orbs) und unten die kräftigen Footer-Kugeln. */
+  .bg-visual {
+    display: none;
+  }
   .badge .dot {
     animation: none;
-  }
-  .blob,
-  .ring {
-    will-change: auto;
   }
 
   /* Farbige Kugeln oben rechts: sichtbarer Akzent, der dezent in der Ecke
@@ -2167,13 +2212,31 @@ button {
     margin-top: 0;
   }
 
-  /* Footer flows at the end on every page (no overlap with the bar). */
+  /* Footer flows at the end on every page (no overlap with the bar).
+     `relative` gives the Footer-Orbs einen Positionierungs-Kontext. */
   .placeholder .footer {
-    position: static;
+    position: relative;
     left: auto;
     bottom: auto;
     margin-top: 2.5rem;
     padding-top: 0;
+  }
+  /* Links/Text über den Kugeln halten. */
+  .footer > :not(.footer-orbs) {
+    position: relative;
+    z-index: 1;
+  }
+  /* Kugel-Cluster unten rechts im Footer, leicht über den rechten Rand
+     hinaus (wird vom horizontalen Overflow abgeschnitten). */
+  .footer-orbs {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    right: clamp(-3rem, -5vw, -1rem);
+    bottom: 0;
+    width: 12rem;
+    height: 9rem;
+    pointer-events: none;
   }
 
   /* Sidebar → horizontal pill docked at the bottom center */
