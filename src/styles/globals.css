@@ -1779,7 +1779,7 @@ button {
   .mobile-orbs {
     display: block;
     position: absolute;
-    top: 1.5rem;
+    top: -1.5rem;
     right: -1.25rem;
     width: 11rem;
     height: 11rem;
@@ -1902,6 +1902,11 @@ button {
   .content--legal h1 {
     font-size: 2rem;
     line-height: 1.18;
+  }
+  /* Team- und Projekte-Überschriften auf dieselbe Größe wie die Kontaktseite
+     (.pillars-heading = 2.2rem) anheben. */
+  .page-head h1 {
+    font-size: 2.2rem;
   }
 
   .block-heading {
