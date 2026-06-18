@@ -520,12 +520,81 @@ button {
 @media (prefers-reduced-motion: reduce) {
   .blob,
   .ring,
-  .badge .dot {
+  .badge .dot,
+  .section-orb {
     animation: none;
   }
   .sidebar-label,
   .sidebar-icon {
     transition: none;
+  }
+}
+
+/* Reusable decorative sphere cluster that lives in the whitespace beside the
+   centred content column. Hidden by default; only switched on at desktop widths
+   where there's room to bleed it in from the page edge. */
+.section-orbs {
+  display: none;
+}
+
+.section-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: drop-shadow(0 0.75rem 1.75rem rgba(20, 33, 61, 0.16));
+  /* Reuse the hero float — rotation is invisible on a circle, so only the
+     gentle vertical drift shows. */
+  animation: morph 16s ease-in-out infinite;
+}
+
+/* Radialer Verlauf gibt den Kugeln einen weichen 3D-Glanz. Blau/grün-betont,
+   um sich vom lila-lastigen Hero-Akzent oben rechts abzusetzen. */
+.section-orb.blue {
+  background: radial-gradient(
+    circle at 32% 28%,
+    var(--blue-bright),
+    var(--blue-deep)
+  );
+}
+.section-orb.green {
+  background: radial-gradient(circle at 32% 28%, #b8ecca, var(--green));
+  animation-delay: -5s;
+}
+.section-orb.orange {
+  background: radial-gradient(circle at 32% 28%, #ffd98a, var(--orange));
+  animation-delay: -9s;
+}
+
+@media (min-width: 1200px) {
+  /* Akzent im Übergang zwischen "Projekte" und "Wir sind dabei": links in den
+     freien Rand getuckt, im oberen 9rem-Abstand der Events-Sektion. z-index 0
+     hält ihn hinter dem Sektionsinhalt (die Sektion liegt über .bg-visual). */
+  .section-orbs--events {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    left: clamp(-5rem, -2vw, -1rem);
+    width: 15rem;
+    height: 13rem;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .section-orbs--events .section-orb.blue {
+    width: 9rem;
+    height: 9rem;
+    top: 0;
+    left: 2.5rem;
+  }
+  .section-orbs--events .section-orb.green {
+    width: 5rem;
+    height: 5rem;
+    top: 7rem;
+    left: 0;
+  }
+  .section-orbs--events .section-orb.orange {
+    width: 3.75rem;
+    height: 3.75rem;
+    top: 6rem;
+    left: 8.5rem;
   }
 }
 
