@@ -27,11 +27,14 @@ export function SiteFooter() {
   const phone = c.phones[0];
 
   const scrollToTop = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // The scroll container is the <main class="placeholder">, not the window
-    // (html/body have overflow:hidden).
+    // Desktop: the <main class="placeholder"> is the scroll container
+    // (html/body have overflow:hidden). Mobile: .placeholder has
+    // overflow:visible and the window scrolls instead. Scroll both so the
+    // button works regardless of which one is actually scrollable.
     e.currentTarget
       .closest(".placeholder")
       ?.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (

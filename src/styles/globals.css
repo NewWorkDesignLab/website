@@ -2330,6 +2330,13 @@ button {
     margin-right: 0;
     flex-basis: 100%;
   }
+  /* Push the back-to-top pill to the far end of the legal row and give it a
+     touch of vertical room so it isn't cramped against the legal links. */
+  .footer-top {
+    margin-left: auto;
+    margin-top: 0.35rem;
+    padding: 0.5rem 1rem;
+  }
 
   /* Sidebar → horizontal pill docked at the bottom center */
   .sidebar {
