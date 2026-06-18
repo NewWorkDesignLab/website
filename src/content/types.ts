@@ -40,6 +40,9 @@ export interface Project {
 export interface EventItem {
   /** /events/<slug>.jpg (Datei in public/events/) */
   image: string;
+  /** Datum bzw. Zeitraum, oben rechts auf der Karte (z. B. "17.06.2026"
+   *  oder "22.–23.10.2026") */
+  date: string;
   /** Infozeile, immer sichtbar */
   title: Localized;
   /** kurzer Zusatztext, beim Hover sichtbar */

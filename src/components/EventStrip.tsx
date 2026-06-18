@@ -18,6 +18,7 @@ export function EventStrip() {
             fill
             sizes="(max-width: 768px) 80vw, 24rem"
           />
+          <span className="event-card-date">{ev.date}</span>
           <div className="event-card-caption">
             <span className="event-card-title">{ev.title[lang]}</span>
             <span className="event-card-blurb">{ev.blurb[lang]}</span>
