@@ -45,6 +45,11 @@ export function ContactBlock({
 
       {contactPage ? (
         <div className="contact-spotlight">
+          <span className="contact-spotlight-role">{cp.role}</span>
+          <div className="contact-spotlight-text">
+            <strong className="contact-spotlight-name">{cp.person}</strong>
+            <span className="contact-spotlight-title">{cp.titleFhd}</span>
+          </div>
           <div className="contact-spotlight-photo">
             <Image
               src="/team/marius-brade.jpg"
@@ -52,11 +57,6 @@ export function ContactBlock({
               fill
               sizes="(max-width: 768px) 8rem, 11rem"
             />
-          </div>
-          <div className="contact-spotlight-text">
-            <span className="contact-spotlight-role">{cp.role}</span>
-            <strong className="contact-spotlight-name">{cp.person}</strong>
-            <span className="contact-spotlight-title">{cp.titleFhd}</span>
           </div>
           <p className="contact-spotlight-bio">{cp.bio}</p>
         </div>
