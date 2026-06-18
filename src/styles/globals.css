@@ -517,7 +517,8 @@ button {
   .badge .dot {
     animation: none;
   }
-  .sidebar-label {
+  .sidebar-label,
+  .sidebar-icon {
     transition: none;
   }
 }
@@ -601,6 +602,14 @@ button {
   border-radius: 0.95rem;
   text-align: left;
   transition: color 0.2s ease, background 0.2s ease;
+  /* Snappier touch: no grey tap flash, no 300ms click delay. */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Quick press feedback so taps feel responsive on mobile. */
+.sidebar-item:active .sidebar-icon {
+  transform: scale(0.92);
 }
 
 .sidebar-item:hover {
@@ -634,6 +643,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.12s ease;
 }
 
 .sidebar-icon svg {
@@ -1662,6 +1672,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  min-width: 0;
 }
 
 .home-contact-field label {
@@ -1675,6 +1686,11 @@ button {
   font-family: inherit;
   font-size: 1.12rem;
   color: var(--ink);
+  /* Fill the field and stay inside the padded panel — without these the
+     inputs' intrinsic width forces horizontal overflow on small screens. */
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   padding: 0.85rem 1rem;
   border: 1px solid var(--border);
   border-radius: 0.6rem;
@@ -1737,6 +1753,18 @@ button {
 @media (max-width: 768px) {
   :root {
     --edge: 1.25rem;
+  }
+
+  /* Background is barely visible while scrolling on a phone — stop animating it
+     entirely and release its compositor layers to save battery/CPU. */
+  .blob,
+  .ring,
+  .badge .dot {
+    animation: none;
+  }
+  .blob,
+  .ring {
+    will-change: auto;
   }
 
   /* Let pages grow and scroll naturally instead of being clipped. */
@@ -1924,6 +1952,24 @@ button {
     grid-template-columns: 1fr;
     gap: 2.25rem;
     border-radius: 1.25rem;
+    padding: 1.5rem;
+  }
+  .home-contact-form {
+    padding: 1.25rem;
+    gap: 0.85rem;
+  }
+  .home-contact-field textarea {
+    min-height: 5rem;
+  }
+  /* Scale the info text down so the block doesn't read oversized on phones. */
+  .home-contact-block {
+    font-size: 1rem;
+  }
+  .home-contact-block strong {
+    font-size: 1.35rem;
+  }
+  .home-contact-block strong.home-contact-person {
+    font-size: 1.15rem;
   }
   .contact-spotlight {
     flex-direction: column;
@@ -1949,7 +1995,7 @@ button {
     transform: translateX(-50%);
     flex-direction: row;
     align-items: center;
-    background: rgba(255, 255, 255, 0.88);
+    background: #fff;
     border-radius: 999px;
     padding: 0.35rem;
   }
