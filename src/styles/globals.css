@@ -1496,9 +1496,14 @@ button {
 .contact-spotlight {
   position: relative;
   z-index: 3;
-  display: flex;
-  gap: clamp(1.5rem, 3vw, 2.75rem);
-  align-items: center;
+  /* Grid: photo in column 1 (spanning both rows), the role/name/title meta in
+     column 2 row 1, and the bio in column 2 row 2. This same structure flips to
+     "photo + meta side by side, bio full-width below" on mobile. */
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: clamp(1.5rem, 3vw, 2.75rem);
+  row-gap: 0.5rem;
+  align-items: start;
   padding: clamp(1.75rem, 3vw, 2.75rem);
   background: #fff;
   border: 1px solid var(--border);
@@ -1508,7 +1513,9 @@ button {
 
 .contact-spotlight-photo {
   position: relative;
-  flex: 0 0 auto;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  align-self: center;
   width: clamp(7.5rem, 13vw, 11rem);
   aspect-ratio: 1;
   border-radius: 1.25rem;
@@ -1521,6 +1528,8 @@ button {
 }
 
 .contact-spotlight-text {
+  grid-column: 2;
+  grid-row: 1;
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
@@ -1549,6 +1558,8 @@ button {
 }
 
 .contact-spotlight-bio {
+  grid-column: 2;
+  grid-row: 2;
   margin-top: 0.35rem;
   font-size: 1.08rem;
   line-height: 1.65;
@@ -2039,10 +2050,20 @@ button {
   .home-contact-block strong.home-contact-person {
     font-size: 1.15rem;
   }
+  /* Mobile: Foto + Basisinfos (Rolle/Name/Titel) nebeneinander in Zeile 1,
+     die Bio darunter über die volle Breite — so hängt der Bio-Text nicht mehr
+     so weit unten. */
   .contact-spotlight {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
+    align-items: center;
+    column-gap: 1.25rem;
+    row-gap: 1.25rem;
+  }
+  .contact-spotlight-photo {
+    grid-row: 1;
+  }
+  .contact-spotlight-bio {
+    grid-column: 1 / -1;
+    margin-top: 0;
   }
 
   /* Footer flows at the end on every page (no overlap with the bar). */

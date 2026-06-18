@@ -57,8 +57,8 @@ export function ContactBlock({
             <span className="contact-spotlight-role">{cp.role}</span>
             <strong className="contact-spotlight-name">{cp.person}</strong>
             <span className="contact-spotlight-title">{cp.titleFhd}</span>
-            <p className="contact-spotlight-bio">{cp.bio}</p>
           </div>
+          <p className="contact-spotlight-bio">{cp.bio}</p>
         </div>
       ) : null}
 
