@@ -1,4 +1,4 @@
-# New Work Design Lab – Website
+# NewWorkDesignLab – Website
 
 Modern placeholder website (coming soon) built with
 [Next.js](https://nextjs.org/) (App Router) and TypeScript. Optimized for

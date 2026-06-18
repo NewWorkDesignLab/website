@@ -86,10 +86,10 @@ export default function Home() {
       <Sidebar />
 
       <div className="page-brand">
-        <span className="page-brand-logo" aria-label="New Work Design Lab">
+        <span className="page-brand-logo" aria-label="NewWorkDesignLab">
           <Image
             src="/nwdl_logo.png"
-            alt="New Work Design Lab"
+            alt="NewWorkDesignLab"
             width={244}
             height={244}
             priority

@@ -19,11 +19,11 @@ export function PageShell({ children }: { children: ReactNode }) {
         <Link
           href="/"
           className="page-brand-logo"
-          aria-label="New Work Design Lab — Startseite"
+          aria-label="NewWorkDesignLab — Startseite"
         >
           <Image
             src="/nwdl_logo.png"
-            alt="New Work Design Lab"
+            alt="NewWorkDesignLab"
             width={244}
             height={244}
             priority

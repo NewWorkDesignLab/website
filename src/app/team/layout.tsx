@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Team",
   description:
-    "Das Team des New Work Design Lab – aktuelle und ehemalige Mitarbeitende.",
+    "Das Team des NewWorkDesignLab – aktuelle und ehemalige Mitarbeitende.",
 };
 
 export default function TeamLayout({

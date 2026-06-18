@@ -1,6 +1,6 @@
 {
   "de": {
-    "badge": "New Work Design Lab",
+    "badge": "NewWorkDesignLab",
     "titleLead": "Wir gestalten",
     "titleAccent": "Flow",
     "titleTail": "beim Arbeiten, Denken & Lernen.",
@@ -95,7 +95,7 @@
     },
     "teamPage": {
       "title": "Team",
-      "intro": "Die Menschen hinter dem New Work Design Lab – aktuell und ehemals.",
+      "intro": "Die Menschen hinter dem NewWorkDesignLab – aktuell und ehemals.",
       "current": "Aktuelles Team",
       "alumni": "Ehemalige"
     },
@@ -103,13 +103,13 @@
       "title": "Kontakt",
       "intro": "Du hast Interesse an einer Zusammenarbeit oder eine Frage zu einem unserer Projekte? Wir freuen uns auf deine Nachricht.",
       "person": "Prof. Dr. Marius Brade",
-      "role": "Ansprechpartner New Work Design Lab",
+      "role": "Ansprechpartner NewWorkDesignLab",
       "titleFhd": "Professor für Medieninformatik · Prorektor für Forschung, Innovation und nachhaltigen Transfer",
       "bio": "Prof. Dr. Marius Brade leitet das NewWorkDesignLab an der Fachhochschule Dresden. Ihn treibt eine Frage an: Wie lässt sich Technologie so gestalten, dass sie uns Menschen wirklich hilft? Seit über einem Jahrzehnt forscht er im Schnittgebiet von Interaktionsdesign, Informatik und Kognitionspsychologie – immer mit dem Blick darauf, wie wir Arbeiten und Zusammenleben im Sinne von New Work neu denken können."
     },
     "impressum": {
       "title": "Impressum",
-      "intro": "Das New Work Design Lab befindet sich an der:",
+      "intro": "Das NewWorkDesignLab befindet sich an der:",
       "company": "Fachhochschule Dresden - Private Fachhochschule GmbH",
       "street": "Güntzstraße 1",
       "city": "01069 Dresden",
@@ -128,7 +128,7 @@
     }
   },
   "en": {
-    "badge": "New Work Design Lab",
+    "badge": "NewWorkDesignLab",
     "titleLead": "We design",
     "titleAccent": "flow",
     "titleTail": "for working, thinking & learning.",
@@ -223,7 +223,7 @@
     },
     "teamPage": {
       "title": "Team",
-      "intro": "The people behind the New Work Design Lab – current and former.",
+      "intro": "The people behind the NewWorkDesignLab – current and former.",
       "current": "Current team",
       "alumni": "Alumni"
     },
@@ -231,13 +231,13 @@
       "title": "Contact",
       "intro": "Interested in working together or have a question about one of our projects? We look forward to hearing from you.",
       "person": "Prof. Dr. Marius Brade",
-      "role": "Contact, New Work Design Lab",
+      "role": "Contact, NewWorkDesignLab",
       "titleFhd": "Professor of Media Informatics · Vice-Rector for Research, Innovation and Sustainable Transfer",
       "bio": "Prof. Dr. Marius Brade heads the NewWorkDesignLab at the University of Applied Sciences Dresden. He is driven by one question: how can technology be designed so that it genuinely helps people? For more than a decade he has been researching at the intersection of interaction design, computer science and cognitive psychology – always with an eye on how we might rethink the way we work and live together in the spirit of New Work."
     },
     "impressum": {
       "title": "Legal Note",
-      "intro": "The New Work Design Lab is located at:",
+      "intro": "The NewWorkDesignLab is located at:",
       "company": "Fachhochschule Dresden - Private Fachhochschule GmbH",
       "street": "Güntzstraße 1",
       "city": "01069 Dresden",

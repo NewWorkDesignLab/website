@@ -11,7 +11,7 @@ import type { Member } from "./types";
 export const team: Member[] = [
   {
     name: "Prof. Dr. Marius Brade",
-    role: { de: "Leitung New Work Design Lab", en: "Head of New Work Design Lab" },
+    role: { de: "Leitung NewWorkDesignLab", en: "Head of NewWorkDesignLab" },
     photo: "/team/marius-brade.jpg", // ← Datei liegt unter public/team/marius-brade.jpg
     status: "current",
     linkedin: "https://www.linkedin.com/in/marius-brade/",
