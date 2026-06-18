@@ -6,8 +6,7 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import texts from "../content/texts.json";
 import { FLAGS, getLangSwitchLabel, useLang, type Lang } from "../app/useLang";
-
-const LINKEDIN_URL = "https://www.linkedin.com/company/new-work-design-lab-fhd";
+import { LINKEDIN_URL } from "../content/site";
 
 type NavKey = "home" | "projects" | "team" | "contact";
 

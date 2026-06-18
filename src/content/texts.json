@@ -11,6 +11,15 @@
     "linkedin": "Folge uns auf LinkedIn",
     "footerImpressum": "Impressum",
     "footerDatenschutz": "Datenschutz",
+    "footer": {
+      "tagline": "Kompetenzfeld für Digital Business & New Work der Fachhochschule Dresden.",
+      "navHeading": "Navigation",
+      "contactHeading": "Kontakt",
+      "mapsLabel": "Auf der Karte ansehen",
+      "fhdLabel": "Fachhochschule Dresden",
+      "copyright": "NewWorkDesignLab · Fachhochschule Dresden",
+      "backToTop": "Zum Seitenanfang"
+    },
     "nav": {
       "home": "Home",
       "projects": "Projekte",
@@ -139,6 +148,15 @@
     "linkedin": "Follow us on LinkedIn",
     "footerImpressum": "Legal Note",
     "footerDatenschutz": "Privacy",
+    "footer": {
+      "tagline": "Competency field for Digital Business & New Work at the University of Applied Sciences Dresden.",
+      "navHeading": "Navigation",
+      "contactHeading": "Contact",
+      "mapsLabel": "View on map",
+      "fhdLabel": "University of Applied Sciences Dresden",
+      "copyright": "NewWorkDesignLab · University of Applied Sciences Dresden",
+      "backToTop": "Back to top"
+    },
     "nav": {
       "home": "Home",
       "projects": "Projects",

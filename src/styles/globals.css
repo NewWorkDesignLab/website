@@ -118,12 +118,6 @@ button {
   .placeholder:not(.placeholder--page) {
     padding-bottom: var(--corner);
   }
-
-  .placeholder:not(.placeholder--page) .footer {
-    position: static;
-    left: auto;
-    bottom: auto;
-  }
 }
 
 .topbar {
@@ -291,16 +285,23 @@ button {
   margin-left: 0.1875rem;
 }
 
+/* Full-width footer band that closes every page. On the homepage and content
+   pages it flows at the very bottom of the scroll content (overrides further
+   down pin it there). */
 .footer {
-  position: absolute;
+  position: relative;
   z-index: 5;
-  left: var(--edge);
-  bottom: var(--corner);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.95rem;
+  /* Full-bleed: span the whole viewport width regardless of the parent's
+     (per-page) padding. overflow-x:hidden on .placeholder clips the overhang. */
+  width: 100vw;
+  margin-top: 4rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 2.75rem var(--edge) 1.75rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg-soft);
   color: var(--muted);
+  font-size: 0.95rem;
 }
 
 .footer a {
@@ -317,45 +318,145 @@ button {
   color: var(--border);
 }
 
-/* Kräftige Farbkugeln im Footer — nur mobil sichtbar (eingeblendet + positioniert
-   im Mobile-Block). Ersetzen die flachen Hero-Blobs, die mobil nach unten in den
-   Footerbereich rutschten. Statisch (keine Animation) für die Mobile-Performance. */
-.footer-orbs {
-  display: none;
+/* Upper zone: brand · navigation · contact */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-bottom: 2rem;
 }
 
-.footer-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: drop-shadow(0 0.5rem 1.5rem rgba(20, 33, 61, 0.22));
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
-.footer-orb.purple {
-  width: 7rem;
-  height: 7rem;
-  right: 0.25rem;
-  bottom: 0;
-  background: radial-gradient(circle at 32% 28%, #b98cff, var(--purple));
+.footer-heading {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
 }
 
-.footer-orb.blue {
-  width: 4.5rem;
-  height: 4.5rem;
-  right: 4.5rem;
-  bottom: 3.75rem;
-  background: radial-gradient(
-    circle at 32% 28%,
-    var(--blue-bright),
-    var(--blue-deep)
-  );
+.footer-brand {
+  gap: 0.85rem;
 }
 
-.footer-orb.orange {
-  width: 3.5rem;
-  height: 3.5rem;
-  right: 7rem;
-  bottom: 0.75rem;
-  background: radial-gradient(circle at 32% 28%, #ffd98a, var(--orange));
+.footer-logo {
+  width: 3.25rem;
+  height: auto;
+}
+
+.footer-tagline {
+  margin: 0;
+  max-width: 22rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.footer-fhd {
+  display: inline-block;
+  width: fit-content;
+}
+
+.footer-fhd-logo {
+  width: auto;
+  height: 2.1rem;
+}
+
+.footer-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-top: 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+}
+
+.footer-social svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.footer-social:hover {
+  color: #fff;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+/* Lower bar: copyright · legal · back-to-top */
+.footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.footer-copy {
+  margin-right: auto;
+}
+
+.footer-legal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-top svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.footer-top:hover {
+  color: var(--blue);
+  border-color: var(--blue);
 }
 
 /* ------------------------------------------------------------------ */
@@ -816,12 +917,10 @@ button {
   padding-right: 6rem;
 }
 
+/* On content pages, push the footer to the very bottom on short pages so it
+   still closes the viewport. */
 .placeholder--page .footer {
-  position: static;
-  left: auto;
-  bottom: auto;
   margin-top: auto;
-  padding-top: 3rem;
 }
 
 /* Centred content column for sub-pages, mirroring the homepage sections
@@ -2212,31 +2311,22 @@ button {
     margin-top: 0;
   }
 
-  /* Footer flows at the end on every page (no overlap with the bar).
-     `relative` gives the Footer-Orbs einen Positionierungs-Kontext. */
+  /* Footer flows at the end on every page; columns stack into one. */
   .placeholder .footer {
-    position: relative;
-    left: auto;
-    bottom: auto;
     margin-top: 2.5rem;
-    padding-top: 0;
+    padding: 2.25rem 1.25rem 1.75rem;
   }
-  /* Links/Text über den Kugeln halten. */
-  .footer > :not(.footer-orbs) {
-    position: relative;
-    z-index: 1;
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding-bottom: 1.75rem;
   }
-  /* Kugel-Cluster unten rechts im Footer, leicht über den rechten Rand
-     hinaus (wird vom horizontalen Overflow abgeschnitten). */
-  .footer-orbs {
-    display: block;
-    position: absolute;
-    z-index: 0;
-    right: clamp(-3rem, -5vw, -1rem);
-    bottom: 0;
-    width: 12rem;
-    height: 9rem;
-    pointer-events: none;
+  .footer-bar {
+    gap: 0.6rem 1rem;
+  }
+  .footer-copy {
+    margin-right: 0;
+    flex-basis: 100%;
   }
 
   /* Sidebar → horizontal pill docked at the bottom center */
