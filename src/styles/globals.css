@@ -1999,6 +1999,18 @@ button {
     padding-top: 3.5rem;
     gap: 2.5rem;
   }
+  /* Eigenständige Kontaktseite: Überschrift + Subtext linksbündig, passend zu
+     den Projekte-/Team-Seiten (statt zentriert wie auf der Startseite). */
+  .home-contact--standalone .pillars-intro {
+    align-items: flex-start;
+    text-align: left;
+  }
+  /* Gleiche Specificity wie `.home-contact` (beides eine Klasse) — diese Regel
+     steht bewusst NACH der 3.5rem-Regel oben, damit die Kontaktseite denselben
+     Top-Abstand wie die Projekte-/Team-Seiten bekommt (kein Extra-Padding). */
+  .home-contact--standalone {
+    padding-top: 0;
+  }
   .home-contact-panel {
     grid-template-columns: 1fr;
     gap: 2.25rem;
