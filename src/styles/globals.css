@@ -423,6 +423,12 @@ button {
   opacity: 0.4;
 }
 
+/* Mobile-only Farbtupfer oben rechts (siehe Mobile-Media-Query). Auf Desktop
+   ausgeblendet, dort übernehmen die großen Hero-Blobs. */
+.mobile-orbs {
+  display: none;
+}
+
 .blob {
   position: absolute;
   border-radius: 46% 54% 60% 40% / 48% 42% 58% 52%;
@@ -1765,6 +1771,51 @@ button {
   .blob,
   .ring {
     will-change: auto;
+  }
+
+  /* Farbige Kugeln oben rechts: sichtbarer Akzent, der dezent in der Ecke
+     sitzt und kaum Platz wegnimmt. Bleibt im oberen Bereich und scrollt mit
+     dem Seitenanfang weg, statt Inhalte zu überdecken. */
+  .mobile-orbs {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    right: -1.25rem;
+    width: 11rem;
+    height: 11rem;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .mobile-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: drop-shadow(0 0.5rem 1.25rem rgba(20, 33, 61, 0.16));
+  }
+  /* Radialer Verlauf gibt den Kugeln einen leichten 3D-Glanz. */
+  .mobile-orb.purple {
+    width: 6.5rem;
+    height: 6.5rem;
+    top: 0;
+    right: 0;
+    background: radial-gradient(circle at 32% 28%, #b98cff, var(--purple));
+  }
+  .mobile-orb.orange {
+    width: 3.75rem;
+    height: 3.75rem;
+    top: 5.25rem;
+    right: 4.5rem;
+    background: radial-gradient(circle at 32% 28%, #ffd98a, var(--orange));
+  }
+  .mobile-orb.blue {
+    width: 2.75rem;
+    height: 2.75rem;
+    top: 6.25rem;
+    right: 0.75rem;
+    background: radial-gradient(
+      circle at 32% 28%,
+      var(--blue-bright),
+      var(--blue-deep)
+    );
   }
 
   /* Let pages grow and scroll naturally instead of being clipped. */
