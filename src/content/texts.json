@@ -104,9 +104,13 @@
     },
     "teamPage": {
       "title": "Team",
-      "intro": "Die Menschen hinter dem NewWorkDesignLab – aktuell und ehemals.",
+      "intro": "Die Menschen hinter dem NewWorkDesignLab. Wir sind ein transdisziplinäres Team aus Design, Informatik und Kognitionswissenschaft – verbunden durch die Begeisterung dafür, Technologie so zu gestalten, dass sie Menschen beim Arbeiten, Denken und Lernen wirklich weiterbringt. Hier findest du die Köpfe, die unsere Projekte voranbringen – aktuell und ehemals.",
       "current": "Aktuelles Team",
-      "alumni": "Ehemalige"
+      "alumni": "Ehemalige",
+      "bioMore": "Mehr erfahren",
+      "bioLess": "Weniger anzeigen",
+      "emailLabel": "E-Mail an",
+      "linkedinLabel": "LinkedIn-Profil von"
     },
     "contactPage": {
       "title": "Kontakt",
@@ -241,9 +245,13 @@
     },
     "teamPage": {
       "title": "Team",
-      "intro": "The people behind the NewWorkDesignLab – current and former.",
+      "intro": "The people behind the NewWorkDesignLab. We are a transdisciplinary team from design, computer science and cognitive science – united by a passion for shaping technology so that it genuinely helps people work, think and learn. Meet the minds who drive our projects forward – current and former.",
       "current": "Current team",
-      "alumni": "Alumni"
+      "alumni": "Alumni",
+      "bioMore": "Read more",
+      "bioLess": "Show less",
+      "emailLabel": "Email",
+      "linkedinLabel": "LinkedIn profile of"
     },
     "contactPage": {
       "title": "Contact",

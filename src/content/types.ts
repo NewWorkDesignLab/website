@@ -56,4 +56,12 @@ export interface Member {
   photo: string;
   status: "current" | "alumni";
   linkedin?: string;
+  /** mailto-Adresse, z. B. "j.ludorf@fh-dresden.eu" */
+  email?: string;
+  /** eine Zeile unter der Rolle, z. B. "Interaktionsdesign & Eye-Tracking" */
+  specialty?: Localized;
+  /** Themen-Chips, z. B. ["UX", "Unity", "KI"] */
+  tags?: string[];
+  /** 1–2 Sätze, auf der Karte aufklappbar */
+  bio?: Localized;
 }
