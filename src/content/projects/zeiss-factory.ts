@@ -11,6 +11,7 @@ export const zeissFactory: Project = {
   status: "completed",
   cover: "/projects/zeiss-factory/cover.svg",
   funding: ["freistaat-sachsen", "efre"],
+  partners: [{ key: "zeiss", kind: "client" }],
   sections: [
     {
       type: "text",

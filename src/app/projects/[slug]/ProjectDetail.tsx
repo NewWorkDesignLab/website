@@ -8,10 +8,28 @@ import { useLang } from "../../useLang";
 import { PageShell } from "../../../components/PageShell";
 import { BlockRenderer } from "../../../components/BlockRenderer";
 import { FundingBar } from "../../../components/FundingBar";
+import { ProjectCredits } from "../../../components/ProjectCredits";
+import type { Lang } from "../../useLang";
+
+function formatDate(iso: string, lang: Lang) {
+  return new Intl.DateTimeFormat(lang === "de" ? "de-DE" : "en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  }).format(new Date(iso));
+}
 
 export function ProjectDetail({ project }: { project: Project }) {
   const { lang } = useLang();
   const meta = texts[lang].projectMeta;
+
+  const bylineParts = [
+    project.authors && project.authors.length > 0
+      ? `${meta.by} ${project.authors.join(", ")}`
+      : null,
+    project.createdAt ? `${meta.createdOn} ${formatDate(project.createdAt, lang)}` : null,
+    project.updatedAt ? `${meta.updatedOn} ${formatDate(project.updatedAt, lang)}` : null,
+  ].filter((part): part is string => Boolean(part));
 
   return (
     <PageShell>
@@ -33,6 +51,16 @@ export function ProjectDetail({ project }: { project: Project }) {
 
           <h1>{project.title}</h1>
           <p className="lead">{project.tagline[lang]}</p>
+
+          {bylineParts.length > 0 ? (
+            <p className="project-byline">
+              {bylineParts.map((part, i) => (
+                <span key={i} className="project-byline-item">
+                  {part}
+                </span>
+              ))}
+            </p>
+          ) : null}
 
           <div className="project-hero-cover">
             <Image
@@ -59,6 +87,8 @@ export function ProjectDetail({ project }: { project: Project }) {
         <div className="project-body">
           <BlockRenderer blocks={project.sections} lang={lang} />
         </div>
+
+        <ProjectCredits project={project} lang={lang} />
 
         <FundingBar keys={project.funding} title={meta.fundingTitle} />
       </article>

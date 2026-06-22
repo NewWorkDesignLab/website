@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" role="img" aria-label="VR-Minilab Platzhalter">
+  <defs>
+    <linearGradient id="m" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#26406f"/>
+      <stop offset="1" stop-color="#4a7fe0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#m)"/>
+  <rect x="80" y="160" width="500" height="480" rx="18" fill="rgba(255,255,255,0.10)"/>
+  <rect x="700" y="160" width="500" height="480" rx="18" fill="rgba(255,255,255,0.16)"/>
+  <text x="330" y="410" fill="#ffffff" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">Physischer Raum</text>
+  <text x="950" y="410" fill="#ffffff" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">Virtueller Raum</text>
+  <text x="640" y="720" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="22" text-anchor="middle">VR-Minilab · Bild folgt</text>
+</svg>

@@ -1178,6 +1178,21 @@ button {
   line-height: 1.75;
 }
 
+.block-list {
+  margin: 0;
+  padding-left: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.block-list li {
+  padding-left: 0.25rem;
+}
+
 .block-image {
   margin: 0.6rem 0;
 }
@@ -1279,6 +1294,129 @@ button {
 
 .funding-logo {
   display: block;
+}
+
+/* ------------------------------------------------------------------ */
+/* Project byline + credits (contributors, partners / clients)        */
+/* ------------------------------------------------------------------ */
+.project-byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.1rem;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Dot separator between byline items (author · created · updated). */
+.project-byline-item {
+  position: relative;
+}
+
+.project-byline-item + .project-byline-item::before {
+  content: "·";
+  position: absolute;
+  left: -0.65rem;
+}
+
+.contributor-section,
+.partner-section {
+  margin-top: 1.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.contributor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.contributor-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--corner);
+  box-shadow: 0 0.4rem 1.1rem rgba(20, 33, 61, 0.06);
+}
+
+.contributor-photo {
+  position: relative;
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+
+.contributor-photo img {
+  object-fit: cover;
+}
+
+.contributor-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.contributor-name {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.contributor-role {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+.partner-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.partner-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.95rem;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--corner);
+  box-shadow: 0 0.4rem 1.1rem rgba(20, 33, 61, 0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.partner-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.8rem 1.8rem rgba(20, 33, 61, 0.14);
+}
+
+.partner-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.partner-name {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.95rem;
 }
 
 /* ------------------------------------------------------------------ */

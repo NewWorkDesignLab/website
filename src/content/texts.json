@@ -100,7 +100,13 @@
       },
       "fundingTitle": "Gefördert durch",
       "backToProjects": "Zurück zu den Projekten",
-      "visit": "Projekt-Website öffnen"
+      "visit": "Projekt-Website öffnen",
+      "by": "von",
+      "createdOn": "Erstellt am",
+      "updatedOn": "Zuletzt geändert am",
+      "contributorsTitle": "Mitarbeitende",
+      "partnersTitle": "Projektpartner",
+      "clientsTitle": "Auftraggeber"
     },
     "teamPage": {
       "title": "Team",
@@ -241,7 +247,13 @@
       },
       "fundingTitle": "Funded by",
       "backToProjects": "Back to projects",
-      "visit": "Open project website"
+      "visit": "Open project website",
+      "by": "by",
+      "createdOn": "Created on",
+      "updatedOn": "Last updated on",
+      "contributorsTitle": "Contributors",
+      "partnersTitle": "Project partners",
+      "clientsTitle": "Client"
     },
     "teamPage": {
       "title": "Team",

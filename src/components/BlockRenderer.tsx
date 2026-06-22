@@ -33,6 +33,14 @@ export function BlockRenderer({ blocks, lang }: { blocks: Block[]; lang: Lang })
                 {block.caption ? <figcaption>{block.caption[lang]}</figcaption> : null}
               </figure>
             );
+          case "list":
+            return (
+              <ul key={i} className="block-list">
+                {block.items.map((item, j) => (
+                  <li key={j}>{item[lang]}</li>
+                ))}
+              </ul>
+            );
           case "gallery":
             return (
               <Gallery

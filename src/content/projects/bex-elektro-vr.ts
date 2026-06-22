@@ -11,6 +11,7 @@ export const bexElektroVr: Project = {
   status: "ongoing",
   cover: "/projects/bex-elektro-vr/cover.svg",
   funding: ["freistaat-sachsen", "esf"],
+  partners: [{ key: "bex", kind: "partner" }],
   sections: [
     {
       type: "text",

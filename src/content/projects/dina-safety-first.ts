@@ -11,6 +11,7 @@ export const dinaSafetyFirst: Project = {
   status: "completed",
   cover: "/projects/dina-safety-first/cover.svg",
   funding: ["freistaat-sachsen", "esf"],
+  partners: [{ key: "dina", kind: "client" }],
   sections: [
     {
       type: "text",

@@ -14,6 +14,11 @@ import type { Member } from "./types";
  *   tags:      ["UX", "Unity", "KI"]                    // Themen-Chips
  *   bio:       { de: "1–2 Sätze …", en: "1–2 sentences …" } // aufklappbar
  */
+/** Look up a team member by their exact `name`, e.g. for project credits. */
+export function getMember(name: string): Member | undefined {
+  return team.find((m) => m.name === name);
+}
+
 // Current team members are listed.
 export const team: Member[] = [
   {

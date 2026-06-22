@@ -11,6 +11,7 @@ export const globalFoundriesRundgang: Project = {
   status: "completed",
   cover: "/projects/global-foundries-rundgang/cover.svg",
   funding: ["freistaat-sachsen", "efre"],
+  partners: [{ key: "global-foundries", kind: "client" }],
   sections: [
     {
       type: "text",
