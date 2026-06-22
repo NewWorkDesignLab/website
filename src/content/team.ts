@@ -36,7 +36,7 @@ export const team: Member[] = [
   {
     name: "Jonas Ludorf",
     role: { de: "Wissenschaftlicher Mitarbeiter", en: "Research Associate" },
-    photo: "/team/jonas-ludorf.jpg", // ← Datei liegt unter public/team/jonas-ludorf.jpg
+    photo: "/team/jonas-ludorf.webp", // ← Datei liegt unter public/team/jonas-ludorf.webp
     status: "current",
     linkedin: "https://www.linkedin.com/in/jonas-ludorf/",
     email: "j.ludorf@fh-dresden.eu",

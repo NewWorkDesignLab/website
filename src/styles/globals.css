@@ -719,8 +719,8 @@ button {
   .section-orbs--events {
     display: block;
     position: absolute;
-    top: 1.5rem;
-    left: clamp(-9rem, -5vw, -3rem);
+    top: 1.75rem;
+    left: clamp(-15rem, -12vw, -23rem);
     width: 15rem;
     height: 13rem;
     z-index: 0;
