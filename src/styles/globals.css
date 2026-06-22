@@ -565,10 +565,64 @@ button {
   opacity: 0.4;
 }
 
-/* Mobile-only Farbtupfer oben rechts (siehe Mobile-Media-Query). Auf Desktop
-   ausgeblendet, dort übernehmen die großen Hero-Blobs. */
+/* Kompaktes Kugel-Cluster für die obere rechte Ecke. Genutzt vom Mobile-Layout
+   (auf jeder Seite, s. Mobile-Media-Query) und von der Kontaktseite auch auf
+   Desktop (.placeholder--orbs). Größe/Farben der Kugeln sind überall gleich –
+   nur Sichtbarkeit und Anker (top/right) wechseln je Kontext. Standardmäßig
+   ausgeblendet; auf Desktop übernehmen sonst die großen Hero-Blobs. */
 .mobile-orbs {
   display: none;
+  position: absolute;
+  width: 11rem;
+  height: 11rem;
+  z-index: 0;
+  pointer-events: none;
+}
+.mobile-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: drop-shadow(0 0.5rem 1.25rem rgba(20, 33, 61, 0.16));
+}
+/* Radialer Verlauf gibt den Kugeln einen leichten 3D-Glanz. */
+.mobile-orb.purple {
+  width: 6.5rem;
+  height: 6.5rem;
+  top: 0;
+  right: 0;
+  background: radial-gradient(circle at 32% 28%, #b98cff, var(--purple));
+}
+.mobile-orb.orange {
+  width: 3.75rem;
+  height: 3.75rem;
+  top: 5.25rem;
+  right: 4.5rem;
+  background: radial-gradient(circle at 32% 28%, #ffd98a, var(--orange));
+}
+.mobile-orb.blue {
+  width: 2.75rem;
+  height: 2.75rem;
+  top: 6.25rem;
+  right: 0.75rem;
+  background: radial-gradient(
+    circle at 32% 28%,
+    var(--blue-bright),
+    var(--blue-deep)
+  );
+}
+
+/* Kontaktseite (Desktop): statt der großen, blassen Hero-Blobs das kompakte
+   Kugel-Cluster oben rechts. Die Seite hat wenig Inhalt – der leichtere Akzent
+   hält sie aufgeräumt und besser lesbar. Auf Mobil bleibt die generische
+   Mobile-Regel weiter maßgeblich. */
+@media (min-width: 769px) {
+  .placeholder--orbs .bg-visual {
+    display: none;
+  }
+  .placeholder--orbs .mobile-orbs {
+    display: block;
+    top: 2.5rem;
+    right: 2.5rem;
+  }
 }
 
 .blob {
@@ -2090,47 +2144,12 @@ button {
 
   /* Farbige Kugeln oben rechts: sichtbarer Akzent, der dezent in der Ecke
      sitzt und kaum Platz wegnimmt. Bleibt im oberen Bereich und scrollt mit
-     dem Seitenanfang weg, statt Inhalte zu überdecken. */
+     dem Seitenanfang weg, statt Inhalte zu überdecken. Größe/Farben kommen aus
+     den Basis-Regeln; hier nur Sichtbarkeit + Anker für Mobil. */
   .mobile-orbs {
     display: block;
-    position: absolute;
     top: -1.5rem;
     right: -1.25rem;
-    width: 11rem;
-    height: 11rem;
-    z-index: 0;
-    pointer-events: none;
-  }
-  .mobile-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: drop-shadow(0 0.5rem 1.25rem rgba(20, 33, 61, 0.16));
-  }
-  /* Radialer Verlauf gibt den Kugeln einen leichten 3D-Glanz. */
-  .mobile-orb.purple {
-    width: 6.5rem;
-    height: 6.5rem;
-    top: 0;
-    right: 0;
-    background: radial-gradient(circle at 32% 28%, #b98cff, var(--purple));
-  }
-  .mobile-orb.orange {
-    width: 3.75rem;
-    height: 3.75rem;
-    top: 5.25rem;
-    right: 4.5rem;
-    background: radial-gradient(circle at 32% 28%, #ffd98a, var(--orange));
-  }
-  .mobile-orb.blue {
-    width: 2.75rem;
-    height: 2.75rem;
-    top: 6.25rem;
-    right: 0.75rem;
-    background: radial-gradient(
-      circle at 32% 28%,
-      var(--blue-bright),
-      var(--blue-deep)
-    );
   }
 
   /* Let pages grow and scroll naturally instead of being clipped. */

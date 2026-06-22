@@ -5,7 +5,7 @@ import { ContactBlock } from "../../components/ContactBlock";
 
 export default function ContactPage() {
   return (
-    <PageShell>
+    <PageShell cornerOrbs>
       <ContactBlock headingTag="h1" standalone contactPage />
     </PageShell>
   );

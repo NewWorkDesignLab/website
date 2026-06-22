@@ -9,10 +9,24 @@ import { SiteFooter } from "./SiteFooter";
  * Scrollable page frame shared by all content pages: decorative background,
  * fixed top-left home/brand shortcut, floating sidebar, the page content,
  * and the footer (pushed to the bottom).
+ *
+ * `cornerOrbs` swaps the large faded hero blobs for the compact corner-orb
+ * cluster on desktop too (used by the short contact page so it stays clean and
+ * readable). On mobile every page already shows the corner orbs.
  */
-export function PageShell({ children }: { children: ReactNode }) {
+export function PageShell({
+  children,
+  cornerOrbs = false,
+}: {
+  children: ReactNode;
+  cornerOrbs?: boolean;
+}) {
   return (
-    <main className="placeholder placeholder--page">
+    <main
+      className={`placeholder placeholder--page${
+        cornerOrbs ? " placeholder--orbs" : ""
+      }`}
+    >
       <Background />
 
       <div className="page-brand">
