@@ -29,8 +29,8 @@ export const team: Member[] = [
     },
     tags: ["UX", "Research", "New Work"],
     bio: {
-      de: "Leitet das NewWorkDesignLab und forscht im Schnittgebiet von Interaktionsdesign, Informatik und Kognitionspsychologie.",
-      en: "Heads the NewWorkDesignLab and researches at the intersection of interaction design, computer science and cognitive psychology.",
+      de: "Als Leiter des New Work Design Lab und Professor für Medieninformatik an der FHD forscht er seit 2010 im Schnittfeld von Interaktionsdesign, Informatik und Kognitionspsychologie, heute mit Schwerpunkt auf User Experience Design und Game-Entwicklung. Seit 2014 treibt ihn das Thema New Work um: wie wir herausfinden, was wir im Leben wirklich wollen und brauchen – und wie sich das gestalten lässt.",
+      en: "As head of the New Work Design Lab and professor of media informatics at FHD, he has been researching at the intersection of interaction design, computer science and cognitive psychology since 2010 – today with a focus on user experience design and game development. Since 2014 he has been driven by the topic of New Work: how we find out what we truly want and need in life – and how that can be shaped.",
     },
   },
   {
@@ -42,6 +42,10 @@ export const team: Member[] = [
     email: "j.ludorf@fh-dresden.eu",
     specialty: { de: "XR-Entwickler", en: "XR Developer" },
     tags: ["Unity", "XR", "UX", "Web", "Automation"],
+    bio: {
+      de: "Er konzipiert und realisiert immersive XR-Erlebnisse für Industriekunden und Forschungsprojekte – von Schulungs- über Marketing- bis zu Recruiting-Anwendungen. Am Lab entwickelt er performante 3D-Anwendungen und räumliche Prototyping-Tools in Unity, mit Fokus auf intuitives Design und den Wissenstransfer durch Extended Reality.",
+      en: "He designs and builds immersive XR experiences for industry clients and research projects – from training to marketing and recruiting applications. At the lab he develops performant 3D applications and spatial prototyping tools in Unity, focusing on intuitive design and knowledge transfer through extended reality.",
+    },
   },
   {
     name: "Vincent Schiller",
@@ -55,6 +59,10 @@ export const team: Member[] = [
       en: "Unity/XR expert, researcher & digital designer",
     },
     tags: ["Unity", "XR", "UX", "3D", "Architecture"],
+    bio: {
+      de: "Master of Arts in Games- & XR-Management (2025) und Experte für Unity und XR. Am Lab gestaltet und entwickelt er interaktive Erlebnisse – mit Schwerpunkt auf User Experience und Mixed-Reality-Anwendungen, u. a. im Projekt Holospace XR. Für seine Bachelorarbeit erhielt er den Dresden Excellence Award; das daraus entstandene Programmierlernspiel wurde als bestes Serious Game mit dem Games Innovation Award Saxony 2021 ausgezeichnet.",
+      en: "Master of Arts in Games & XR Management (2025) and an expert in Unity and XR. At the lab he designs and develops interactive experiences – with a focus on user experience and mixed-reality applications, including the Holospace XR project. For his bachelor's thesis he received the Dresden Excellence Award; the resulting programming learning game was named best serious game with the Games Innovation Award Saxony 2021.",
+    },
   },
  {
     name: "Nicos Lentzsch",
@@ -68,6 +76,10 @@ export const team: Member[] = [
       en: "VR expert specialising in UI/UX",
     },
     tags: ["Unity", "XR", "UX", "UI"],
+    bio: {
+      de: "Nach seinem Abschluss in Medieninformatik & Mediendesign (FHD, 2022) gründete er mit Förderung durch Dresden EXIST das VR-Projekt DreamTime-VR, einen mobilen Meditationsraum. Heute ist er in Vollzeit am Projekt Holospace XR tätig und bringt umfangreiche Unity-Erfahrung ein.",
+      en: "After graduating in media informatics & media design (FHD, 2022), he founded the VR project DreamTime-VR, a portable meditation room, with support from the Dresden EXIST programme. Today he works full-time on the Holospace XR project, contributing extensive Unity experience.",
+    },
   },
   {
     name: "Christian Schülke",
@@ -93,7 +105,11 @@ export const team: Member[] = [
     status: "current",
     email: "MID23.PAhlers@stud.fh-dresden.eu",
     specialty: { de: "XR-Entwickler, Web-Apps", en: "XR developer, web apps" },
-    tags: ["Unity", "XR", "UX", "Web", "Databases"],
+    tags: ["Unity", "XR", "UX", "Web", "Databases", "Games"],
+    bio: {
+      de: "XR- und Web-Entwickler, der seit dem Wintersemester 2023 an der FHD studiert. Am Lab setzte er den „QR-Rundgang“ technisch um – ein Webportal, über das hausintern digitale Projekte an den Wänden ausgestellt und per Smartphone als AR im Raum erlebbar werden. Bereits während seines Studiums veröffentlichte er sein erstes Spiel „Caveman hits Giraffe in a Car“ auf Steam.",
+      en: "XR and web developer who has been studying at FHD since the 2023 winter semester. At the lab he handled the technical implementation of the “QR tour” – a web portal through which in-house digital projects are exhibited on the walls and can be experienced as AR in the room via smartphone. He has already released his first game, “Caveman hits Giraffe in a Car”, created during his studies, on Steam.",
+    },
   },
    {
     name: "Philipp Wittig",
