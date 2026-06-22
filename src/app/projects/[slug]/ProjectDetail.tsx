@@ -9,6 +9,7 @@ import { PageShell } from "../../../components/PageShell";
 import { BlockRenderer } from "../../../components/BlockRenderer";
 import { FundingBar } from "../../../components/FundingBar";
 import { ProjectCredits } from "../../../components/ProjectCredits";
+import { ProjectFacts } from "../../../components/ProjectFacts";
 import type { Lang } from "../../useLang";
 
 function formatDate(iso: string, lang: Lang) {
@@ -62,6 +63,17 @@ export function ProjectDetail({ project }: { project: Project }) {
             </p>
           ) : null}
 
+          {project.details && project.details.length > 0 ? (
+            <dl className="project-facts-inline">
+              {project.details.map((d, i) => (
+                <div key={i} className="project-facts-inline-item">
+                  <dt>{d.label[lang]}</dt>
+                  <dd>{d.value[lang]}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
+
           <div className="project-hero-cover">
             <Image
               src={project.cover}
@@ -87,6 +99,8 @@ export function ProjectDetail({ project }: { project: Project }) {
         <div className="project-body">
           <BlockRenderer blocks={project.sections} lang={lang} />
         </div>
+
+        <ProjectFacts project={project} lang={lang} />
 
         <ProjectCredits project={project} lang={lang} />
 

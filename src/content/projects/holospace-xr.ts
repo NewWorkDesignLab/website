@@ -15,6 +15,19 @@ export const holospaceXr: Project = {
   authors: ["Jonas Ludorf"],
   createdAt: "2026-06-18",
   updatedAt: "2026-06-22",
+  details: [
+    {
+      label: { de: "Förderung", en: "Funding" },
+      value: {
+        de: "EFRE Validierungsförderung 2021–2027",
+        en: "ERDF validation funding 2021–2027",
+      },
+    },
+    {
+      label: { de: "Laufzeit", en: "Duration" },
+      value: { de: "18 Monate", en: "18 months" },
+    },
+  ],
   team: ["Prof. Dr. Marius Brade", "Jonas Ludorf", "Nicos Lentzsch", "Christian Schülke", "Natalie Lehnart", "Vincent Schiller", "Cora Marie Lenz"],
   // Otto Maurer ist (noch) nicht im Team gelistet – daher inline nur mit Namen
   // und Platzhalter-Silhouette. Bei Bedarf später nach team.ts verschieben.

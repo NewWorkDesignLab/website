@@ -1321,13 +1321,69 @@ button {
 }
 
 .contributor-section,
-.partner-section {
+.partner-section,
+.facts-section {
   margin-top: 1.5rem;
   padding-top: 1.4rem;
   border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+}
+
+/* Labelled key-facts block (funding, duration, …) above the project team. */
+.facts-list {
+  margin: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1.5rem;
+}
+
+.facts-label {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.facts-value {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* Compact facts strip in the hero — quick orientation for the reader. */
+.project-facts-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.8rem;
+  margin: 0;
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--corner);
+}
+
+.project-facts-inline-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin: 0;
+  min-width: 0;
+}
+
+.project-facts-inline-item dt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-facts-inline-item dd {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
 }
 
 .contributor-grid {

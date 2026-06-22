@@ -104,7 +104,8 @@
       "by": "von",
       "createdOn": "Erstellt am",
       "updatedOn": "Zuletzt geändert am",
-      "contributorsTitle": "Mitarbeitende",
+      "detailsTitle": "Projektdetails",
+      "contributorsTitle": "Projektteam",
       "partnersTitle": "Projektpartner",
       "clientsTitle": "Auftraggeber"
     },
@@ -251,7 +252,8 @@
       "by": "by",
       "createdOn": "Created on",
       "updatedOn": "Last updated on",
-      "contributorsTitle": "Contributors",
+      "detailsTitle": "Project details",
+      "contributorsTitle": "Project team",
       "partnersTitle": "Project partners",
       "clientsTitle": "Client"
     },
