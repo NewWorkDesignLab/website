@@ -1239,6 +1239,7 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
   gap: 1.5rem;
+  align-items: start;
 }
 
 .team-card {
