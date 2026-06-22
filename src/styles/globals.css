@@ -559,17 +559,12 @@ button {
   pointer-events: none;
 }
 
-/* Auf Inhaltsseiten treten die Blobs hinter den Inhalt zurück (zarter Akzent);
-   die Startseite behält ihre volle Leuchtkraft. */
-.placeholder--page .bg-visual {
-  opacity: 0.4;
-}
-
 /* Kompaktes Kugel-Cluster für die obere rechte Ecke. Genutzt vom Mobile-Layout
-   (auf jeder Seite, s. Mobile-Media-Query) und von der Kontaktseite auch auf
-   Desktop (.placeholder--orbs). Größe/Farben der Kugeln sind überall gleich –
-   nur Sichtbarkeit und Anker (top/right) wechseln je Kontext. Standardmäßig
-   ausgeblendet; auf Desktop übernehmen sonst die großen Hero-Blobs. */
+   (auf jeder Seite, s. Mobile-Media-Query) und auf Desktop von allen
+   Unterseiten (.placeholder--page) als lebendiger Ersatz für die großen
+   Hero-Blobs. Größe/Farben der Kugeln sind überall gleich – nur Sichtbarkeit
+   und Anker (top/right) wechseln je Kontext. Standardmäßig ausgeblendet; nur
+   die Startseite (Desktop) behält die großen Hero-Blobs. */
 .mobile-orbs {
   display: none;
   position: absolute;
@@ -610,18 +605,43 @@ button {
   );
 }
 
-/* Kontaktseite (Desktop): statt der großen, blassen Hero-Blobs das kompakte
-   Kugel-Cluster oben rechts. Die Seite hat wenig Inhalt – der leichtere Akzent
-   hält sie aufgeräumt und besser lesbar. Auf Mobil bleibt die generische
-   Mobile-Regel weiter maßgeblich. */
+/* Unterseiten (Desktop): statt der großen, blassen Hero-Blobs das kompakte,
+   sanft schwebende Kugel-Cluster oben rechts – einheitlich auf allen
+   Unterseiten und lebendiger bei wenig Inhalt. Auf Mobil bleibt die generische
+   Mobile-Regel maßgeblich, die Startseite behält ihre Hero-Blobs. */
 @media (min-width: 769px) {
-  .placeholder--orbs .bg-visual {
+  .placeholder--page .bg-visual {
     display: none;
   }
-  .placeholder--orbs .mobile-orbs {
+  .placeholder--page .mobile-orbs {
     display: block;
     top: 2.5rem;
     right: 2.5rem;
+  }
+  /* Sanftes Schweben, pro Kugel gestaffelt, damit es lebendig wirkt.
+     Transform-only → eigene Compositor-Ebene, kein Repaint beim Scrollen. */
+  .placeholder--page .mobile-orb {
+    animation: orb-float 7s ease-in-out infinite;
+    will-change: transform;
+  }
+  .placeholder--page .mobile-orb.orange {
+    animation-duration: 6s;
+    animation-delay: -2s;
+  }
+  .placeholder--page .mobile-orb.blue {
+    animation-duration: 5.5s;
+    animation-delay: -3.5s;
+  }
+}
+
+/* Leichtes Driften – Transform-only zugunsten der Scroll-Performance. */
+@keyframes orb-float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0.07rem, -0.28rem);
   }
 }
 
@@ -723,7 +743,8 @@ button {
   .blob,
   .ring,
   .badge .dot,
-  .section-orb {
+  .section-orb,
+  .mobile-orb {
     animation: none;
   }
   .sidebar-label,

@@ -10,23 +10,13 @@ import { SiteFooter } from "./SiteFooter";
  * fixed top-left home/brand shortcut, floating sidebar, the page content,
  * and the footer (pushed to the bottom).
  *
- * `cornerOrbs` swaps the large faded hero blobs for the compact corner-orb
- * cluster on desktop too (used by the short contact page so it stays clean and
- * readable). On mobile every page already shows the corner orbs.
+ * On desktop these sub-pages show the compact, gently floating corner-orb
+ * cluster (top-right) instead of the homepage's large hero blobs — see the
+ * `.placeholder--page` rules in globals.css. On mobile every page shows them.
  */
-export function PageShell({
-  children,
-  cornerOrbs = false,
-}: {
-  children: ReactNode;
-  cornerOrbs?: boolean;
-}) {
+export function PageShell({ children }: { children: ReactNode }) {
   return (
-    <main
-      className={`placeholder placeholder--page${
-        cornerOrbs ? " placeholder--orbs" : ""
-      }`}
-    >
+    <main className="placeholder placeholder--page">
       <Background />
 
       <div className="page-brand">

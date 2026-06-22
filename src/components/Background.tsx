@@ -10,8 +10,9 @@ export function Background() {
         <span className="blob green" />
       </div>
 
-      {/* Mobile-only: a small cluster of colourful spheres tucked into the
-          top-right corner, echoing the desktop hero blobs. Hidden on desktop. */}
+      {/* Small cluster of colourful spheres tucked into the top-right corner.
+          Shown on mobile everywhere, and on desktop sub-pages (where it gently
+          floats and replaces the large hero blobs — see globals.css). */}
       <div className="mobile-orbs" aria-hidden="true">
         <span className="mobile-orb purple" />
         <span className="mobile-orb orange" />
