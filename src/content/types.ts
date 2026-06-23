@@ -2,7 +2,7 @@ export type Localized = { de: string; en: string };
 
 export type ProjectCategory = "vr" | "ar" | "research" | "ai";
 export type ProjectStatus = "ongoing" | "completed";
-export type FundingKey = "freistaat-sachsen" | "efre" | "esf" | "eu";
+export type FundingKey = "freistaat-sachsen" | "efre" | "esf" | "eu" | "esf-eu";
 
 export type GalleryImage = {
   src: string;

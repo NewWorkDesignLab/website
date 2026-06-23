@@ -32,9 +32,28 @@ export const partners: Record<string, Partner> = {
     name: "DInA-Elektro",
     logo: "/partners/dina.svg",
   },
+  ebz: {
+    name: "EBZ Dresden",
+    logo: "/partners/ebz_logo.png",
+  },
   bex: {
     name: "BeX Elektro",
     logo: "/partners/bex.svg",
+  },
+  afbb: {
+    name: "AFBB",
+    logo: "/partners/afbb.jpeg",
+    url: "https://www.afbb.de/",
+  },
+  "tu-dresden": {
+    name: "TU Dresden",
+    logo: "/partners/tu-dresden.jpeg",
+    url: "https://tu-dresden.de/",
+  },
+  fhd: {
+    name: "Fachhochschule Dresden (FHD)",
+    logo: "/fhd_logo.webp",
+    url: "https://www.fh-dresden.eu/",
   },
 };
 

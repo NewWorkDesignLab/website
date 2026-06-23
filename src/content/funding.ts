@@ -18,7 +18,7 @@ export type FundingLogo = {
  */
 export const funding: Record<FundingKey, FundingLogo> = {
   "freistaat-sachsen": {
-    src: "/funding/freistaat-sachsen.svg",
+    src: "/funding/freistaat-sachsen.webp",
     label: "Freistaat Sachsen",
     url: "https://www.sachsen.de/",
   },
@@ -33,8 +33,13 @@ export const funding: Record<FundingKey, FundingLogo> = {
     url: "https://www.esf.sachsen.de/",
   },
   eu: {
-    src: "/funding/eu.svg",
+    src: "/funding/EU-Logo.webp",
     label: "Europäische Union",
     url: "https://european-union.europa.eu/",
+  },
+  "esf-eu": {
+    src: "/funding/esf-eu.webp",
+    label: "Europäischer Sozialfonds / Europäische Union (ESF)",
+    url: "https://www.esf.sachsen.de/",
   },
 };

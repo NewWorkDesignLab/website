@@ -1157,6 +1157,11 @@ button {
   object-fit: cover;
 }
 
+/* Center the optional "open project website" button under the hero. */
+.project-hero .cta {
+  align-self: center;
+}
+
 .project-body {
   display: flex;
   flex-direction: column;
@@ -1289,7 +1294,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .funding-logo {

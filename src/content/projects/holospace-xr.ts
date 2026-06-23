@@ -11,7 +11,7 @@ export const holospaceXr: Project = {
   status: "ongoing",
   year: "2025–2026",
   cover: "/projects/holospace-xr/cover.svg",
-  funding: ["freistaat-sachsen", "efre", "eu"],
+  funding: ["eu", "freistaat-sachsen"],
   authors: ["Jonas Ludorf"],
   createdAt: "2026-06-18",
   updatedAt: "2026-06-22",

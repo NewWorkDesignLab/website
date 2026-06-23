@@ -16,9 +16,9 @@ export function FundingBar({ keys, title }: { keys: FundingKey[]; title: string 
               className="funding-logo"
               src={f.src}
               alt={f.label}
-              width={140}
-              height={70}
-              style={{ height: "3.25rem", width: "auto" }}
+              width={200}
+              height={100}
+              style={{ height: "4.75rem", width: "auto" }}
             />
           );
           return f.url ? (

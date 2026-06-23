@@ -8,6 +8,7 @@ import { narrenhaeuselAr } from "./narrenhaeusel-ar";
 import { zeissFactory } from "./zeiss-factory";
 import { globalFoundriesEscape } from "./global-foundries-escape";
 import { bexElektroVr } from "./bex-elektro-vr";
+import { domicileVr } from "./domicile-vr";
 
 /** Order here = order shown in the overview grid. */
 export const projects: Project[] = [
@@ -20,6 +21,7 @@ export const projects: Project[] = [
   zeissFactory,
   globalFoundriesEscape,
   bexElektroVr,
+  domicileVr,
 ];
 
 export function getProject(slug: string): Project | undefined {
