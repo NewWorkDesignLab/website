@@ -19,9 +19,9 @@ export type Partner = {
  */
 export const partners: Record<string, Partner> = {
   zeiss: {
-    name: "ZEISS",
-    logo: "/partners/zeiss.svg",
-    url: "https://www.zeiss.de/",
+    name: "ZEISS Digital Innovation",
+    logo: "/partners/zeiss.webp",
+    url: "https://www.zeiss.de/digital-innovation/home.html",
   },
   "global-foundries": {
     name: "GlobalFoundries",

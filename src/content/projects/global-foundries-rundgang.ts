@@ -9,8 +9,9 @@ export const globalFoundriesRundgang: Project = {
   },
   categories: ["vr"],
   status: "completed",
+  year: "2023–2025",
   cover: "/projects/global-foundries-rundgang/cover.svg",
-  funding: ["freistaat-sachsen", "efre"],
+  funding: [],
   partners: [{ key: "global-foundries", kind: "client" }],
   sections: [
     {
