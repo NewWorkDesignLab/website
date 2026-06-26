@@ -33,8 +33,9 @@ export const partners: Record<string, Partner> = {
     logo: "/partners/dina.svg",
   },
   ebz: {
-    name: "EBZ Dresden",
+    name: "Elektrobildungs- und Technologiezentrum e.V.",
     logo: "/partners/ebz_logo.png",
+    url: "https://www.ebz-dresden.de/",
   },
   bex: {
     name: "BeX Elektro",
@@ -59,6 +60,21 @@ export const partners: Record<string, Partner> = {
     name: "Fraunhofer IVV",
     logo: "/partners/fraunhofer-ivv.webp",
     url: "https://www.ivv.fraunhofer.de/",
+  },
+  "fraunhofer-iis": {
+    name: "Fraunhofer IIS / EAS",
+    logo: "/partners/logo-fraunhofer-iis.webp",
+    url: "https://www.eas.iis.fraunhofer.de/",
+  },
+  "bz-lt": {
+    name: "Bildungszentrum Lernen+Technik gGmbH",
+    logo: "/partners/bz-l+t.webp",
+    url: "https://lernen-technik.de/",
+  },
+  "softed-systems": {
+    name: "SoftEd Systems GmbH",
+    logo: "/partners/logo-softed-systems.svg",
+    url: "https://www.softed.de/",
   },
 };
 

@@ -28,12 +28,12 @@ export const funding: Record<FundingKey, FundingLogo> = {
     url: "https://www.efre.sachsen.de/",
   },
   esf: {
-    src: "/funding/esf.svg",
+    src: "/funding/esf-eu.webp",
     label: "Europäischer Sozialfonds (ESF)",
     url: "https://www.esf.sachsen.de/",
   },
   eu: {
-    src: "/funding/EU-Logo.webp",
+    src: "/funding/eu.webp",
     label: "Europäische Union",
     url: "https://european-union.europa.eu/",
   },
