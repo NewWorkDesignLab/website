@@ -55,6 +55,11 @@ export const partners: Record<string, Partner> = {
     logo: "/fhd_logo.webp",
     url: "https://www.fh-dresden.eu/",
   },
+  "fraunhofer-ivv": {
+    name: "Fraunhofer IVV",
+    logo: "/partners/fraunhofer-ivv.webp",
+    url: "https://www.ivv.fraunhofer.de/",
+  },
 };
 
 export function getPartner(key: string): Partner | undefined {
