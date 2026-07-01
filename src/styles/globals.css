@@ -1441,6 +1441,10 @@ button {
   flex-direction: column;
   gap: 0.1rem;
   min-width: 0;
+  /* Break long single words (e.g. "NewWorkDesignLab",
+     "Wissenschaftlicher") instead of letting them overflow the card. */
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .contributor-name {

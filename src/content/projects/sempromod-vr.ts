@@ -12,6 +12,7 @@ export const sempromodVr: Project = {
   cover: "/projects/sempromod-vr/sempromod-vr-1.webp",
   funding: [],
   authors: ["Vincent Schiller"],
+  team: ["Vincent Schiller"],
   createdAt: "2022-05-06",
   updatedAt: "2026-06-26",
   partners: [{ key: "fraunhofer-ivv", kind: "partner" }],
