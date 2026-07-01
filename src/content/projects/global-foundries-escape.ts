@@ -10,7 +10,7 @@ export const globalFoundriesEscape: Project = {
   categories: ["vr"],
   status: "completed",
   year: "2024–2025",
-  cover: "/projects/global-foundries-escape/gf-2.webp",
+  cover: "/projects/global-foundries-escape/gf.webp",
   funding: [],
   partners: [{ key: "global-foundries", kind: "client" }],
   sections: [
