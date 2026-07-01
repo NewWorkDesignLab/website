@@ -388,16 +388,28 @@ button {
   line-height: 1.5;
 }
 
+.footer-social-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.6rem;
+}
+
 .footer-social {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 2.25rem;
   height: 2.25rem;
-  margin-top: 0.6rem;
   border-radius: 999px;
   border: 1px solid var(--border);
   color: var(--ink-soft);
+}
+
+/* Back-to-top pill next to LinkedIn — desktop keeps the copy in the bottom
+   bar, so this one is hidden until the mobile breakpoint. */
+.footer-top--social {
+  display: none;
 }
 
 .footer-social svg {
@@ -2642,11 +2654,14 @@ a.partner-card:hover {
     margin-right: 0;
     flex-basis: 100%;
   }
-  /* Push the back-to-top pill to the far end of the legal row and give it a
-     touch of vertical room so it isn't cramped against the legal links. */
-  .footer-top {
+  /* On mobile the back-to-top pill lives next to the LinkedIn button (see
+     .footer-social-row); the copy of it in the bottom bar is hidden. */
+  .footer-top--bar {
+    display: none;
+  }
+  .footer-top--social {
+    display: inline-flex;
     margin-left: auto;
-    margin-top: 0.35rem;
     padding: 0.5rem 1rem;
   }
 
