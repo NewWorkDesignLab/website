@@ -10,7 +10,7 @@ export const globalFoundriesRundgang: Project = {
   categories: ["vr"],
   status: "completed",
   year: "2023–2025",
-  cover: "/projects/global-foundries-rundgang/cover.svg",
+  cover: "/projects/global-foundries-rundgang/gf.webp",
   funding: [],
   partners: [{ key: "global-foundries", kind: "client" }],
   sections: [
