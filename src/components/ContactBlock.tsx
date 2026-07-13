@@ -80,6 +80,11 @@ export function ContactBlock({
           </div>
 
           <div className="home-contact-block">
+            <span className="home-contact-block-label">{c.personLabel}</span>
+            <strong className="home-contact-person">{c.person}</strong>
+          </div>
+
+          <div className="home-contact-block">
             <span className="home-contact-block-label">{c.phoneLabel}</span>
             {c.phones.map((phone) => (
               <a
@@ -90,14 +95,6 @@ export function ContactBlock({
                 {phone}
               </a>
             ))}
-          </div>
-
-          <div className="home-contact-block">
-            <span className="home-contact-block-label">{c.personLabel}</span>
-            <strong className="home-contact-person">{c.person}</strong>
-            <a className="home-contact-link" href={`mailto:${c.email}`}>
-              {c.email}
-            </a>
           </div>
         </div>
 
