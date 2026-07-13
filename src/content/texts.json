@@ -42,7 +42,9 @@
     },
     "events": {
       "heading": "Wir sind dabei.",
-      "intro": "Ob Messe, Konferenz oder Branchentreffen – wir sind gern vor Ort, zeigen, woran wir arbeiten, und kommen mit Menschen ins Gespräch."
+      "intro": "Ob Messe, Konferenz oder Branchentreffen – wir sind gern vor Ort, zeigen, woran wir arbeiten, und kommen mit Menschen ins Gespräch.",
+      "prev": "Vorherige Events",
+      "next": "Nächste Events"
     },
     "homeContact": {
       "heading": "Lass uns sprechen.",
@@ -196,7 +198,9 @@
     },
     "events": {
       "heading": "We're there.",
-      "intro": "Whether it's a trade fair, conference or industry meet-up – we love being on site, showing what we work on and getting into conversation with people."
+      "intro": "Whether it's a trade fair, conference or industry meet-up – we love being on site, showing what we work on and getting into conversation with people.",
+      "prev": "Previous events",
+      "next": "Next events"
     },
     "homeContact": {
       "heading": "Let's talk.",

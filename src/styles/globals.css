@@ -2049,6 +2049,69 @@ a.partner-card:hover {
   gap: 3.5rem;
 }
 
+/* Trägt die absolut positionierten Pfeile. Sie liegen bewusst außerhalb von
+   `.event-strip` — dessen overflow-x und Fade-Maske würden sie sonst
+   abschneiden bzw. ausblenden. */
+.event-strip-wrap {
+  position: relative;
+}
+
+/* Runde Blätter-Pfeile im Seitenrand: Maße/Hover wie `.footer-social`, der
+   Glas-Look wie `.event-card-date`. Sie sitzen komplett im Seiten-Padding
+   (`.placeholder`, 4.5rem / var(--edge)) und verdecken so keine Karte. */
+.event-nav {
+  position: absolute;
+  /* Korrigiert die asymmetrische Polsterung des Streifens (0.5rem oben,
+     1.25rem unten) — sonst säße der Pfeil unter der Kartenmitte. */
+  top: calc(50% - 0.375rem);
+  transform: translateY(-50%);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: var(--ink-soft);
+  box-shadow: 0 0.4rem 1rem rgba(20, 33, 61, 0.18);
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.event-nav svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.event-nav:hover {
+  color: #fff;
+  background: var(--blue);
+  border-color: var(--blue);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.event-nav:active {
+  transform: translateY(-50%) scale(0.94);
+}
+
+.event-nav:focus-visible {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 0.1875rem rgba(58, 111, 216, 0.15);
+}
+
+.event-nav--prev {
+  left: -3.75rem;
+}
+
+.event-nav--next {
+  right: -3.75rem;
+}
+
 /* Horizontal, swipeable strip. The right-edge mask hints that more cards
    follow; padding keeps the lift/shadow and scrollbar from being clipped. */
 .event-strip {
@@ -2687,6 +2750,11 @@ a.partner-card:hover {
   .event-card-blurb {
     max-height: none;
     opacity: 1;
+  }
+  /* Wischen und Auto-Scroll tragen mobil; im auf 1.25rem geschrumpften
+     Seitenrand (var(--edge)) wäre für die Pfeile ohnehin kein Platz. */
+  .event-nav {
+    display: none;
   }
 
   /* Closing contact section */
