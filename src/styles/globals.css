@@ -1956,6 +1956,7 @@ a.partner-card:hover {
   padding-bottom: 0;
   display: flex;
   flex-direction: column;
+  gap: 1.75rem;
 }
 
 /* Teaser und "Wir sind dabei" sollen als ein zusammengehöriger Block gelesen
@@ -1978,11 +1979,6 @@ a.partner-card:hover {
   align-items: flex-start;
   text-align: left;
   gap: 1.5rem;
-}
-
-.home-team-more {
-  align-self: flex-start;
-  margin-top: 0.25rem;
 }
 
 .home-team-cluster {

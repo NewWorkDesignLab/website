@@ -35,12 +35,6 @@ export function TeamTeaser() {
         <div className="home-team-copy">
           <h2 className="pillars-heading">{t.heading}</h2>
           <p className="pillars-lead">{t.intro}</p>
-          <Link href="/team" className="home-projects-more home-team-more">
-            {t.more}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
         </div>
 
         <div className="home-team-cluster">
@@ -56,6 +50,16 @@ export function TeamTeaser() {
           </span>
         </div>
       </div>
+
+      {/* Sitzt außerhalb des Split-Grids, damit er am rechten Rand der ganzen
+          Sektion landet — wie der "Mehr ansehen"-Link der Projekte. Mobil
+          rutscht er unter Fotos und Label und bleibt rechtsbündig. */}
+      <Link href="/team" className="home-projects-more">
+        {t.more}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </Link>
     </section>
   );
 }
