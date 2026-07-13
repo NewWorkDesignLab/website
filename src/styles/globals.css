@@ -406,12 +406,6 @@ button {
   color: var(--ink-soft);
 }
 
-/* Back-to-top pill next to LinkedIn — desktop keeps the copy in the bottom
-   bar, so this one is hidden until the mobile breakpoint. */
-.footer-top--social {
-  display: none;
-}
-
 .footer-social svg {
   width: 1.15rem;
   height: 1.15rem;
@@ -469,6 +463,13 @@ button {
 .footer-top:hover {
   color: var(--blue);
   border-color: var(--blue);
+}
+
+/* Back-to-top pill next to LinkedIn — desktop keeps the copy in the bottom
+   bar, so this one is hidden until the mobile breakpoint. Must come after the
+   .footer-top base rule to win on equal specificity. */
+.footer-top--social {
+  display: none;
 }
 
 /* ------------------------------------------------------------------ */
