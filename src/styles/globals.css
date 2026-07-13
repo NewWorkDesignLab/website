@@ -2713,16 +2713,28 @@ a.partner-card:hover {
     font-size: 1.6rem;
   }
 
-  /* Team teaser */
+  /* Team teaser — mobil fällt der Split ohnehin in eine Spalte zusammen; der
+     asymmetrische Auftritt des Desktops würde dann nur als Ausreißer in einer
+     sonst durchgehend zentrierten Spalte lesen. Also hier zentriert wie die
+     übrigen Sektionen, mit demselben Abstand oben und unten. */
   .home-team {
     padding-top: 3.5rem;
+    /* Basis ist 0 — den Rest des Abstands trug auf dem Desktop die Kopplung an
+       die Events. Mobil zahlt die Sektion ihre untere Hälfte selbst, wie alle
+       anderen auch (3rem unten + 3.5rem oben der nächsten = 6.5rem). */
+    padding-bottom: 3rem;
   }
   .home-team-inner {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+  .home-team-copy {
+    align-items: center;
+    text-align: center;
+    gap: 1.3rem;
+  }
   .home-team-cluster {
-    align-items: flex-start;
+    align-items: center;
   }
   .home-team-face {
     width: 4.5rem;
@@ -2736,11 +2748,12 @@ a.partner-card:hover {
     padding-top: 3.5rem;
     gap: 2.5rem;
   }
-  /* Gleiche Specificity-Falle wie auf dem Desktop: `.home-team + .home-events`
-     (0-1-1) schlägt `.home-events` (0-1-0) — die Gruppierung muss hier also
-     explizit wiederholt werden, sonst zieht der 5rem-Desktopwert auch mobil. */
+  /* Die enge Kopplung an den Teaser gilt nur auf dem Desktop; mobil bekommt
+     "Wir sind dabei" denselben Abstand wie jede andere Sektion. Der Reset muss
+     die Selektorform des Desktops wiederholen, sonst schlägt dessen 5rem-Regel
+     (0-1-1) die schlichte `.home-events`-Regel (0-1-0) auch hier. */
   .home-team + .home-events {
-    padding-top: 2rem;
+    padding-top: 3.5rem;
   }
   .event-card {
     flex-basis: 80vw;

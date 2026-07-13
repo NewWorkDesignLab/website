@@ -7,11 +7,12 @@ import { useLang } from "../app/useLang";
 import { team } from "../content/team";
 
 /**
- * Team teaser between the projects and the events section: an asymmetric band
- * that points scrollers towards /team. It deliberately breaks the centered
- * heading rhythm the other homepage sections share — the off-center split and
- * its compact height mark it as a transition, and the tight gap to "Wir sind
- * dabei" below ties the two into one block.
+ * Team teaser between the projects and the events section: on the desktop an
+ * asymmetric band that points scrollers towards /team — the off-center split
+ * and its compact height mark it as a transition, and the tight gap to "Wir
+ * sind dabei" below ties the two into one block. Mobile drops that idea: the
+ * split collapses into one column anyway, so the section is centered and
+ * spaced like every other one (see the media query in globals.css).
  *
  * Members still on a placeholder silhouette are left out of the face cluster;
  * the counter next to it still names the full current team.
