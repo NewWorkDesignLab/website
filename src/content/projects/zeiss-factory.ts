@@ -9,6 +9,7 @@ export const zeissFactory: Project = {
   },
   categories: ["vr"],
   status: "completed",
+  year: "2023–2024",
   cover: "/projects/zeiss-factory/zeiss-smart-factory.webp",
   funding: [],
   partners: [{ key: "zeiss", kind: "client" }],
