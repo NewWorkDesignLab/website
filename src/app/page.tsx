@@ -9,6 +9,7 @@ import { Background } from "../components/Background";
 import { Sidebar } from "../components/Sidebar";
 import { SiteFooter } from "../components/SiteFooter";
 import { EventStrip } from "../components/EventStrip";
+import { TeamTeaser } from "../components/TeamTeaser";
 import { ContactBlock } from "../components/ContactBlock";
 import { getProject } from "../content/projects";
 import type { Project } from "../content/types";
@@ -181,12 +182,9 @@ export default function Home() {
         </div>
       </section>
 
+      <TeamTeaser />
+
       <section className="home-events">
-        <span className="section-orbs section-orbs--events" aria-hidden="true">
-          <span className="section-orb blue" />
-          <span className="section-orb green" />
-          <span className="section-orb orange" />
-        </span>
         <div className="pillars-intro">
           <h2 className="pillars-heading">{t.events.heading}</h2>
           <p className="pillars-lead">{t.events.intro}</p>

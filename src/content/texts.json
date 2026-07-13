@@ -34,6 +34,12 @@
       "intro": "Mit unseren wirkungsvollen Projekten treiben wir Veränderungsprozesse aktiv voran. Unser Team arbeitet mit starkem Fokus auf anwendungsbezogene Forschung und Entwicklung im Schnittgebiet von User Experience Design, Gamification, Softwareentwicklung und kognitiver Ergonomie. Unsere Partner kommen aus den unterschiedlichsten Bereichen der Forschung.",
       "more": "Mehr ansehen"
     },
+    "teamTeaser": {
+      "heading": "Die Menschen dahinter.",
+      "intro": "Forschende, Entwickler:innen und Designer:innen — interdisziplinär, neugierig und mit Freude an dem, was Menschen wirklich weiterbringt.",
+      "more": "Team ansehen",
+      "count": "{count} Menschen im Lab"
+    },
     "events": {
       "heading": "Wir sind dabei.",
       "intro": "Ob Messe, Konferenz oder Branchentreffen – wir sind gern vor Ort, zeigen, woran wir arbeiten, und kommen mit Menschen ins Gespräch."
@@ -181,6 +187,12 @@
       "heading": "Projects",
       "intro": "With our impactful projects we actively drive change forward. Our team works with a strong focus on applied research and development at the intersection of user experience design, gamification, software development and cognitive ergonomics. Our partners come from the most diverse fields of research.",
       "more": "View all"
+    },
+    "teamTeaser": {
+      "heading": "The people behind it.",
+      "intro": "Researchers, developers and designers — interdisciplinary, curious, and driven by what genuinely moves people forward.",
+      "more": "Meet the team",
+      "count": "{count} people in the lab"
     },
     "events": {
       "heading": "We're there.",

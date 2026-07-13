@@ -800,10 +800,10 @@ button {
 }
 
 @media (min-width: 1200px) {
-  /* Akzent im Übergang zwischen "Projekte" und "Wir sind dabei": links in den
-     freien Rand getuckt, im oberen 9rem-Abstand der Events-Sektion. z-index 0
+  /* Akzent im Übergang zwischen "Projekte" und dem Team-Teaser: links in den
+     freien Rand getuckt, im großen oberen Abstand der Team-Sektion. z-index 0
      hält ihn hinter dem Sektionsinhalt (die Sektion liegt über .bg-visual). */
-  .section-orbs--events {
+  .section-orbs--team {
     display: block;
     position: absolute;
     top: 1.75rem;
@@ -813,19 +813,19 @@ button {
     z-index: 0;
     pointer-events: none;
   }
-  .section-orbs--events .section-orb.blue {
+  .section-orbs--team .section-orb.blue {
     width: 9rem;
     height: 9rem;
     top: 0;
     left: 2.5rem;
   }
-  .section-orbs--events .section-orb.green {
+  .section-orbs--team .section-orb.green {
     width: 5rem;
     height: 5rem;
     top: 7rem;
     left: 0;
   }
-  .section-orbs--events .section-orb.orange {
+  .section-orbs--team .section-orb.orange {
     width: 3.75rem;
     height: 3.75rem;
     top: 6rem;
@@ -1938,6 +1938,106 @@ a.partner-card:hover {
 }
 
 /* ------------------------------------------------------------------ */
+/* Home: team teaser                                                   */
+/* ------------------------------------------------------------------ */
+/* Übergangsband zur Teamseite. Bewusst asymmetrisch und flach, statt der
+   zentrierten Überschrift + Grid, die die übrigen Startseiten-Sektionen
+   teilen — so liest es sich als Übergang, nicht als eigenes Kapitel. */
+.home-team {
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  width: 100%;
+  max-width: 72rem;
+  /* Viel Luft nach oben trennt vom Projekte-Block (+3rem von dessen
+     padding-bottom = 14rem). Nach unten kein Padding — den knappen Rest
+     setzt die Regel unter .home-events. */
+  padding-top: 11rem;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Teaser und "Wir sind dabei" sollen als ein zusammengehöriger Block gelesen
+   werden: der Abstand nach unten ist gut ein Drittel des Abstands nach oben,
+   bleibt mit 5rem aber großzügig. */
+.home-team + .home-events {
+  padding-top: 5rem;
+}
+
+.home-team-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: clamp(3rem, 6vw, 6rem);
+}
+
+.home-team-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 1.5rem;
+}
+
+.home-team-more {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
+.home-team-cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Überlappende Portraits — der leichte Höhenversatz macht aus der Reihe eine
+   Gruppe. Die Karte, über der die Maus liegt, hebt sich frei. */
+.home-team-faces {
+  display: flex;
+  align-items: center;
+}
+
+.home-team-face {
+  position: relative;
+  flex: none;
+  width: clamp(5.5rem, 8vw, 7.5rem);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 0.25rem solid #fff;
+  box-shadow: 0 0.75rem 2.5rem rgba(20, 33, 61, 0.16);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.home-team-face + .home-team-face {
+  margin-left: -1.4rem;
+}
+
+.home-team-face:nth-child(2n) {
+  transform: translateY(-0.9rem);
+}
+
+.home-team-face img {
+  object-fit: cover;
+}
+
+.home-team-faces:hover .home-team-face:hover,
+.home-team-faces:hover .home-team-face:nth-child(2n):hover {
+  transform: translateY(-1.6rem) scale(1.04);
+  box-shadow: 0 1.75rem 4rem rgba(20, 33, 61, 0.24);
+  z-index: 1;
+}
+
+.home-team-count {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* ------------------------------------------------------------------ */
 /* Home: events / presence strip                                      */
 /* ------------------------------------------------------------------ */
 .home-events {
@@ -2554,10 +2654,34 @@ a.partner-card:hover {
     font-size: 1.6rem;
   }
 
+  /* Team teaser */
+  .home-team {
+    padding-top: 3.5rem;
+  }
+  .home-team-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .home-team-cluster {
+    align-items: flex-start;
+  }
+  .home-team-face {
+    width: 4.5rem;
+  }
+  .home-team-face + .home-team-face {
+    margin-left: -1rem;
+  }
+
   /* Events strip */
   .home-events {
     padding-top: 3.5rem;
     gap: 2.5rem;
+  }
+  /* Gleiche Specificity-Falle wie auf dem Desktop: `.home-team + .home-events`
+     (0-1-1) schlägt `.home-events` (0-1-0) — die Gruppierung muss hier also
+     explizit wiederholt werden, sonst zieht der 5rem-Desktopwert auch mobil. */
+  .home-team + .home-events {
+    padding-top: 2rem;
   }
   .event-card {
     flex-basis: 80vw;
