@@ -1,23 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import texts from "../content/texts.json";
 import { useLang } from "../app/useLang";
 
-/**
- * Closing contact block: a vivid brand-gradient panel pairing the lab's
- * contact details with a (presentational) message form. Shared by the
- * homepage and the dedicated contact page so the UX stays identical.
- *
- * `headingTag` lets the dedicated contact page expose this as its primary
- * <h1>, while the homepage keeps it an <h2> below the hero headline.
- * `standalone` trims the large top whitespace that only makes sense when the
- * block follows other homepage sections.
- * `contactPage` switches the block into its dedicated-page guise: the heading
- * reads "Kontakt" instead of the homepage's hero line, and Marius Brade is
- * introduced as the lab's named point of contact. The homepage section keeps
- * its original wording.
- */
+const CONTACT_API_URL =
+  process.env.NEXT_PUBLIC_CONTACT_API_URL ?? "https://api.nwdl.org/contact";
+
 export function ContactBlock({
   headingTag: Heading = "h2",
   standalone = false,
@@ -30,6 +20,45 @@ export function ContactBlock({
   const { lang } = useLang();
   const c = texts[lang].homeContact;
   const cp = texts[lang].contactPage;
+
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error" | "rateLimit"
+  >("idle");
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (status === "sending") return;
+
+    const form = event.currentTarget;
+    const data = Object.fromEntries(
+      new FormData(form).entries(),
+    ) as Record<string, string>;
+
+    setStatus("sending");
+    try {
+      const res = await fetch(CONTACT_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.name ?? "",
+          email: data.email ?? "",
+          message: data.message ?? "",
+          website: data.website ?? "",
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else if (res.status === 429) {
+        setStatus("rateLimit");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <section
@@ -98,9 +127,7 @@ export function ContactBlock({
           </div>
         </div>
 
-        {/* Form is presentational for now – wiring follows once our own
-            server endpoint is ready. */}
-        <form className="home-contact-form" onSubmit={(e) => e.preventDefault()}>
+        <form className="home-contact-form" onSubmit={handleSubmit} noValidate>
           <div className="home-contact-field">
             <label htmlFor="contact-name">{c.form.name}</label>
             <input
@@ -109,6 +136,7 @@ export function ContactBlock({
               type="text"
               placeholder={c.form.namePlaceholder}
               autoComplete="name"
+              required
             />
           </div>
           <div className="home-contact-field">
@@ -119,6 +147,7 @@ export function ContactBlock({
               type="email"
               placeholder={c.form.emailPlaceholder}
               autoComplete="email"
+              required
             />
           </div>
           <div className="home-contact-field">
@@ -128,11 +157,43 @@ export function ContactBlock({
               name="message"
               rows={4}
               placeholder={c.form.messagePlaceholder}
+              required
             />
           </div>
-          <button type="submit" className="cta home-contact-submit">
-            {c.form.submit}
+
+          {}
+          <input
+            className="home-contact-honeypot"
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
+
+          <button
+            type="submit"
+            className="cta home-contact-submit"
+            disabled={status === "sending"}
+          >
+            {status === "sending" ? c.form.sending : c.form.submit}
           </button>
+
+          {status === "success" ? (
+            <p className="home-contact-status home-contact-status--ok" role="status">
+              {c.form.success}
+            </p>
+          ) : null}
+          {status === "rateLimit" ? (
+            <p className="home-contact-status home-contact-status--err" role="alert">
+              {c.form.rateLimit}
+            </p>
+          ) : null}
+          {status === "error" ? (
+            <p className="home-contact-status home-contact-status--err" role="alert">
+              {c.form.error}
+            </p>
+          ) : null}
         </form>
       </div>
     </section>

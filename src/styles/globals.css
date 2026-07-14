@@ -26,19 +26,16 @@
 }
 
 html {
-  /* Mobile-first: a comfortable, fixed base so text stays readable. */
+
   font-size: 16px;
 }
 
-/* On larger screens the layout scales with the viewport width. */
 @media (min-width: 769px) {
   html {
     font-size: clamp(11px, calc(100vw / 120), 16px);
   }
 }
 
-/* Tablet band: the desktop curve alone leaves text too small here, so use a
-   comfortable fixed base. */
 @media (min-width: 769px) and (max-width: 1024px) {
   html {
     font-size: 13px;
@@ -53,8 +50,6 @@ body {
   overflow: hidden;
 }
 
-/* Match the page's ending colour so over-scroll / rubber-band on mobile shows
-   --bg-soft instead of a white stripe behind the body. */
 html {
   background: var(--bg-soft);
 }
@@ -90,18 +85,11 @@ button {
   padding-left: var(--edge);
 }
 
-/* Home hero: anchored in the upper third (instead of dead-centre) so it sits
-   close under the logo; margin-bottom:auto keeps the footer pinned to the
-   bottom and lets the content scroll instead of clipping when it's taller
-   than the viewport. */
 .placeholder:not(.placeholder--page) > .content {
   margin-top: clamp(1rem, 7vh, 5rem);
   margin-bottom: auto;
 }
 
-/* Home brand sits at the same top offset as the sub-page header
-   (2.25rem) despite the home's larger 4.5rem padding, but the wordmark
-   is given more presence on the landing page. */
 .placeholder:not(.placeholder--page) .page-brand {
   margin-top: -2.25rem;
 }
@@ -110,10 +98,6 @@ button {
   height: 5rem;
 }
 
-/* Desktop/tablet: the home footer flows at the bottom of the scroll content
-   instead of being absolutely positioned. Absolute positioning detached it
-   from the (taller-than-viewport) content and floated it mid-page on scroll.
-   Mobile already keeps the footer in flow (see the mobile block). */
 @media (min-width: 769px) {
   .placeholder:not(.placeholder--page) {
     padding-bottom: var(--corner);
@@ -285,14 +269,10 @@ button {
   margin-left: 0.1875rem;
 }
 
-/* Full-width footer band that closes every page. On the homepage and content
-   pages it flows at the very bottom of the scroll content (overrides further
-   down pin it there). */
 .footer {
   position: relative;
   z-index: 5;
-  /* Full-bleed: span the whole viewport width regardless of the parent's
-     (per-page) padding. overflow-x:hidden on .placeholder clips the overhang. */
+
   width: 100vw;
   margin-top: 4rem;
   margin-left: 50%;
@@ -318,7 +298,6 @@ button {
   color: var(--border);
 }
 
-/* Upper zone: brand · navigation · contact */
 .footer-grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr 1.2fr;
@@ -417,7 +396,6 @@ button {
   border-color: var(--blue);
 }
 
-/* Lower bar: copyright · legal · back-to-top */
 .footer-bar {
   display: flex;
   flex-wrap: wrap;
@@ -465,16 +443,10 @@ button {
   border-color: var(--blue);
 }
 
-/* Back-to-top pill next to LinkedIn — desktop keeps the copy in the bottom
-   bar, so this one is hidden until the mobile breakpoint. Must come after the
-   .footer-top base rule to win on equal specificity. */
 .footer-top--social {
   display: none;
 }
 
-/* ------------------------------------------------------------------ */
-/* Fixed top-left brand + home button (content sub-pages)              */
-/* ------------------------------------------------------------------ */
 .page-brand {
   position: relative;
   z-index: 2;
@@ -572,12 +544,6 @@ button {
   pointer-events: none;
 }
 
-/* Kompaktes Kugel-Cluster für die obere rechte Ecke. Genutzt vom Mobile-Layout
-   (auf jeder Seite, s. Mobile-Media-Query) und auf Desktop von allen
-   Unterseiten (.placeholder--page) als lebendiger Ersatz für die großen
-   Hero-Blobs. Größe/Farben der Kugeln sind überall gleich – nur Sichtbarkeit
-   und Anker (top/right) wechseln je Kontext. Standardmäßig ausgeblendet; nur
-   die Startseite (Desktop) behält die großen Hero-Blobs. */
 .mobile-orbs {
   display: none;
   position: absolute;
@@ -591,7 +557,7 @@ button {
   border-radius: 50%;
   filter: drop-shadow(0 0.5rem 1.25rem rgba(20, 33, 61, 0.16));
 }
-/* Radialer Verlauf gibt den Kugeln einen leichten 3D-Glanz. */
+
 .mobile-orb.purple {
   width: 6.5rem;
   height: 6.5rem;
@@ -618,10 +584,6 @@ button {
   );
 }
 
-/* Unterseiten (Desktop): statt der großen, blassen Hero-Blobs das kompakte,
-   sanft schwebende Kugel-Cluster oben rechts – einheitlich auf allen
-   Unterseiten und lebendiger bei wenig Inhalt. Auf Mobil bleibt die generische
-   Mobile-Regel maßgeblich, die Startseite behält ihre Hero-Blobs. */
 @media (min-width: 769px) {
   .placeholder--page .bg-visual {
     display: none;
@@ -631,8 +593,7 @@ button {
     top: 2.5rem;
     right: 2.5rem;
   }
-  /* Sanftes Schweben, pro Kugel gestaffelt, damit es lebendig wirkt.
-     Transform-only → eigene Compositor-Ebene, kein Repaint beim Scrollen. */
+
   .placeholder--page .mobile-orb {
     animation: orb-float 7s ease-in-out infinite;
     will-change: transform;
@@ -647,7 +608,6 @@ button {
   }
 }
 
-/* Leichtes Driften – Transform-only zugunsten der Scroll-Performance. */
 @keyframes orb-float {
   0%,
   100% {
@@ -660,13 +620,11 @@ button {
 
 .blob {
   position: absolute;
-  /* Runde Kugeln (radialer 3D-Glanz, s. u.) statt der früheren flachen,
-     organischen Blobs — gleicher Stil wie die Farbtupfer-Orbs. */
+
   border-radius: 50%;
   filter: drop-shadow(0 1.25rem 2.75rem rgba(20, 33, 61, 0.18));
   animation: morph 14s ease-in-out infinite;
-  /* Own compositor layer so the drop-shadow is rasterised once and the
-     animation just moves the texture — no per-frame repaint while scrolling. */
+
   will-change: transform;
 }
 
@@ -718,9 +676,6 @@ button {
   will-change: transform;
 }
 
-/* Transform-only: animating border-radius forces a repaint every frame and
-   is the main cause of scroll stutter on phones. Drift + rotate keep the
-   blobs feeling alive while staying fully GPU-composited. */
 @keyframes morph {
   0%,
   100% {
@@ -766,9 +721,6 @@ button {
   }
 }
 
-/* Reusable decorative sphere cluster that lives in the whitespace beside the
-   centred content column. Hidden by default; only switched on at desktop widths
-   where there's room to bleed it in from the page edge. */
 .section-orbs {
   display: none;
 }
@@ -777,13 +729,10 @@ button {
   position: absolute;
   border-radius: 50%;
   filter: drop-shadow(0 0.75rem 1.75rem rgba(20, 33, 61, 0.16));
-  /* Reuse the hero float — rotation is invisible on a circle, so only the
-     gentle vertical drift shows. */
+
   animation: morph 16s ease-in-out infinite;
 }
 
-/* Radialer Verlauf gibt den Kugeln einen weichen 3D-Glanz. Blau/grün-betont,
-   um sich vom lila-lastigen Hero-Akzent oben rechts abzusetzen. */
 .section-orb.blue {
   background: radial-gradient(
     circle at 32% 28%,
@@ -801,9 +750,7 @@ button {
 }
 
 @media (min-width: 1200px) {
-  /* Akzent im Übergang zwischen "Projekte" und dem Team-Teaser: links in den
-     freien Rand getuckt, im großen oberen Abstand der Team-Sektion. z-index 0
-     hält ihn hinter dem Sektionsinhalt (die Sektion liegt über .bg-visual). */
+
   .section-orbs--team {
     display: block;
     position: absolute;
@@ -834,9 +781,6 @@ button {
   }
 }
 
-/* ------------------------------------------------------------------ */
-/* Home hero CTA                                                       */
-/* ------------------------------------------------------------------ */
 .content-group {
   display: flex;
   flex-direction: column;
@@ -864,9 +808,6 @@ button {
   box-shadow: 0 1rem 2.25rem rgba(58, 111, 216, 0.42);
 }
 
-/* ------------------------------------------------------------------ */
-/* Floating micro-sidebar                                             */
-/* ------------------------------------------------------------------ */
 .sidebar {
   position: fixed;
   top: 50%;
@@ -913,12 +854,11 @@ button {
   border-radius: 0.95rem;
   text-align: left;
   transition: color 0.2s ease, background 0.2s ease;
-  /* Snappier touch: no grey tap flash, no 300ms click delay. */
+
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
 
-/* Quick press feedback so taps feel responsive on mobile. */
 .sidebar-item:active .sidebar-icon {
   transform: scale(0.92);
 }
@@ -933,8 +873,6 @@ button {
   background: rgba(58, 111, 216, 0.12);
 }
 
-/* Aktiv-Indikator: farbiger Strich am rechten Rand des aktiven Items, damit die
-   aktuelle Seite auch ohne Label sofort erkennbar ist. */
 .sidebar-item.is-active::before {
   content: "";
   position: absolute;
@@ -970,8 +908,6 @@ button {
   display: block;
 }
 
-/* Label erscheint als schwebende Pill links neben dem Icon (die Leiste klebt am
-   rechten Rand) — nur beim Hover/Focus des EINZELNEN Items, kein Layout-Sprung. */
 .sidebar-label {
   position: absolute;
   top: 50%;
@@ -998,24 +934,14 @@ button {
   transform: translateY(-50%) translateX(0);
 }
 
-/* ------------------------------------------------------------------ */
-/* Content-page shell (footer in flow, page heading)                  */
-/* ------------------------------------------------------------------ */
 .placeholder--page {
   padding-right: 6rem;
 }
 
-/* On content pages, let the content block absorb the free space so the footer
-   is pushed to the bottom on short pages, while the footer keeps its fixed top
-   gap (base margin-top) on tall pages — mirrors the homepage mechanism and
-   avoids content sticking to the footer line. */
 .placeholder--page > *:has(+ .footer) {
   margin-bottom: auto;
 }
 
-/* Centred content column for sub-pages, mirroring the homepage sections
-   (.pillars / .home-projects / .home-contact) so the page sits in the middle
-   of the available width instead of hugging the left edge. */
 .page-column {
   align-self: center;
   width: 100%;
@@ -1039,9 +965,6 @@ button {
   font-weight: 700;
 }
 
-/* ------------------------------------------------------------------ */
-/* Project overview grid + cards                                      */
-/* ------------------------------------------------------------------ */
 .project-grid {
   position: relative;
   z-index: 2;
@@ -1128,9 +1051,6 @@ button {
   color: #9a6a05;
 }
 
-/* ------------------------------------------------------------------ */
-/* Project detail                                                     */
-/* ------------------------------------------------------------------ */
 .project-detail {
   position: relative;
   z-index: 3;
@@ -1170,7 +1090,6 @@ button {
   object-fit: cover;
 }
 
-/* Center the optional "open project website" button under the hero. */
 .project-hero .cta {
   align-self: center;
 }
@@ -1283,9 +1202,6 @@ button {
   color: var(--muted);
 }
 
-/* ------------------------------------------------------------------ */
-/* Funding logos                                                      */
-/* ------------------------------------------------------------------ */
 .funding-bar {
   margin-top: 1.5rem;
   padding-top: 1.4rem;
@@ -1314,9 +1230,6 @@ button {
   display: block;
 }
 
-/* ------------------------------------------------------------------ */
-/* Project byline + credits (contributors, partners / clients)        */
-/* ------------------------------------------------------------------ */
 .project-byline {
   display: flex;
   flex-wrap: wrap;
@@ -1327,7 +1240,6 @@ button {
   color: var(--muted);
 }
 
-/* Dot separator between byline items (author · created · updated). */
 .project-byline-item {
   position: relative;
 }
@@ -1349,7 +1261,6 @@ button {
   gap: 0.9rem;
 }
 
-/* Labelled key-facts block (funding, duration, …) above the project team. */
 .facts-list {
   margin: 0;
   display: grid;
@@ -1369,7 +1280,6 @@ button {
   font-size: 0.95rem;
 }
 
-/* Compact facts strip in the hero — quick orientation for the reader. */
 .project-facts-inline {
   display: flex;
   flex-wrap: wrap;
@@ -1442,8 +1352,7 @@ button {
   flex-direction: column;
   gap: 0.1rem;
   min-width: 0;
-  /* Break long single words (e.g. "NewWorkDesignLab",
-     "Wissenschaftlicher") instead of letting them overflow the card. */
+
   overflow-wrap: break-word;
   word-break: break-word;
 }
@@ -1497,9 +1406,6 @@ a.partner-card:hover {
   font-size: 0.95rem;
 }
 
-/* ------------------------------------------------------------------ */
-/* Team                                                               */
-/* ------------------------------------------------------------------ */
 .team-section {
   position: relative;
   z-index: 2;
@@ -1511,7 +1417,6 @@ a.partner-card:hover {
   gap: 1.2rem;
 }
 
-/* Extra breathing room between the "current" and "alumni" team groups. */
 .team-section + .team-section {
   margin-top: 2.5rem;
 }
@@ -1647,9 +1552,6 @@ a.partner-card:hover {
   height: 1.1rem;
 }
 
-/* ------------------------------------------------------------------ */
-/* Contact                                                            */
-/* ------------------------------------------------------------------ */
 .contact {
   gap: 1.6rem;
 }
@@ -1686,9 +1588,6 @@ a.partner-card:hover {
   text-underline-offset: 0.2em;
 }
 
-/* ------------------------------------------------------------------ */
-/* Home pillars section                                               */
-/* ------------------------------------------------------------------ */
 .pillars {
   position: relative;
   z-index: 3;
@@ -1774,9 +1673,6 @@ a.partner-card:hover {
   background: linear-gradient(90deg, var(--orange), #ffcf6b);
 }
 
-/* Soft gradient shape anchored in the bottom-right corner, clipped by the
-   card's overflow:hidden so it reads as a quiet, voluminous watermark behind
-   the text. The pillar colour comes from `color`; `opacity` keeps it subtle. */
 .pillar-shape {
   position: absolute;
   bottom: -2rem;
@@ -1834,9 +1730,6 @@ a.partner-card:hover {
   z-index: 1;
 }
 
-/* ------------------------------------------------------------------ */
-/* Home: featured projects                                            */
-/* ------------------------------------------------------------------ */
 .home-projects {
   position: relative;
   z-index: 3;
@@ -1862,8 +1755,6 @@ a.partner-card:hover {
   gap: 1.75rem;
 }
 
-/* Image-dominant tile: cover fills the card, the title sits over a soft
-   gradient at the bottom. Distinct from the project-overview cards. */
 .home-project-tile {
   position: relative;
   display: flex;
@@ -1938,21 +1829,13 @@ a.partner-card:hover {
   height: 1.25rem;
 }
 
-/* ------------------------------------------------------------------ */
-/* Home: team teaser                                                   */
-/* ------------------------------------------------------------------ */
-/* Übergangsband zur Teamseite. Bewusst asymmetrisch und flach, statt der
-   zentrierten Überschrift + Grid, die die übrigen Startseiten-Sektionen
-   teilen — so liest es sich als Übergang, nicht als eigenes Kapitel. */
 .home-team {
   position: relative;
   z-index: 3;
   align-self: center;
   width: 100%;
   max-width: 72rem;
-  /* Viel Luft nach oben trennt vom Projekte-Block (+3rem von dessen
-     padding-bottom = 14rem). Nach unten kein Padding — den knappen Rest
-     setzt die Regel unter .home-events. */
+
   padding-top: 11rem;
   padding-bottom: 0;
   display: flex;
@@ -1960,9 +1843,6 @@ a.partner-card:hover {
   gap: 1.75rem;
 }
 
-/* Teaser und "Wir sind dabei" sollen als ein zusammengehöriger Block gelesen
-   werden: der Abstand nach unten ist gut ein Drittel des Abstands nach oben,
-   bleibt mit 5rem aber großzügig. */
 .home-team + .home-events {
   padding-top: 5rem;
 }
@@ -1989,8 +1869,6 @@ a.partner-card:hover {
   gap: 1.5rem;
 }
 
-/* Überlappende Portraits — der leichte Höhenversatz macht aus der Reihe eine
-   Gruppe. Die Karte, über der die Maus liegt, hebt sich frei. */
 .home-team-faces {
   display: flex;
   align-items: center;
@@ -2034,9 +1912,6 @@ a.partner-card:hover {
   color: var(--muted);
 }
 
-/* ------------------------------------------------------------------ */
-/* Home: events / presence strip                                      */
-/* ------------------------------------------------------------------ */
 .home-events {
   position: relative;
   z-index: 3;
@@ -2050,20 +1925,13 @@ a.partner-card:hover {
   gap: 3.5rem;
 }
 
-/* Trägt die absolut positionierten Pfeile. Sie liegen bewusst außerhalb von
-   `.event-strip` — dessen overflow-x und Fade-Maske würden sie sonst
-   abschneiden bzw. ausblenden. */
 .event-strip-wrap {
   position: relative;
 }
 
-/* Runde Blätter-Pfeile im Seitenrand: Maße/Hover wie `.footer-social`, der
-   Glas-Look wie `.event-card-date`. Sie sitzen komplett im Seiten-Padding
-   (`.placeholder`, 4.5rem / var(--edge)) und verdecken so keine Karte. */
 .event-nav {
   position: absolute;
-  /* Korrigiert die asymmetrische Polsterung des Streifens (0.5rem oben,
-     1.25rem unten) — sonst säße der Pfeil unter der Kartenmitte. */
+
   top: calc(50% - 0.375rem);
   transform: translateY(-50%);
   z-index: 2;
@@ -2113,8 +1981,6 @@ a.partner-card:hover {
   right: -3.75rem;
 }
 
-/* Horizontal, swipeable strip. The right-edge mask hints that more cards
-   follow; padding keeps the lift/shadow and scrollbar from being clipped. */
 .event-strip {
   list-style: none;
   margin: 0;
@@ -2167,7 +2033,6 @@ a.partner-card:hover {
   z-index: 0;
 }
 
-/* Datums-Marker oben rechts auf der Karte (über dem Bild und dem Verlauf). */
 .event-card-date {
   position: absolute;
   top: 0.9rem;
@@ -2203,8 +2068,6 @@ a.partner-card:hover {
   line-height: 1.35;
 }
 
-/* Blurb is revealed on hover/focus (desktop); collapsed by default so the
-   image stays the focus. Touch devices show it permanently (see mobile block). */
 .event-card-blurb {
   font-size: 0.92rem;
   line-height: 1.5;
@@ -2221,16 +2084,13 @@ a.partner-card:hover {
   opacity: 1;
 }
 
-/* ------------------------------------------------------------------ */
-/* Home: closing contact section                                      */
-/* ------------------------------------------------------------------ */
 .home-contact {
   position: relative;
   z-index: 3;
   align-self: center;
   width: 100%;
   max-width: 72rem;
-  /* Generous breathing room above so the page settles before its close. */
+
   padding-top: 11rem;
   padding-bottom: 2rem;
   display: flex;
@@ -2238,21 +2098,14 @@ a.partner-card:hover {
   gap: 3.5rem;
 }
 
-/* On the dedicated contact page the block stands on its own (no preceding
-   sections), so drop the large top whitespace and let it sit just below the
-   page brand. */
 .home-contact--standalone {
   padding-top: 0;
 }
 
-/* Named point of contact on the dedicated contact page: a calm white card
-   that introduces Marius Brade before the gradient contact panel. */
 .contact-spotlight {
   position: relative;
   z-index: 3;
-  /* Grid: photo in column 1 (spanning both rows), the role/name/title meta in
-     column 2 row 1, and the bio in column 2 row 2. This same structure flips to
-     "photo + meta side by side, bio full-width below" on mobile. */
+
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   column-gap: clamp(1.5rem, 3vw, 2.75rem);
@@ -2322,8 +2175,6 @@ a.partner-card:hover {
   color: var(--ink-soft);
 }
 
-/* The "bunte viereckige" element: a vivid brand-gradient panel that lifts the
-   contact block off the page and rounds the homepage off. */
 .home-contact-panel {
   position: relative;
   overflow: hidden;
@@ -2342,7 +2193,6 @@ a.partner-card:hover {
   align-items: start;
 }
 
-/* Soft, rotated colour pops break up the gradient and add playfulness. */
 .home-contact-panel::before,
 .home-contact-panel::after {
   content: "";
@@ -2397,8 +2247,6 @@ a.partner-card:hover {
   margin-bottom: 0.25rem;
 }
 
-/* The named contact (Marius Brade): emphasised, but kept smaller and in the
-   sans face so it reads as a person and not a second org heading. */
 .home-contact-block strong.home-contact-person {
   font-family: inherit;
   font-size: 1.3rem;
@@ -2459,8 +2307,7 @@ a.partner-card:hover {
   font-family: inherit;
   font-size: 1.12rem;
   color: var(--ink);
-  /* Fill the field and stay inside the padded panel — without these the
-     inputs' intrinsic width forces horizontal overflow on small screens. */
+
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
@@ -2493,9 +2340,34 @@ a.partner-card:hover {
   border: none;
 }
 
-/* ------------------------------------------------------------------ */
-/* Tablet                                                             */
-/* ------------------------------------------------------------------ */
+.home-contact-submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.home-contact-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.home-contact-status {
+  margin: 0.2rem 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.home-contact-status--ok {
+  color: #1f8a4c;
+}
+
+.home-contact-status--err {
+  color: #c0392b;
+}
+
 @media (max-width: 860px) and (min-width: 769px) {
   .placeholder--page {
     padding-right: 5rem;
@@ -2520,17 +2392,11 @@ a.partner-card:hover {
   }
 }
 
-/* ------------------------------------------------------------------ */
-/* Mobile (phones & small tablets)                                    */
-/* ------------------------------------------------------------------ */
 @media (max-width: 768px) {
   :root {
     --edge: 1.25rem;
   }
 
-  /* Die flachen Hero-Blobs rutschten mobil nach unten in den Footerbereich.
-     Mobil blenden wir .bg-visual ganz aus — den Akzent übernehmen oben die
-     Farbtupfer (.mobile-orbs) und unten die kräftigen Footer-Kugeln. */
   .bg-visual {
     display: none;
   }
@@ -2538,25 +2404,16 @@ a.partner-card:hover {
     animation: none;
   }
 
-  /* Farbige Kugeln oben rechts: sichtbarer Akzent, der dezent in der Ecke
-     sitzt und kaum Platz wegnimmt. Bleibt im oberen Bereich und scrollt mit
-     dem Seitenanfang weg, statt Inhalte zu überdecken. Größe/Farben kommen aus
-     den Basis-Regeln; hier nur Sichtbarkeit + Anker für Mobil. */
   .mobile-orbs {
     display: block;
     top: -1.5rem;
     right: -1.25rem;
   }
 
-  /* Let pages grow and scroll naturally instead of being clipped. */
   html,
   body {
     height: auto;
-    /* `clip` hides horizontal overflow WITHOUT turning the element into a
-       scroll container — unlike `hidden`, which made <body> independently
-       scrollable (a stray ~60px from the decorative blob) and broke touch
-       scroll chaining: the first swipe stalled on <body>, then a second
-       swipe scrolled the viewport. With `clip` only the viewport scrolls. */
+
     overflow-x: clip;
     overflow-y: visible;
   }
@@ -2579,14 +2436,11 @@ a.partner-card:hover {
     margin-bottom: 1.75rem;
   }
 
-  /* Home & generic content */
   .content {
     gap: 2rem;
     max-width: 100%;
   }
 
-  /* Mobile home: pull the headline + lead up closer to the logo, while the
-     CTA keeps its position (the extra gap opens up between lead and button). */
   .placeholder:not(.placeholder--page) > .content {
     margin-top: 1rem;
   }
@@ -2621,7 +2475,6 @@ a.partner-card:hover {
     padding: 0.8rem 1.4rem;
   }
 
-  /* Sub-page headings */
   .page-head {
     margin-bottom: 2rem;
   }
@@ -2633,8 +2486,7 @@ a.partner-card:hover {
     font-size: 2rem;
     line-height: 1.18;
   }
-  /* Team- und Projekte-Überschriften auf dieselbe Größe wie die Kontaktseite
-     (.pillars-heading = 2.2rem) anheben. */
+
   .page-head h1 {
     font-size: 2.2rem;
   }
@@ -2648,7 +2500,6 @@ a.partner-card:hover {
     font-size: 1rem;
   }
 
-  /* Grids → single / two columns */
   .project-grid {
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -2667,7 +2518,6 @@ a.partner-card:hover {
     gap: 1.25rem;
   }
 
-  /* Pillars */
   .pillars {
     padding-top: 3.5rem;
     gap: 2.5rem;
@@ -2698,7 +2548,6 @@ a.partner-card:hover {
     right: -1.25rem;
   }
 
-  /* Featured projects */
   .home-projects {
     padding-top: 3.5rem;
     gap: 2.5rem;
@@ -2714,15 +2563,9 @@ a.partner-card:hover {
     font-size: 1.6rem;
   }
 
-  /* Team teaser — mobil fällt der Split ohnehin in eine Spalte zusammen; der
-     asymmetrische Auftritt des Desktops würde dann nur als Ausreißer in einer
-     sonst durchgehend zentrierten Spalte lesen. Also hier zentriert wie die
-     übrigen Sektionen, mit demselben Abstand oben und unten. */
   .home-team {
     padding-top: 3.5rem;
-    /* Basis ist 0 — den Rest des Abstands trug auf dem Desktop die Kopplung an
-       die Events. Mobil zahlt die Sektion ihre untere Hälfte selbst, wie alle
-       anderen auch (3rem unten + 3.5rem oben der nächsten = 6.5rem). */
+
     padding-bottom: 3rem;
   }
   .home-team-inner {
@@ -2744,15 +2587,11 @@ a.partner-card:hover {
     margin-left: -1rem;
   }
 
-  /* Events strip */
   .home-events {
     padding-top: 3.5rem;
     gap: 2.5rem;
   }
-  /* Die enge Kopplung an den Teaser gilt nur auf dem Desktop; mobil bekommt
-     "Wir sind dabei" denselben Abstand wie jede andere Sektion. Der Reset muss
-     die Selektorform des Desktops wiederholen, sonst schlägt dessen 5rem-Regel
-     (0-1-1) die schlichte `.home-events`-Regel (0-1-0) auch hier. */
+
   .home-team + .home-events {
     padding-top: 3.5rem;
   }
@@ -2760,31 +2599,26 @@ a.partner-card:hover {
     flex-basis: 80vw;
     aspect-ratio: 4 / 3;
   }
-  /* No hover on touch — keep the blurb visible. */
+
   .event-card-blurb {
     max-height: none;
     opacity: 1;
   }
-  /* Wischen und Auto-Scroll tragen mobil; im auf 1.25rem geschrumpften
-     Seitenrand (var(--edge)) wäre für die Pfeile ohnehin kein Platz. */
+
   .event-nav {
     display: none;
   }
 
-  /* Closing contact section */
   .home-contact {
     padding-top: 3.5rem;
     gap: 2.5rem;
   }
-  /* Eigenständige Kontaktseite: Überschrift + Subtext linksbündig, passend zu
-     den Projekte-/Team-Seiten (statt zentriert wie auf der Startseite). */
+
   .home-contact--standalone .pillars-intro {
     align-items: flex-start;
     text-align: left;
   }
-  /* Gleiche Specificity wie `.home-contact` (beides eine Klasse) — diese Regel
-     steht bewusst NACH der 3.5rem-Regel oben, damit die Kontaktseite denselben
-     Top-Abstand wie die Projekte-/Team-Seiten bekommt (kein Extra-Padding). */
+
   .home-contact--standalone {
     padding-top: 0;
   }
@@ -2794,10 +2628,7 @@ a.partner-card:hover {
     border-radius: 1.25rem;
     padding: 1.5rem;
   }
-  /* Mobil zuerst das Formular zeigen: Auf dem Handy klappt das Panel in eine
-     Spalte, wodurch sonst der ganze Kontakt-Text (NWDL → Adresse → Telefon →
-     Marius) vor den Eingabefeldern stünde. `order` dreht die Reihenfolge nur
-     mobil um, das Desktop-Layout (Info links, Formular rechts) bleibt gleich. */
+
   .home-contact-form {
     order: -1;
     padding: 1.25rem;
@@ -2806,7 +2637,7 @@ a.partner-card:hover {
   .home-contact-field textarea {
     min-height: 5rem;
   }
-  /* Scale the info text down so the block doesn't read oversized on phones. */
+
   .home-contact-block {
     font-size: 1rem;
   }
@@ -2816,9 +2647,7 @@ a.partner-card:hover {
   .home-contact-block strong.home-contact-person {
     font-size: 1.15rem;
   }
-  /* Mobile: "Ansprechpartner" als Überschrift oben über die volle Breite,
-     darunter Name/Titel links und das Bild rechts daneben, die Bio darunter
-     über die volle Breite. Alles linksbündig. */
+
   .contact-spotlight {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
@@ -2843,7 +2672,6 @@ a.partner-card:hover {
     margin-top: 0;
   }
 
-  /* Footer flows at the end on every page; columns stack into one. */
   .placeholder .footer {
     margin-top: 2.5rem;
     padding: 2.25rem 1.25rem 1.75rem;
@@ -2860,8 +2688,7 @@ a.partner-card:hover {
     margin-right: 0;
     flex-basis: 100%;
   }
-  /* On mobile the back-to-top pill lives next to the LinkedIn button (see
-     .footer-social-row); the copy of it in the bottom bar is hidden. */
+
   .footer-top--bar {
     display: none;
   }
@@ -2871,7 +2698,6 @@ a.partner-card:hover {
     padding: 0.5rem 1rem;
   }
 
-  /* Sidebar → horizontal pill docked at the bottom center */
   .sidebar {
     top: auto;
     bottom: 0.9rem;
@@ -2903,19 +2729,16 @@ a.partner-card:hover {
     height: 2.9rem;
   }
 
-  /* Labels can't expand sideways in the bar — keep it icon-only. */
   .sidebar-label,
   .sidebar-item:hover .sidebar-label,
   .sidebar-item:focus-visible .sidebar-label {
     display: none;
   }
 
-  /* No active-indicator stripe in the horizontal bottom bar. */
   .sidebar-item.is-active::before {
     display: none;
   }
 
-  /* Compact top-left brand */
   .page-brand {
     gap: 0.5rem;
   }
@@ -2924,4 +2747,3 @@ a.partner-card:hover {
     height: 3.5rem;
   }
 }
-

@@ -69,7 +69,11 @@
         "emailPlaceholder": "deine@adresse.de",
         "message": "Nachricht",
         "messagePlaceholder": "Worum geht es?",
-        "submit": "Nachricht senden"
+        "submit": "Nachricht senden",
+        "sending": "Wird gesendet …",
+        "success": "Danke! Deine Nachricht wurde gesendet.",
+        "error": "Es ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
+        "rateLimit": "Zu viele Anfragen. Bitte versuche es später erneut."
       }
     },
     "pillarsHeading": "Was uns antreibt.",
@@ -225,7 +229,11 @@
         "emailPlaceholder": "you@address.com",
         "message": "Message",
         "messagePlaceholder": "What's it about?",
-        "submit": "Send message"
+        "submit": "Send message",
+        "sending": "Sending …",
+        "success": "Thank you! Your message has been sent.",
+        "error": "Something went wrong. Please try again later.",
+        "rateLimit": "Too many requests. Please try again later."
       }
     },
     "pillarsHeading": "What drives us.",
