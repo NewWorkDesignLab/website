@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getProject, projects } from "../../../content/projects";
+import { pageMetadata } from "../../../content/seo";
 import { ProjectDetail } from "./ProjectDetail";
 
 export function generateStaticParams() {
@@ -15,10 +16,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  return {
+  return pageMetadata({
     title: project.title,
     description: project.tagline.de,
-  };
+    path: `/projects/${project.slug}`,
+    // Covers are still SVG placeholders; socialImage() falls back to the site
+    // card until real raster covers land.
+    image: project.cover,
+  });
 }
 
 export default async function ProjectPage({

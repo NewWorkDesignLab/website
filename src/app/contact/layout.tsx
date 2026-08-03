@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { pageMetadata, seo } from "../../content/seo";
 
-export const metadata: Metadata = {
-  title: "Kontakt",
-  description:
-    "Kontakt zum NewWorkDesignLab – Ansprechpartner Prof. Dr. Marius Brade.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: seo.contactTitle,
+  description: seo.contactDescription,
+  path: "/contact",
+});
 
 export default function ContactLayout({
   children,

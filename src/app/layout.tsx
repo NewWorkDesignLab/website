@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "../styles/globals.css";
 import { LangProvider } from "./useLang";
+import { SITE_URL, pageMetadata, seo } from "../content/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,14 +16,18 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+/**
+ * Root metadata doubles as the homepage's metadata (app/page.tsx is a client
+ * component and cannot export `metadata`). Every sub-route builds its own
+ * complete object via pageMetadata() instead of inheriting from here — see the
+ * note in content/seo.ts on how Next merges metadata.
+ */
 export const metadata: Metadata = {
-  metadataBase: new URL("https://newworkdesignlab.org"),
-  title: {
-    default: "NewWorkDesignLab",
-    template: "%s · NewWorkDesignLab",
-  },
-  description:
-    "Das transdisziplinäre NewWorkDesignLab forscht und gestaltet im Schnittgebiet von User Experience Design, Gamification, Softwareentwicklung und kognitiver Ergonomie.",
+  metadataBase: new URL(SITE_URL),
+  ...pageMetadata({
+    description: seo.homeDescription,
+    path: "/",
+  }),
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
@@ -30,27 +35,13 @@ export const metadata: Metadata = {
   },
   keywords: [
     "NewWorkDesignLab",
+    "New Work Design Lab",
     "User Experience Design",
     "Gamification",
     "Kognitive Ergonomie",
     "Digital Business",
     "FH Dresden",
   ],
-  openGraph: {
-    title: "NewWorkDesignLab",
-    description:
-      "Forschung und Entwicklung für ein Erlebnis des Flow beim Arbeiten, Denken und Lernen.",
-    url: "https://newworkdesignlab.org",
-    siteName: "NewWorkDesignLab",
-    locale: "de_DE",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "NewWorkDesignLab",
-    description:
-      "Forschung und Entwicklung für ein Erlebnis des Flow beim Arbeiten, Denken und Lernen.",
-  },
 };
 
 export default function RootLayout({

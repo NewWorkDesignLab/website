@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { pageMetadata, seo } from "../../content/seo";
 
-export const metadata: Metadata = {
-  title: "Legal Notice",
-  description:
-    "Legal notice of the NewWorkDesignLab at Fachhochschule Dresden (FHD).",
-};
+export const metadata: Metadata = pageMetadata({
+  title: seo.legalTitle,
+  description: seo.legalDescription,
+  path: "/legal-note",
+});
 
 export default function LegalNoteLayout({
   children,

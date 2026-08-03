@@ -1,5 +1,17 @@
 {
   "de": {
+    "seo": {
+      "homeTitle": "NewWorkDesignLab – Digital Business & New Work an der FH Dresden",
+      "homeDescription": "Das NewWorkDesignLab der Fachhochschule Dresden forscht und entwickelt im Schnittgebiet von User Experience Design, Gamification, Softwareentwicklung und kognitiver Ergonomie – für ein Erlebnis des Flow beim Arbeiten, Denken und Lernen.",
+      "projectsTitle": "Projekte",
+      "projectsDescription": "Projekte des NewWorkDesignLab aus Virtual Reality, Augmented Reality, Forschung und Künstlicher Intelligenz – gemeinsam mit Partnern aus Industrie, Bildung und Wissenschaft.",
+      "teamTitle": "Team",
+      "teamDescription": "Die Menschen hinter dem NewWorkDesignLab: ein transdisziplinäres Team aus Design, Informatik und Kognitionswissenschaft an der Fachhochschule Dresden.",
+      "contactTitle": "Kontakt",
+      "contactDescription": "Kontakt zum NewWorkDesignLab an der Fachhochschule Dresden, Güntzstr. 1, 01069 Dresden. Ansprechpartner: Prof. Dr. Marius Brade.",
+      "legalTitle": "Impressum",
+      "legalDescription": "Impressum des NewWorkDesignLab an der Fachhochschule Dresden (FHD)."
+    },
     "badge": "NewWorkDesignLab",
     "titleLead": "Wir gestalten",
     "titleAccent": "Flow",
@@ -160,6 +172,18 @@
     }
   },
   "en": {
+    "seo": {
+      "homeTitle": "NewWorkDesignLab – Digital Business & New Work at FH Dresden",
+      "homeDescription": "The NewWorkDesignLab at the University of Applied Sciences Dresden researches and builds at the intersection of user experience design, gamification, software development and cognitive ergonomics – for an experience of flow while working, thinking and learning.",
+      "projectsTitle": "Projects",
+      "projectsDescription": "Projects of the NewWorkDesignLab across virtual reality, augmented reality, research and artificial intelligence – built with partners from industry, education and science.",
+      "teamTitle": "Team",
+      "teamDescription": "The people behind the NewWorkDesignLab: a transdisciplinary team from design, computer science and cognitive science at the University of Applied Sciences Dresden.",
+      "contactTitle": "Contact",
+      "contactDescription": "Get in touch with the NewWorkDesignLab at the University of Applied Sciences Dresden, Güntzstr. 1, 01069 Dresden. Contact: Prof. Dr. Marius Brade.",
+      "legalTitle": "Legal Note",
+      "legalDescription": "Legal note of the NewWorkDesignLab at the University of Applied Sciences Dresden (FHD)."
+    },
     "badge": "NewWorkDesignLab",
     "titleLead": "We design",
     "titleAccent": "flow",

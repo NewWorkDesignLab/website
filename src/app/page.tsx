@@ -6,6 +6,8 @@ import Link from "next/link";
 import texts from "../content/texts.json";
 import { useLang } from "./useLang";
 import { Background } from "../components/Background";
+import { JsonLd } from "../components/JsonLd";
+import { organizationJsonLd } from "../content/seo";
 import { Sidebar } from "../components/Sidebar";
 import { SiteFooter } from "../components/SiteFooter";
 import { EventStrip } from "../components/EventStrip";
@@ -83,6 +85,8 @@ export default function Home() {
 
   return (
     <main className="placeholder">
+      {/* Organization + WebSite entity — homepage only. */}
+      <JsonLd data={organizationJsonLd()} />
       <Background />
       <Sidebar />
 

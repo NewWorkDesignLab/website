@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { pageMetadata, seo } from "../../content/seo";
 
-export const metadata: Metadata = {
-  title: "Team",
-  description:
-    "Das Team des NewWorkDesignLab – aktuelle und ehemalige Mitarbeitende.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: seo.teamTitle,
+  description: seo.teamDescription,
+  path: "/team",
+});
 
 export default function TeamLayout({
   children,

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { pageMetadata, seo } from "../../content/seo";
 
-export const metadata: Metadata = {
-  title: "Projekte",
-  description:
-    "Projekte des NewWorkDesignLab aus Virtual Reality, Augmented Reality, Forschung und Künstlicher Intelligenz.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: seo.projectsTitle,
+  description: seo.projectsDescription,
+  path: "/projects",
+});
 
 export default function ProjectsLayout({
   children,
