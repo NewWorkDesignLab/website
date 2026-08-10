@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import texts from "./texts.json";
-import { FHD_URL, LINKEDIN_URL } from "./site";
+import { DISCORD_URL, FHD_URL, GITHUB_URL, LINKEDIN_URL } from "./site";
 
 export const SITE_URL = "https://newworkdesignlab.org";
 export const SITE_NAME = "NewWorkDesignLab";
@@ -175,7 +175,7 @@ export function organizationJsonLd() {
           "Digital Business",
           "New Work",
         ],
-        sameAs: [LINKEDIN_URL],
+        sameAs: [LINKEDIN_URL, GITHUB_URL, DISCORD_URL],
       },
       {
         "@type": "WebSite",
