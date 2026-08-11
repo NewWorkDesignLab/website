@@ -14,8 +14,7 @@ import { team } from "../content/team";
  * split collapses into one column anyway, so the section is centered and
  * spaced like every other one (see the media query in globals.css).
  *
- * Members still on a placeholder silhouette are left out of the face cluster;
- * the counter next to it still names the full current team.
+ * Members still on a placeholder silhouette are left out of the face cluster.
  */
 export function TeamTeaser() {
   const { lang } = useLang();
@@ -46,9 +45,7 @@ export function TeamTeaser() {
               </span>
             ))}
           </div>
-          <span className="home-team-count">
-            {t.count.replace("{count}", String(current.length))}
-          </span>
+          <span className="home-team-count">{t.count}</span>
         </div>
       </div>
 

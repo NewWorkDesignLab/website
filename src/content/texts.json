@@ -50,7 +50,7 @@
       "heading": "Ein kreatives Team",
       "intro": "Forschende, Entwickler:innen und Designer:innen — interdisziplinär, neugierig und mit Freude an dem, was Menschen wirklich bewegt.",
       "more": "Team kennenlernen",
-      "count": "Die {count} Gesichter des Labs"
+      "count": "Die Gesichter des Labs"
     },
     "events": {
       "heading": "Wir sind dabei.",
@@ -224,7 +224,7 @@
       "heading": "The people behind it.",
       "intro": "Researchers, developers and designers — interdisciplinary, curious, and driven by what genuinely moves people forward.",
       "more": "Meet the team",
-      "count": "{count} people in the lab"
+      "count": "The faces of the lab"
     },
     "events": {
       "heading": "We're there.",
