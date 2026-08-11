@@ -18,7 +18,11 @@ export default function TeamPage() {
       <div className="page-column">
         <section className="content page-head">
           <h1>{t.title}</h1>
-          <p className="lead">{t.intro}</p>
+          <p className="lead">
+            {t.introBefore}
+            <strong>{t.introBrand}</strong>
+            {t.intro}
+          </p>
         </section>
 
         <section className="team-section">

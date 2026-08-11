@@ -47,10 +47,10 @@
       "more": "Mehr ansehen"
     },
     "teamTeaser": {
-      "heading": "Die Menschen dahinter.",
-      "intro": "Forschende, Entwickler:innen und Designer:innen — interdisziplinär, neugierig und mit Freude an dem, was Menschen wirklich weiterbringt.",
-      "more": "Team ansehen",
-      "count": "{count} Menschen im Lab"
+      "heading": "Ein kreatives Team",
+      "intro": "Forschende, Entwickler:innen und Designer:innen — interdisziplinär, neugierig und mit Freude an dem, was Menschen wirklich bewegt.",
+      "more": "Team kennenlernen",
+      "count": "Die {count} Gesichter des Labs"
     },
     "events": {
       "heading": "Wir sind dabei.",
@@ -135,7 +135,9 @@
     },
     "teamPage": {
       "title": "Team",
-      "intro": "Die Menschen hinter dem NewWorkDesignLab. Wir sind ein transdisziplinäres Team aus Design, Informatik und Kognitionswissenschaft – verbunden durch die Begeisterung dafür, Technologie so zu gestalten, dass sie Menschen beim Arbeiten, Denken und Lernen wirklich weiterbringt. Hier findest du die Köpfe, die unsere Projekte voranbringen – aktuell und ehemals.",
+      "introBefore": "Die Menschen hinter dem ",
+      "introBrand": "NewWorkDesignLab",
+      "intro": ". Wir sind ein transdisziplinäres Team aus Design, Informatik und Kognitionswissenschaft – verbunden durch die Begeisterung dafür, Technologie so zu gestalten, dass sie Menschen beim Arbeiten, Denken und Lernen wirklich weiterbringt. Hier findest du die Köpfe, die unsere Projekte voranbringen – aktuell und ehemals.",
       "current": "Aktuelles Team",
       "alumni": "Ehemalige",
       "bioMore": "Mehr erfahren",
@@ -307,7 +309,9 @@
     },
     "teamPage": {
       "title": "Team",
-      "intro": "The people behind the NewWorkDesignLab. We are a transdisciplinary team from design, computer science and cognitive science – united by a passion for shaping technology so that it genuinely helps people work, think and learn. Meet the minds who drive our projects forward – current and former.",
+      "introBefore": "The people behind the ",
+      "introBrand": "NewWorkDesignLab",
+      "intro": ". We are a transdisciplinary team from design, computer science and cognitive science – united by a passion for shaping technology so that it genuinely helps people work, think and learn. Meet the minds who drive our projects forward – current and former.",
       "current": "Current team",
       "alumni": "Alumni",
       "bioMore": "Read more",
