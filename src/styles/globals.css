@@ -1438,6 +1438,12 @@ a.partner-card:hover {
   align-items: start;
 }
 
+@media (min-width: 769px) {
+  .team-grid-current {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .team-card {
   display: flex;
   flex-direction: column;

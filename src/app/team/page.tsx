@@ -23,7 +23,7 @@ export default function TeamPage() {
 
         <section className="team-section">
           <h2 className="team-section-title">{t.current}</h2>
-          <div className="team-grid">
+          <div className="team-grid team-grid-current">
             {current.map((m, i) => (
               <TeamCard key={i} member={m} lang={lang} />
             ))}
