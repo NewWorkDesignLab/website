@@ -10,7 +10,7 @@ export const mathematikEscapeRoom: Project = {
   categories: ["vr"],
   status: "ongoing",
   year: "2026",
-  cover: "/projects/mathematik-escape-room/MEVR_cover.webp",
+  cover: "/projects/mathematik-escape-room/MEVR_7.webp",
   funding: [],
   sections: [
     {

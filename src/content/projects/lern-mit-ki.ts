@@ -49,6 +49,14 @@ export const lernMitKi: Project = {
       },
     },
     {
+      type: "image",
+      src: "/projects/lern-mit-ki/lmki-treff-2.JPG",
+      alt: {
+        de: "Gruppenfoto der Projektbeteiligten: rund fünfzehn Personen stehen nebeneinander vor einer hellen Wand in einem Seminarraum.",
+        en: "Group photo of the project participants: around fifteen people standing side by side in front of a light-coloured wall in a seminar room.",
+      },
+    },
+    {
       type: "heading",
       text: { de: "Projektziele", en: "Project objectives" },
     },
@@ -83,6 +91,14 @@ export const lernMitKi: Project = {
           en: "Integrative capacity-building of training staff on the basis of integrated implementation scenarios for transfer into practice.",
         },
       ],
+    },
+    {
+      type: "image",
+      src: "/projects/lern-mit-ki/lmki-strom-prototype.png",
+      alt: {
+        de: "Screenshot des Lernprototyps „Stromkreis“: Im Level „Parallel = ODER“ ist ein Stromkreis mit zwei parallel geschalteten Schaltern aufgebaut, darunter die Rückmeldung „Geschafft!“ und die Werkzeuge Leitung, Schalten, Löschen und Zurücksetzen.",
+        en: "Screenshot of the “Stromkreis” learning prototype: in the “Parallel = ODER” level, a circuit with two switches wired in parallel has been built, below it the feedback “Geschafft!” and the tools for wiring, switching, deleting and resetting.",
+      },
     },
   ],
 };
