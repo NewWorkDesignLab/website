@@ -55,6 +55,10 @@ export const lernMitKi: Project = {
         de: "Gruppenfoto der Projektbeteiligten: rund fünfzehn Personen stehen nebeneinander vor einer hellen Wand in einem Seminarraum.",
         en: "Group photo of the project participants: around fifteen people standing side by side in front of a light-coloured wall in a seminar room.",
       },
+      caption: {
+        de: "Halbtagsworkshop an der FHD im Februar 2026: Die Beteiligten aller Projektpartner kamen zum gemeinsamen Austausch zusammen.",
+        en: "Half-day workshop at FHD in February 2026: everyone involved from all project partners came together to exchange ideas.",
+      },
     },
     {
       type: "heading",
@@ -98,6 +102,10 @@ export const lernMitKi: Project = {
       alt: {
         de: "Screenshot des Lernprototyps „Stromkreis“: Im Level „Parallel = ODER“ ist ein Stromkreis mit zwei parallel geschalteten Schaltern aufgebaut, darunter die Rückmeldung „Geschafft!“ und die Werkzeuge Leitung, Schalten, Löschen und Zurücksetzen.",
         en: "Screenshot of the “Stromkreis” learning prototype: in the “Parallel = ODER” level, a circuit with two switches wired in parallel has been built, below it the feedback “Geschafft!” and the tools for wiring, switching, deleting and resetting.",
+      },
+      caption: {
+        de: "Prototyp eines interaktiven Lernspiels im Web: Stromkreise werden selbst aufgebaut, geschaltet und direkt im Browser getestet.",
+        en: "Prototype of an interactive web-based learning game: circuits are built and switched by the learners themselves and tested directly in the browser.",
       },
     },
   ],
