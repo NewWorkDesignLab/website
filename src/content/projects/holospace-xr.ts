@@ -10,7 +10,7 @@ export const holospaceXr: Project = {
   categories: ["vr", "research"],
   status: "ongoing",
   year: "2025–2026",
-  cover: "/projects/holospace-xr/cover.svg",
+  cover: "/projects/holospace-xr/hsxr-1.webp",
   funding: ["eu", "freistaat-sachsen"],
   authors: ["Jonas Ludorf"],
   createdAt: "2026-06-18",
@@ -46,10 +46,10 @@ export const holospaceXr: Project = {
     },
     {
       type: "image",
-      src: "/projects/holospace-xr/concept.svg",
+      src: "/projects/holospace-xr/hsxr-ingame-2.webp",
       alt: {
-        de: "Konzept: remote Teilnehmende als Hologramme im physischen Raum",
-        en: "Concept: remote participants as holograms in the physical room",
+        de: "Realer Meetingraum und derselbe Raum mit holografischen Remote-Teilnehmenden",
+        en: "Real meeting room and the same room with holographic remote participants",
       },
     },
     {
@@ -72,7 +72,7 @@ export const holospaceXr: Project = {
     },
     {
       type: "image",
-      src: "/projects/holospace-xr/vr-minilab.svg",
+      src: "/projects/holospace-xr/minilab.png",
       alt: {
         de: "Vorprojekt VR-Minilab: physischer und virtueller Raum überlagert",
         en: "Preliminary project VR-Minilab: physical and virtual room overlaid",
@@ -120,10 +120,14 @@ export const holospaceXr: Project = {
     },
     {
       type: "image",
-      src: "/projects/holospace-xr/innovation.svg",
+      src: "/projects/holospace-xr/hsxr-ingame-1.webp",
       alt: {
-        de: "Verbindung von physischer und virtueller Realität in Echtzeit",
-        en: "Connecting physical and virtual reality in real time",
+        de: "Zwei Avatare im virtuellen Meetingraum mit visualisierter räumlicher Tonverortung",
+        en: "Two avatars in the virtual meeting room with visualised spatial audio positioning",
+      },
+      caption: {
+        de: "Immersive Klangwelt: Die Stimmen der Teilnehmenden werden positionstreu im Raum verortet („Spatial Audio“), sodass Gespräche mit natürlicher Richtung und Distanz wahrgenommen werden.",
+        en: "Immersive soundscape: participants’ voices are positioned true to their location in the room (“spatial audio”), so conversations are perceived with natural direction and distance.",
       },
     },
     {
