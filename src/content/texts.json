@@ -170,6 +170,12 @@
       "editorTitle": "Redaktionell Verantwortlicher:",
       "editor": "Prof. Dr. Marius Brade",
       "back": "Zurück zur Startseite"
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "lead": "Diese Adresse gibt es nicht (mehr). Vielleicht wurde die Seite verschoben oder der Link ist veraltet.",
+      "linksTitle": "Weiter zu:",
+      "back": "Zurück zur Startseite"
     }
   },
   "en": {
@@ -342,6 +348,12 @@
       "email": "Email: info@fh-dresden.eu",
       "editorTitle": "Responsible for content:",
       "editor": "Prof. Dr. Marius Brade",
+      "back": "Back to home"
+    },
+    "notFound": {
+      "title": "Page not found",
+      "lead": "This address does not exist (any more). The page may have moved, or the link is out of date.",
+      "linksTitle": "Continue to:",
       "back": "Back to home"
     }
   }
