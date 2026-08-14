@@ -1516,9 +1516,17 @@ a.partner-card:hover {
   margin-top: 0.55rem;
 }
 
+/* Contact icons left, bio toggle right, pinned to the bottom of the caption. */
+.team-foot {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+}
+
 .team-bio-toggle {
-  align-self: flex-start;
-  margin-top: 0.6rem;
+  margin-left: auto;
   padding: 0;
   border: 0;
   background: none;
@@ -1547,9 +1555,6 @@ a.partner-card:hover {
 .team-contact {
   display: flex;
   gap: 0.6rem;
-  /* auto keeps the icons on the card's bottom edge when cards are stretched */
-  margin-top: auto;
-  padding-top: 0.75rem;
 }
 
 .team-contact-link {
