@@ -42,19 +42,14 @@ export function TeamCard({ member, lang }: { member: Member; lang: Lang }) {
         ) : null}
 
         {member.bio ? (
-          <>
-            <button
-              type="button"
-              className="team-bio-toggle"
-              aria-expanded={bioOpen}
-              onClick={() => setBioOpen((open) => !open)}
-            >
-              {bioOpen ? t.bioLess : t.bioMore}
-            </button>
-            {bioOpen ? (
-              <p className="team-bio">{member.bio[lang]}</p>
-            ) : null}
-          </>
+          <button
+            type="button"
+            className="team-bio-toggle"
+            aria-expanded={bioOpen}
+            onClick={() => setBioOpen((open) => !open)}
+          >
+            {bioOpen ? t.bioLess : t.bioMore}
+          </button>
         ) : null}
 
         {hasContact ? (
@@ -87,6 +82,12 @@ export function TeamCard({ member, lang }: { member: Member; lang: Lang }) {
           </div>
         ) : null}
       </figcaption>
+
+      {/* Sits outside the caption on purpose: the caption is the part TeamGrid
+          measures for the shared card height, so it has to stay constant. */}
+      {member.bio && bioOpen ? (
+        <p className="team-bio">{member.bio[lang]}</p>
+      ) : null}
     </figure>
   );
 }

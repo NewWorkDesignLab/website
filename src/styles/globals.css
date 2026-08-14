@@ -1441,6 +1441,8 @@ a.partner-card:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
   gap: 1.5rem;
+  /* Cards keep their own height, so an open bio grows only its own card.
+     Equal heights come from --team-caption-h, measured in TeamGrid. */
   align-items: start;
 }
 
@@ -1483,6 +1485,8 @@ a.partner-card:hover {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  /* Set by TeamGrid to the tallest caption in the grid. */
+  min-height: var(--team-caption-h, auto);
   padding: 0.9rem 1.05rem 1.1rem;
 }
 
@@ -1530,8 +1534,11 @@ a.partner-card:hover {
   opacity: 0.7;
 }
 
+/* Sibling of the caption, not part of it — see TeamCard/TeamGrid. */
 .team-bio {
-  margin: 0.5rem 0 0;
+  margin: 0;
+  padding: 0.85rem 1.05rem 1.1rem;
+  border-top: 1px solid var(--border);
   font-size: 0.88rem;
   line-height: 1.45;
   color: var(--ink-soft);
@@ -1540,7 +1547,9 @@ a.partner-card:hover {
 .team-contact {
   display: flex;
   gap: 0.6rem;
-  margin-top: 0.75rem;
+  /* auto keeps the icons on the card's bottom edge when cards are stretched */
+  margin-top: auto;
+  padding-top: 0.75rem;
 }
 
 .team-contact-link {

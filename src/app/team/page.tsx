@@ -4,7 +4,7 @@ import texts from "../../content/texts.json";
 import { team } from "../../content/team";
 import { useLang } from "../useLang";
 import { PageShell } from "../../components/PageShell";
-import { TeamCard } from "../../components/TeamCard";
+import { TeamGrid } from "../../components/TeamGrid";
 
 export default function TeamPage() {
   const { lang } = useLang();
@@ -27,21 +27,17 @@ export default function TeamPage() {
 
         <section className="team-section">
           <h2 className="team-section-title">{t.current}</h2>
-          <div className="team-grid team-grid-current">
-            {current.map((m, i) => (
-              <TeamCard key={i} member={m} lang={lang} />
-            ))}
-          </div>
+          <TeamGrid
+            members={current}
+            lang={lang}
+            className="team-grid-current"
+          />
         </section>
 
         {alumni.length > 0 ? (
           <section className="team-section">
             <h2 className="team-section-title">{t.alumni}</h2>
-            <div className="team-grid">
-              {alumni.map((m, i) => (
-                <TeamCard key={i} member={m} lang={lang} />
-              ))}
-            </div>
+            <TeamGrid members={alumni} lang={lang} />
           </section>
         ) : null}
       </div>
