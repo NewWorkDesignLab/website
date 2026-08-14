@@ -10,7 +10,7 @@ export const lernMitKi: Project = {
   categories: ["ai", "research"],
   status: "ongoing",
   year: "2025–2028",
-  cover: "/projects/lern-mit-ki/cover.svg",
+  cover: "/projects/lern-mit-ki/cover.webp",
   funding: ["eu", "esf", "freistaat-sachsen"],
   team: ["Prof. Dr. Marius Brade", "Christian Schülke"],
   // Celina Kunze ist (noch) nicht im Team gelistet – daher inline nur mit Namen

@@ -1773,29 +1773,36 @@ a.partner-card:hover {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
+  /* Schmaler als die Sektion: die Querformat-Bänder wirken über die vollen
+     72rem zu breit, zentriert liegen sie unter dem Intro-Text. */
+  width: 100%;
+  max-width: 54rem;
+  align-self: center;
 }
 
 .home-projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
 }
 
+/* Querformat: full-width bands — same image language as the portrait tiles
+   (cover photo, dark veil, white display title), only the crop turns wide. */
 .home-project-tile {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 8 / 3;
   border-radius: var(--corner);
   overflow: hidden;
-  box-shadow: 0 0.75rem 2.5rem rgba(20, 33, 61, 0.12);
+  box-shadow: 0 0.5rem 1.75rem rgba(20, 33, 61, 0.1);
   transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
 .home-project-tile:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 2rem 4.5rem rgba(20, 33, 61, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 1.25rem 3rem rgba(20, 33, 61, 0.17);
 }
 
 .home-project-tile-img {
@@ -1807,31 +1814,64 @@ a.partner-card:hover {
   transform: scale(1.04);
 }
 
+/* Wide crop needs the veil to run sideways, otherwise the type sits on an
+   almost bright image; a soft bottom pass keeps the deep corner. */
 .home-project-tile::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(11, 18, 38, 0.88) 0%,
-    rgba(11, 18, 38, 0.35) 42%,
-    rgba(11, 18, 38, 0) 68%
-  );
+  background:
+    linear-gradient(
+      to top,
+      rgba(11, 18, 38, 0.55) 0%,
+      rgba(11, 18, 38, 0.12) 40%,
+      rgba(11, 18, 38, 0) 62%
+    ),
+    linear-gradient(
+      to right,
+      rgba(11, 18, 38, 0.88) 0%,
+      rgba(11, 18, 38, 0.62) 38%,
+      rgba(11, 18, 38, 0.12) 68%,
+      rgba(11, 18, 38, 0) 88%
+    );
   z-index: 0;
 }
 
 .home-project-tile-content {
   position: relative;
   z-index: 1;
-  padding: 1.6rem 1.6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  max-width: 26rem;
+  padding: 1.9rem 2.1rem 1.8rem;
+}
+
+.home-project-tile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag--on-image {
+  background: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(2px);
 }
 
 .home-project-tile-title {
   font-family: var(--font-display);
-  font-size: 1.85rem;
+  font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.15;
   color: #fff;
+}
+
+.home-project-tile-tagline {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .home-projects-more {
@@ -2416,6 +2456,16 @@ a.partner-card:hover {
   .home-contact-panel {
     grid-template-columns: 1fr;
   }
+  .home-project-tile {
+    aspect-ratio: 5 / 2;
+  }
+  .home-project-tile-content {
+    max-width: 24rem;
+    padding: 1.5rem 1.75rem;
+  }
+  .home-project-tile-title {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2585,8 +2635,25 @@ a.partner-card:hover {
   .home-project-tile {
     aspect-ratio: 16 / 10;
   }
+  /* Too narrow for a side veil — fall back to the bottom-anchored crop. */
+  .home-project-tile::after {
+    background: linear-gradient(
+      to top,
+      rgba(11, 18, 38, 0.9) 0%,
+      rgba(11, 18, 38, 0.45) 45%,
+      rgba(11, 18, 38, 0) 72%
+    );
+  }
+  .home-project-tile-content {
+    max-width: none;
+    gap: 0.5rem;
+    padding: 1.4rem 1.4rem 1.3rem;
+  }
   .home-project-tile-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+  }
+  .home-project-tile-tagline {
+    font-size: 0.92rem;
   }
 
   .home-team {

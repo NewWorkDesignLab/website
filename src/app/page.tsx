@@ -150,10 +150,20 @@ export default function Home() {
                   src={p.cover}
                   alt=""
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 860px) 100vw, 22rem"
+                  sizes="(max-width: 860px) 100vw, 54rem"
                 />
                 <span className="home-project-tile-content">
+                  <span className="home-project-tile-tags">
+                    {p.categories.map((c) => (
+                      <span key={c} className="tag tag--on-image">
+                        {t.projectMeta.categories[c]}
+                      </span>
+                    ))}
+                  </span>
                   <span className="home-project-tile-title">{p.title}</span>
+                  <span className="home-project-tile-tagline">
+                    {p.tagline[lang]}
+                  </span>
                 </span>
               </Link>
             ))}
