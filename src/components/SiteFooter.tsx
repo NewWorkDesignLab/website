@@ -69,7 +69,6 @@ export function SiteFooter() {
             height={56}
             className="footer-logo"
           />
-          <p className="footer-tagline">{f.tagline}</p>
           <a
             className="footer-fhd"
             href={FHD_URL}
