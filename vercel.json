@@ -63,12 +63,12 @@
       "permanent": true
     },
     {
-      "source": "/team/:slug",
+      "source": "/team/:slug([^./]+)",
       "destination": "/team/",
       "permanent": true
     },
     {
-      "source": "/team/:slug/",
+      "source": "/team/:slug([^./]+)/",
       "destination": "/team/",
       "permanent": true
     },
@@ -78,27 +78,27 @@
       "permanent": true
     },
     {
-      "source": "/events/:path(.*)",
+      "source": "/events/:path([^.]*)",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/partner/:path(.*)",
+      "source": "/partner/:path([^.]*)",
       "destination": "/projects/",
       "permanent": true
     },
     {
-      "source": "/partners/:path(.*)",
+      "source": "/partners/:path([^.]*)",
       "destination": "/projects/",
       "permanent": true
     },
     {
-      "source": "/labels/:path(.*)",
+      "source": "/labels/:path([^.]*)",
       "destination": "/projects/",
       "permanent": true
     },
     {
-      "source": "/lables/:path(.*)",
+      "source": "/lables/:path([^.]*)",
       "destination": "/projects/",
       "permanent": true
     },
@@ -153,7 +153,7 @@
       "permanent": true
     },
     {
-      "source": "/en/team/:path(.*)",
+      "source": "/en/team/:path([^.]*)",
       "destination": "/team/",
       "permanent": true
     },
@@ -163,22 +163,22 @@
       "permanent": true
     },
     {
-      "source": "/en/partner/:path(.*)",
+      "source": "/en/partner/:path([^.]*)",
       "destination": "/projects/",
       "permanent": true
     },
     {
-      "source": "/en/partners/:path(.*)",
+      "source": "/en/partners/:path([^.]*)",
       "destination": "/projects/",
       "permanent": true
     },
     {
-      "source": "/en/labels/:path(.*)",
+      "source": "/en/labels/:path([^.]*)",
       "destination": "/projects/",
       "permanent": true
     },
     {
-      "source": "/en/lables/:path(.*)",
+      "source": "/en/lables/:path([^.]*)",
       "destination": "/projects/",
       "permanent": true
     },
