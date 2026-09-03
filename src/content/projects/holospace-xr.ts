@@ -17,21 +17,25 @@ export const holospaceXr: Project = {
   updatedAt: "2026-06-22",
   details: [
     {
-      label: { de: "Förderung", en: "Funding" },
+      label: { de: "Fördergeber", en: "Funded by" },
+      value: {
+        de: "Europäische Union und Freistaat Sachsen",
+        en: "European Union and Free State of Saxony",
+      },
+    },
+    {
+      label: { de: "Förderzeitraum", en: "Funding period" },
+      value: { de: "2025–2026 (18 Monate)", en: "2025–2026 (18 months)" },
+    },
+    {
+      label: { de: "Programm", en: "Programme" },
       value: {
         de: "EFRE Validierungsförderung 2021–2027",
         en: "ERDF validation funding 2021–2027",
       },
     },
-    {
-      label: { de: "Laufzeit", en: "Duration" },
-      value: { de: "18 Monate", en: "18 months" },
-    },
   ],
-  team: ["Prof. Dr. Marius Brade", "Jonas Ludorf", "Nicos Lentzsch", "Christian Schülke", "Natalie Lehnart", "Vincent Schiller", "Cora Marie Lenz"],
-  // Otto Maurer ist (noch) nicht im Team gelistet – daher inline nur mit Namen
-  // und Platzhalter-Silhouette. Bei Bedarf später nach team.ts verschieben.
-  contributors: [{ name: "Otto Maurer", photo: "/team/placeholder-male.svg" }],
+  team: ["Prof. Dr. Marius Brade", "Jonas Ludorf", "Nicos Lentzsch", "Christian Schülke", "Vincent Schiller", "Natalie Lehnart", "Cora Marie Lenz", "Otto Maurer"],
   sections: [
     {
       type: "heading",

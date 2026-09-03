@@ -9,12 +9,40 @@ export const dinaSafetyFirst: Project = {
   },
   categories: ["vr"],
   status: "completed",
+  year: "2020–2023",
   cover: "/projects/dina-safety-first/safty_first-1.webp",
-  // Förderinformationen liegen noch nicht vor – Keys ergänzen, sobald bekannt.
+  // BMBF-Förderung über das Sonderprogramm ÜBS-Digitalisierung – kein Logo-Key
+  // in funding.ts vorhanden, die Angaben stehen daher in den details.
   funding: [],
   authors: ["Christian Kretschmer (ehem.)"],
   createdAt: "2023-07-31",
   updatedAt: "2026-06-23",
+  awards: [
+    {
+      de: "Sächsischer Digitalpreis 2022, Kategorie Gesellschaft",
+      en: "Saxon Digital Award 2022, “Society” category",
+    },
+  ],
+  details: [
+    {
+      label: { de: "Fördergeber", en: "Funded by" },
+      value: {
+        de: "Bundesministerium für Bildung und Forschung (BMBF)",
+        en: "German Federal Ministry of Education and Research (BMBF)",
+      },
+    },
+    {
+      label: { de: "Förderzeitraum", en: "Funding period" },
+      value: { de: "09/2020 – 06/2023", en: "09/2020 – 06/2023" },
+    },
+    {
+      label: { de: "Programm", en: "Programme" },
+      value: {
+        de: "Sonderprogramm ÜBS-Digitalisierung, begleitet durch das BIBB",
+        en: "“ÜBS-Digitalisierung” special programme, supervised by the BIBB",
+      },
+    },
+  ],
   team: ["Prof. Dr. Marius Brade", "Vincent Schiller", "Christian Kretschmer"],
   partners: [{ key: "ebz", kind: "client" }],
   sections: [

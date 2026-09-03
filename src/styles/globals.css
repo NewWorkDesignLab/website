@@ -13,6 +13,8 @@
   --navy: #1b2a4a;
   --border: rgba(20, 33, 61, 0.12);
   --edge: 4.5rem;
+  --edge-right: 4.5rem;
+  --section-gap: 9rem;
   --corner: 0.9375rem;
   --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
   --font-body: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
@@ -83,10 +85,11 @@ button {
   flex-direction: column;
   padding: 4.5rem;
   padding-left: var(--edge);
+  padding-right: var(--edge-right);
 }
 
 .placeholder:not(.placeholder--page) > .content {
-  margin-top: clamp(1rem, 7vh, 5rem);
+  margin-top: clamp(0.5rem, 3.6vh, 5rem);
   margin-bottom: auto;
 }
 
@@ -95,7 +98,7 @@ button {
 }
 
 .placeholder:not(.placeholder--page) .page-brand-logo img {
-  height: 5rem;
+  height: min(8.5rem, 13vh);
 }
 
 @media (min-width: 769px) {
@@ -199,7 +202,8 @@ button {
   max-width: 47.5rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  --stack-gap: clamp(1.75rem, 4.5vh, 4rem);
+  gap: var(--stack-gap);
 }
 
 .badge {
@@ -238,7 +242,7 @@ button {
 
 .content h1 {
   font-family: var(--font-display);
-  font-size: 5.6rem;
+  font-size: min(4.8rem, 8vh);
   line-height: 1.12;
   letter-spacing: -0.01em;
   margin: 0;
@@ -251,10 +255,16 @@ button {
 }
 
 .content .lead {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--ink-soft);
   max-width: 38.75rem;
   margin: 0;
+}
+
+.lead--split {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
 }
 
 .content .brand {
@@ -273,10 +283,10 @@ button {
   position: relative;
   z-index: 5;
 
-  width: 100vw;
+  width: auto;
   margin-top: 4rem;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  margin-left: calc(var(--edge) * -1);
+  margin-right: calc(var(--edge-right) * -1);
   padding: 2.75rem var(--edge) 1.75rem;
   border-top: 1px solid var(--border);
   background: var(--bg-soft);
@@ -325,14 +335,14 @@ button {
 }
 
 .footer-brand {
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   align-self: start;
-  gap: 1.5rem;
+  gap: 1.4rem;
 }
 
 .footer-logo {
-  width: 3.25rem;
+  width: 7.5rem;
   height: auto;
 }
 
@@ -344,7 +354,7 @@ button {
 
 .footer-fhd-logo {
   width: auto;
-  height: 2.1rem;
+  height: 6rem;
 }
 
 .footer-nav {
@@ -387,10 +397,14 @@ button {
   height: 1.15rem;
 }
 
+.footer-social {
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
 .footer-social:hover {
-  color: #fff;
-  background: var(--blue);
-  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(58, 111, 216, 0.09);
+  border-color: rgba(58, 111, 216, 0.45);
 }
 
 .footer-bar {
@@ -451,7 +465,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 2.75rem;
+  margin-bottom: clamp(1.25rem, 2.6vh, 2.75rem);
 }
 
 .page-brand-logo {
@@ -465,7 +479,7 @@ button {
 }
 
 .page-brand-logo img {
-  height: 5rem;
+  height: 6.25rem;
   width: auto;
   display: block;
 }
@@ -782,7 +796,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: var(--stack-gap);
 }
 
 .cta {
@@ -1272,6 +1286,7 @@ button {
   display: grid;
   grid-template-columns: max-content 1fr;
   gap: 0.5rem 1.5rem;
+  align-items: baseline;
 }
 
 .facts-label {
@@ -1323,8 +1338,8 @@ button {
 .contributor-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  grid-auto-rows: 1fr;
   gap: 1rem;
-  align-items: start;
 }
 
 .contributor-card {
@@ -1358,9 +1373,7 @@ button {
   flex-direction: column;
   gap: 0.1rem;
   min-width: 0;
-
   overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 .contributor-name {
@@ -1620,8 +1633,8 @@ a.partner-card:hover {
   align-self: center;
   width: 100%;
   max-width: 72rem;
-  padding-top: 12rem;
-  padding-bottom: 3rem;
+  padding-top: var(--section-gap);
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 5.5rem;
@@ -1762,8 +1775,8 @@ a.partner-card:hover {
   align-self: center;
   width: 100%;
   max-width: 72rem;
-  padding-top: 9rem;
-  padding-bottom: 3rem;
+  padding-top: var(--section-gap);
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 5.5rem;
@@ -1902,7 +1915,7 @@ a.partner-card:hover {
   width: 100%;
   max-width: 72rem;
 
-  padding-top: 11rem;
+  padding-top: var(--section-gap);
   padding-bottom: 0;
   display: flex;
   flex-direction: column;
@@ -1910,7 +1923,7 @@ a.partner-card:hover {
 }
 
 .home-team + .home-events {
-  padding-top: 5rem;
+  padding-top: calc(var(--section-gap) * 0.6);
 }
 
 .home-team-inner {
@@ -1984,8 +1997,8 @@ a.partner-card:hover {
   align-self: center;
   width: 100%;
   max-width: 72rem;
-  padding-top: 9rem;
-  padding-bottom: 3rem;
+  padding-top: var(--section-gap);
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
@@ -2054,11 +2067,16 @@ a.partner-card:hover {
   display: flex;
   gap: 1.5rem;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   -webkit-mask-image: linear-gradient(to right, #000 92%, transparent 100%);
   mask-image: linear-gradient(to right, #000 92%, transparent 100%);
+}
+
+.event-strip::-webkit-scrollbar {
+  display: none;
 }
 
 .event-card {
@@ -2157,7 +2175,7 @@ a.partner-card:hover {
   width: 100%;
   max-width: 72rem;
 
-  padding-top: 11rem;
+  padding-top: var(--section-gap);
   padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
@@ -2436,7 +2454,7 @@ a.partner-card:hover {
 
 @media (max-width: 860px) and (min-width: 769px) {
   .placeholder--page {
-    padding-right: 5rem;
+    --edge-right: 5rem;
   }
   .project-hero h1,
   .page-head h1,
@@ -2471,6 +2489,7 @@ a.partner-card:hover {
 @media (max-width: 768px) {
   :root {
     --edge: 1.25rem;
+    --edge-right: 1.25rem;
   }
 
   .bg-visual {
@@ -2512,17 +2531,17 @@ a.partner-card:hover {
     margin-bottom: 1.75rem;
   }
 
+  .placeholder:not(.placeholder--page) .page-brand-logo img {
+    height: 5rem;
+  }
+
   .content {
-    gap: 2rem;
+    --stack-gap: 2rem;
     max-width: 100%;
   }
 
   .placeholder:not(.placeholder--page) > .content {
     margin-top: 1rem;
-  }
-
-  .placeholder:not(.placeholder--page) .cta {
-    margin-top: 2.5rem;
   }
 
   .content h1 {
@@ -2538,9 +2557,6 @@ a.partner-card:hover {
     font-size: 1.2rem;
   }
 
-  .content-group {
-    gap: 1.5rem;
-  }
 
   .badge {
     font-size: 0.72rem;

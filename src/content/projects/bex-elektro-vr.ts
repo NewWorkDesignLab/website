@@ -21,12 +21,15 @@ export const bexElektroVr: Project = {
       },
     },
     {
-      label: { de: "Programm", en: "Programme" },
-      value: { de: "InnoVET", en: "InnoVET" },
-    },
-    {
       label: { de: "Förderzeitraum", en: "Funding period" },
       value: { de: "01.10.2020 – 31.01.2025", en: "1 Oct 2020 – 31 Jan 2025" },
+    },
+    {
+      label: { de: "Programm", en: "Programme" },
+      value: {
+        de: "InnoVET – Innovationen für eine exzellente berufliche Bildung",
+        en: "InnoVET – Innovations for excellent vocational education and training",
+      },
     },
   ],
   team: ["Prof. Dr. Marius Brade", "Jonas Ludorf", "Vincent Schiller"],

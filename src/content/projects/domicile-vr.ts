@@ -13,20 +13,28 @@ export const domicileVr: Project = {
   cover: "/projects/domicile-vr/domicile-1.webp",
   externalUrl: "https://www.domicile-vr.de",
   funding: ["esf-eu", "freistaat-sachsen"],
+  team: ["Prof. Dr. Marius Brade", "Tobias Bohn"],
   authors: ["Tobias Bohn (ehem.)"],
   createdAt: "2022-05-06",
   updatedAt: "2026-06-23",
   details: [
     {
-      label: { de: "Förderung", en: "Funding" },
+      label: { de: "Fördergeber", en: "Funded by" },
+      value: {
+        de: "Sächsisches Staatsministerium für Wirtschaft, Arbeit und Verkehr",
+        en: "Saxon State Ministry for Economic Affairs, Labour and Transport",
+      },
+    },
+    {
+      label: { de: "Förderzeitraum", en: "Funding period" },
+      value: { de: "01.05.2019 – 30.04.2022", en: "1 May 2019 – 30 April 2022" },
+    },
+    {
+      label: { de: "Programm", en: "Programme" },
       value: {
         de: "ESF Berufliche Bildung 2014–2020",
         en: "ESF vocational training 2014–2020",
       },
-    },
-    {
-      label: { de: "Laufzeit", en: "Duration" },
-      value: { de: "01.05.2019 – 30.04.2022", en: "1 May 2019 – 30 April 2022" },
     },
   ],
   partners: [{ key: "afbb" }, { key: "tu-dresden" }, { key: "fhd" }],

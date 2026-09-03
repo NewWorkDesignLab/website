@@ -63,12 +63,12 @@ export function ProjectDetail({ project }: { project: Project }) {
             </p>
           ) : null}
 
-          {project.details && project.details.length > 0 ? (
+          {project.awards && project.awards.length > 0 ? (
             <dl className="project-facts-inline">
-              {project.details.map((d, i) => (
+              {project.awards.map((award, i) => (
                 <div key={i} className="project-facts-inline-item">
-                  <dt>{d.label[lang]}</dt>
-                  <dd>{d.value[lang]}</dd>
+                  <dt>{meta.awardLabel}</dt>
+                  <dd>{award[lang]}</dd>
                 </div>
               ))}
             </dl>

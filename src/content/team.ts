@@ -23,7 +23,7 @@ export function getMember(name: string): Member | undefined {
 export const team: Member[] = [
   {
     name: "Prof. Dr. Marius Brade",
-    role: { de: "Leitung NewWorkDesignLab", en: "Head of NewWorkDesignLab" },
+    role: { de: "Leitung", en: "Head of Lab" },
     photo: "/team/marius-brade.jpg", // ← Datei liegt unter public/team/marius-brade.jpg
     status: "current",
     linkedin: "https://www.linkedin.com/in/marius-brade/",
@@ -46,7 +46,7 @@ export const team: Member[] = [
     linkedin: "https://www.linkedin.com/in/jonas-ludorf/",
     email: "j.ludorf@fh-dresden.eu",
     specialty: { de: "XR-Entwickler", en: "XR Developer" },
-    tags: ["Unity", "XR", "UX", "Web", "Automation"],
+    tags: ["Unity", "XR", "UX", "Web", "Automation & AI"],
     bio: {
       de: "Er konzipiert und realisiert immersive XR-Erlebnisse für Industriekunden und Forschungsprojekte – von Schulungs- über Marketing- bis zu Recruiting-Anwendungen. Am Lab entwickelt er performante 3D-Anwendungen und räumliche Prototyping-Tools in Unity, mit Fokus auf intuitives Design und den Wissenstransfer durch Extended Reality.",
       en: "He designs and builds immersive XR experiences for industry clients and research projects – from training to marketing and recruiting applications. At the lab he develops performant 3D applications and spatial prototyping tools in Unity, focusing on intuitive design and knowledge transfer through extended reality.",
@@ -106,24 +106,30 @@ export const team: Member[] = [
    {
     name: "Philip Ahlers",
     role: { de: "Studentische Hilfskraft", en: "Student Assistant" },
-    photo: "/team/placeholder.svg", // ← Datei liegt unter public/team/philip-ahlers.jpg
+    photo: "/team/placeholder.svg",
     status: "current",
+    linkedin: "https://www.linkedin.com/in/philip-ahlers-a915b0341/",
     email: "MID23.PAhlers@stud.fh-dresden.eu",
     specialty: { de: "XR-Entwickler, Web-Apps", en: "XR developer, web apps" },
-    tags: ["Unity", "XR", "UX", "Web", "Databases", "Games"],
-    bio: {
-      de: "XR- und Web-Entwickler, der seit dem Wintersemester 2023 an der FHD studiert. Am Lab setzte er den „QR-Rundgang“ technisch um – ein Webportal, über das hausintern digitale Projekte an den Wänden ausgestellt und per Smartphone als AR im Raum erlebbar werden. Bereits während seines Studiums veröffentlichte er sein erstes Spiel „Caveman hits Giraffe in a Car“ auf Steam.",
-      en: "XR and web developer who has been studying at FHD since the 2023 winter semester. At the lab he handled the technical implementation of the “QR tour” – a web portal through which in-house digital projects are exhibited on the walls and can be experienced as AR in the room via smartphone. He has already released his first game, “Caveman hits Giraffe in a Car”, created during his studies, on Steam.",
-    },
+    tags: ["Unity", "XR", "UX", "Web", "Databases", "Games"]
   },
    {
     name: "Philipp Wittig",
     role: { de: "Studentische Hilfskraft", en: "Student Assistant" },
-    photo: "/team/placeholder.svg", // ← Datei liegt unter public/team/philipp-wittig.jpg
+    photo: "/team/philipp-wittig.jpg",
     status: "current",
     email: "MID24.PWittig@stud.fh-dresden.eu",
     specialty: { de: "Unity/XR-Experte", en: "Unity/XR expert" },
     tags: ["Unity", "XR", "UX", "3D", "Games"],
+  },
+   {
+    name: "Susanne Pieter",
+    role: { de: "Studentische Hilfskraft", en: "Student Assistant" },
+    photo: "/team/susanne-pieter.jpg",
+    status: "current",
+    email: "GD24.SPieter@stud.fh-dresden.eu",
+    specialty: { de: "Grafikdesignerin", en: "Graphic Designer" },
+    tags: ["Visual Design", "Branding", "UI", "UX"],
   },
 
   // Placeholder for an alumni member — replace with real data or remove if not needed
@@ -134,14 +140,38 @@ export const team: Member[] = [
     status: "alumni",
   },
     {
+    name: "Otto Maurer",
+    role: { de: "Ehemaliger Wissenschaftlicher Mitarbeiter", en: "Former research associate" },
+    photo: "/team/former-member/otto-maurer.jpg", // ← Datei liegt unter public/team/former-member/otto-maurer.jpg
+    status: "alumni",
+  },
+    {
     name: "Cora Marie Lenz",
     role: { de: "Ehemalige Studentische Hilfskraft", en: "Former student assistant" },
     photo: "/team/former-member/cora-marie-lenz.jpg", // ← Datei liegt unter public/team/former-member/cora-marie-lenz.jpg
     status: "alumni",
   },
+  {
+    name: "Friedrich Malz",
+    role: { de: "Ehemalige Studentische Hilfskraft", en: "Former student assistant" },
+    photo: "/team/former-member/friedrich-malz.jpg", // ← Datei liegt unter public/team/former-member/friedrich-malz.jpg
+    status: "alumni",
+  },
+   {
+    name: "Lenny Keil",
+    role: { de: "Ehemalige Studentische Hilfskraft", en: "Former student assistant" },
+    photo: "/team/former-member/lenny-keil.jpg", // ← Datei liegt unter public/team/former-member/lenny-keil.jpg
+    status: "alumni",
+  },
+   {
+    name: "Christian Kretschmer",
+    role: { de: "Ehemalige Studentische Hilfskraft", en: "Former student assistant" },
+    photo: "/team/former-member/christian-kretschmer.jpg", // ← Datei liegt unter public/team/former-member/christian-kretschmer.jpg
+    status: "alumni",
+  },
    {
     name: "Pia Lambracht",
-    role: { de: "Ehemalige Wissenschaftliche Mitarbeiterin", en: "Former team member" },
+    role: { de: "Ehemalige Wissenschaftliche Mitarbeiterin", en: "Former research associate" },
     photo: "/team/former-member/pia-lambracht.jpg", // ← Datei liegt unter public/team/former-member/pia-lambracht.jpg
     status: "alumni",
   },
@@ -152,33 +182,15 @@ export const team: Member[] = [
     status: "alumni",
   },
    {
-    name: "Christian Kretschmer",
-    role: { de: "Ehemalige Studentische Hilfskraft / Praktikant", en: "Former student assistant" },
-    photo: "/team/former-member/christian-kretschmer.jpg", // ← Datei liegt unter public/team/former-member/christian-kretschmer.jpg
-    status: "alumni",
-  },
-   {
     name: "Maximilian Liebscher",
     role: { de: "Ehemaliger Wissenschaftlicher Mitarbeiter", en: "Former research associate" },
     photo: "/team/former-member/maximilian-liebscher.jpg", // ← Datei liegt unter public/team/former-member/maximilian-liebscher.jpg
     status: "alumni",
   },
    {
-    name: "Friedrich Malz",
-    role: { de: "Ehemalige Studentische Hilfskraft / Praktikant", en: "Former student assistant" },
-    photo: "/team/former-member/friedrich-malz.jpg", // ← Datei liegt unter public/team/former-member/friedrich-malz.jpg
-    status: "alumni",
-  },
-   {
-    name: "Lenny Keil",
-    role: { de: "Ehemalige Studentische Hilfskraft / Praktikant", en: "Former student assistant" },
-    photo: "/team/former-member/lenny-keil.jpg", // ← Datei liegt unter public/team/former-member/lenny-keil.jpg
-    status: "alumni",
-  },
-   {
     name: "Tobias Bohn",
-    role: { de: "Ehemaliger Mitarbeiter", en: "Former team member" },
-    photo: "/team/former-member/tobias-bohn.jpg", // ← Datei liegt unter public/team/former-member/tobis-bohn.jpg
+    role: { de: "Ehemaliger Wissenschaftlicher Mitarbeiter", en: "Former research associate" },
+    photo: "/team/former-member/tobias-bohn.jpg", // ← Datei liegt unter public/team/former-member/tobias-bohn.jpg
     status: "alumni",
   },
 ];

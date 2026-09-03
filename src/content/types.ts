@@ -59,8 +59,10 @@ export interface Project {
   createdAt?: string;
   /** ISO date the article was last updated, e.g. "2025-06-20" */
   updatedAt?: string;
-  /** key facts (funding, duration, …) shown as a strip in the hero and as a
-   *  labelled block above the project team */
+  /** distinctions shown as a strip in the hero, e.g. "Sächsischer Digitalpreis 2022" */
+  awards?: Localized[];
+  /** key facts (funding, client, duration, …) shown as a labelled block above
+   *  the project team */
   details?: { label: Localized; value: Localized }[];
   /** names referencing entries in team.ts whose photo/name are reused */
   team?: string[];

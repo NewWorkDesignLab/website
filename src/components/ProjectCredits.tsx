@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import texts from "../content/texts.json";
-import type { Project, PartnerRef } from "../content/types";
+import type { Project } from "../content/types";
 import type { Lang } from "../app/useLang";
 import { getMember } from "../content/team";
-import { getPartner } from "../content/partners";
+import { PartnerCards } from "./PartnerCards";
 
 type CreditPerson = { name: string; role?: string; photo: string };
 
@@ -54,58 +54,18 @@ export function ProjectCredits({ project, lang }: { project: Project; lang: Lang
       ) : null}
 
       {clients.length > 0 ? (
-        <PartnerGroup title={meta.clientsTitle} refs={clients} />
+        <section className="partner-section" aria-label={meta.clientsTitle}>
+          <span className="funding-title">{meta.clientsTitle}</span>
+          <PartnerCards refs={clients} />
+        </section>
       ) : null}
+
       {collaborators.length > 0 ? (
-        <PartnerGroup title={meta.partnersTitle} refs={collaborators} />
+        <section className="partner-section" aria-label={meta.partnersTitle}>
+          <span className="funding-title">{meta.partnersTitle}</span>
+          <PartnerCards refs={collaborators} />
+        </section>
       ) : null}
     </>
-  );
-}
-
-function PartnerGroup({ title, refs }: { title: string; refs: PartnerRef[] }) {
-  const cards = refs
-    .map((ref) => getPartner(ref.key))
-    .filter((p): p is NonNullable<typeof p> => Boolean(p));
-  if (cards.length === 0) return null;
-
-  return (
-    <section className="partner-section" aria-label={title}>
-      <span className="funding-title">{title}</span>
-      <div className="partner-grid">
-        {cards.map((p, i) => {
-          const inner = (
-            <>
-              <span className="partner-logo">
-                <Image
-                  src={p.logo}
-                  alt={p.name}
-                  width={120}
-                  height={60}
-                  style={{ height: "2.5rem", width: "auto" }}
-                />
-              </span>
-              <span className="partner-name">{p.name}</span>
-            </>
-          );
-          return p.url ? (
-            <a
-              key={i}
-              className="partner-card"
-              href={p.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={p.name}
-            >
-              {inner}
-            </a>
-          ) : (
-            <span key={i} className="partner-card">
-              {inner}
-            </span>
-          );
-        })}
-      </div>
-    </section>
   );
 }

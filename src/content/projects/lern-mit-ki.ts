@@ -12,25 +12,28 @@ export const lernMitKi: Project = {
   year: "2025–2028",
   cover: "/projects/lern-mit-ki/cover.webp",
   funding: ["eu", "esf", "freistaat-sachsen"],
-  team: ["Prof. Dr. Marius Brade", "Christian Schülke"],
+  team: ["Prof. Dr. Marius Brade", "Christian Schülke", "Susanne Pieter"],
   // Celina Kunze ist (noch) nicht im Team gelistet – daher inline nur mit Namen
   // und Platzhalter-Silhouette. Bei Bedarf später nach team.ts verschieben.
   contributors: [{ name: "Celina Kunze", photo: "/team/placeholder.svg" }],
   details: [
     {
-      label: { de: "Förderung", en: "Funding" },
+      label: { de: "Fördergeber", en: "Funded by" },
       value: {
-        de: "ESF+ Berufliche Bildung 2021–2027 / Freistaat Sachsen",
-        en: "ESF+ Vocational Training 2021–2027 / Free State of Saxony",
+        de: "Europäische Union und Freistaat Sachsen",
+        en: "European Union and Free State of Saxony",
       },
     },
     {
-      label: { de: "Fördersumme", en: "Funding volume" },
-      value: { de: "273.347 Euro", en: "273,347 euros" },
+      label: { de: "Förderzeitraum", en: "Funding period" },
+      value: { de: "09.05.2025 – 31.10.2028", en: "9 May 2025 – 31 October 2028" },
     },
     {
-      label: { de: "Laufzeit", en: "Duration" },
-      value: { de: "09.05.2025 – 31.10.2028", en: "9 May 2025 – 31 October 2028" },
+      label: { de: "Programm", en: "Programme" },
+      value: {
+        de: "ESF+ Berufliche Bildung 2021–2027",
+        en: "ESF+ Vocational Training 2021–2027",
+      },
     },
   ],
   partners: [

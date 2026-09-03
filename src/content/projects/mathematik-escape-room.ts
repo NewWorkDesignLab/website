@@ -12,6 +12,7 @@ export const mathematikEscapeRoom: Project = {
   year: "2026",
   cover: "/projects/mathematik-escape-room/MEVR_7.webp",
   funding: [],
+  team: ["Philipp Wittig"],
   sections: [
     {
       type: "text",

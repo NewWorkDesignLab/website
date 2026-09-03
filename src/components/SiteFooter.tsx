@@ -65,8 +65,8 @@ export function SiteFooter() {
           <Image
             src="/nwdl_logo.png"
             alt="NewWorkDesignLab"
-            width={56}
-            height={56}
+            width={244}
+            height={244}
             className="footer-logo"
           />
           <a

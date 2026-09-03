@@ -7,6 +7,18 @@ import type { EventItem } from "./types";
  */
 export const events: EventItem[] = [
   {
+    image: "/events/ki-in-der-softwareentwicklung.jpg",
+    date: "19.08.2026",
+    title: {
+      de: "NWDL bei 'Spotlight on: KI in der Softwareentwicklung'",
+      en: "NWDL at 'Spotlight on: AI in Software Development'",
+    },
+    blurb: {
+      de: "Prof. Dr.-Ing. Marius Brade und Jonas Ludorf haben sich in Workshops zu den Themen Mensch, Organisation und Technik im Zusammenhang mit der Implementierung von KI in die Welt der Softwareentwicklung ausgetauscht.",
+      en: "Prof. Dr.-Ing. Marius Brade and Jonas Ludorf participated in workshops on the topics of people, organization, and technology in relation to the implementation of AI in the world of software development.",
+    },
+  },
+  {
     image: "/events/innovationskonferzenz-17-06-2026_.webp",
     date: "17.06.2026",
     title: {
@@ -34,8 +46,8 @@ export const events: EventItem[] = [
     image: "/events/moxy-24-02-2026_.webp",
     date: "24.02.2026",
     title: {
-      de: "NWDL beim Silicon-Saxony-Treffen im MOXY Dresden",
-      en: "NWDL at the Silicon Saxony meet-up at the MOXY Dresden",
+      de: "NWDL beim Silicon Saxony x Moxy Dresden Afterwork",
+      en: "NWDL at the Silicon Saxony x Moxy Dresden Afterwork",
     },
     blurb: {
       de: "Beim Netzwerktreffen von Silicon Saxony sind wir mit dabei und lassen die Gäste HolospaceXR direkt per VR-Brille erleben.",
@@ -44,7 +56,7 @@ export const events: EventItem[] = [
   },
   {
     image: "/events/brainsonsilicon-22-to-23-10-2026_.webp",
-    date: "22.–23.10.2026",
+    date: "22.–23.10.2025",
     title: {
       de: "NWDL bei der Brains on Silicon in Dresden",
       en: "NWDL at Brains on Silicon in Dresden",

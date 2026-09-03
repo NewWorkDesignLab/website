@@ -6,8 +6,9 @@ import texts from "../content/texts.json";
 import { events } from "../content/events";
 import { useLang } from "../app/useLang";
 
-/** Takt des Auto-Scrolls: lang genug, dass der Blurb lesbar bleibt. */
 const STEP_INTERVAL_MS = 5000;
+const SETTLE_MS = 140;
+const LOOPS = 3;
 
 export function EventStrip() {
   const { lang } = useLang();
@@ -16,49 +17,78 @@ export function EventStrip() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const stripRef = useRef<HTMLUListElement>(null);
   const timerRef = useRef<number | undefined>(undefined);
+  const settleRef = useRef<number | undefined>(undefined);
   const reduceMotionRef = useRef(false);
-  /* Solange der Zeiger auf dem Streifen liegt, wird kein neuer Takt geplant —
-     sonst würde der Auto-Scroll dem Nutzer unter der Maus wegspringen. */
   const hoverRef = useRef(false);
 
-  /** Eine Karte weiter (1) oder zurück (-1); an den Enden wird gecyclet. */
-  const advance = useCallback((dir: 1 | -1) => {
+  const loop = events.length > 1;
+  const items = loop
+    ? Array.from({ length: LOOPS }, () => events).flat()
+    : events;
+
+  /** Width of one full copy of the event list, gaps included. */
+  const setWidth = useCallback((el: HTMLUListElement) => {
+    const cards = el.children;
+    if (!loop || cards.length < events.length + 1) return 0;
+    const first = cards[0] as HTMLElement;
+    const nextSet = cards[events.length] as HTMLElement;
+    return nextSet.offsetLeft - first.offsetLeft;
+  }, [loop]);
+
+  /** Keeps the scroll position inside the middle copy so the strip never ends. */
+  const normalize = useCallback(() => {
     const el = stripRef.current;
     if (!el) return;
+    const width = setWidth(el);
+    if (width <= 0) return;
+    if (el.scrollLeft < width * 0.5) el.scrollLeft += width;
+    else if (el.scrollLeft > width * 1.5) el.scrollLeft -= width;
+  }, [setWidth]);
 
-    const max = el.scrollWidth - el.clientWidth;
-    if (max <= 1) return;
+  const advance = useCallback(
+    (dir: 1 | -1) => {
+      const el = stripRef.current;
+      if (!el) return;
 
-    // Schrittweite live messen — die Kartenbreite ist responsiv (clamp bzw.
-    // 80vw), eine Konstante würde bei Resize/Zoom auseinanderlaufen.
-    const cards = el.children;
-    const step =
-      cards.length > 1
-        ? cards[1].getBoundingClientRect().left -
-          cards[0].getBoundingClientRect().left
-        : 0;
-    if (step <= 0) return;
+      const cards = el.children;
+      const step =
+        cards.length > 1
+          ? cards[1].getBoundingClientRect().left -
+            cards[0].getBoundingClientRect().left
+          : 0;
+      if (step <= 0) return;
 
-    const next =
-      dir === 1
-        ? el.scrollLeft >= max - 4
-          ? 0
-          : Math.min(el.scrollLeft + step, max)
-        : el.scrollLeft <= 4
-          ? max
-          : Math.max(el.scrollLeft - step, 0);
+      if (loop) {
+        normalize();
+        el.scrollBy({
+          left: dir * step,
+          behavior: reduceMotionRef.current ? "auto" : "smooth",
+        });
+        return;
+      }
 
-    el.scrollTo({
-      left: next,
-      behavior: reduceMotionRef.current ? "auto" : "smooth",
-    });
-  }, []);
+      const max = el.scrollWidth - el.clientWidth;
+      if (max <= 1) return;
+      const next =
+        dir === 1
+          ? el.scrollLeft >= max - 4
+            ? 0
+            : Math.min(el.scrollLeft + step, max)
+          : el.scrollLeft <= 4
+            ? max
+            : Math.max(el.scrollLeft - step, 0);
+      el.scrollTo({
+        left: next,
+        behavior: reduceMotionRef.current ? "auto" : "smooth",
+      });
+    },
+    [loop, normalize],
+  );
 
   const stop = useCallback(() => {
     window.clearTimeout(timerRef.current);
   }, []);
 
-  /** Startet den Takt neu — immer mit vollem Intervall, nie mit einem Rest. */
   const schedule = useCallback(() => {
     window.clearTimeout(timerRef.current);
     if (reduceMotionRef.current || hoverRef.current) return;
@@ -76,7 +106,23 @@ export function EventStrip() {
     ).matches;
 
     const wrap = wrapRef.current;
-    if (!wrap) return;
+    const strip = stripRef.current;
+    if (!wrap || !strip) return;
+
+    if (loop) {
+      const start = () => {
+        const width = setWidth(strip);
+        if (width > 0) strip.scrollLeft = width;
+      };
+      start();
+      requestAnimationFrame(start);
+    }
+
+    const onScroll = () => {
+      if (!loop) return;
+      window.clearTimeout(settleRef.current);
+      settleRef.current = window.setTimeout(normalize, SETTLE_MS);
+    };
 
     const onEnter = () => {
       hoverRef.current = true;
@@ -86,8 +132,6 @@ export function EventStrip() {
       hoverRef.current = false;
       schedule();
     };
-    // Touch/Pen kennen kein echtes Hover: dort gilt das Ende der Geste als
-    // Ende der Interaktion, statt auf ein (nicht garantiertes) Leave zu warten.
     const onUp = (e: PointerEvent) => {
       if (e.pointerType === "mouse") return;
       hoverRef.current = false;
@@ -96,6 +140,7 @@ export function EventStrip() {
 
     schedule();
 
+    strip.addEventListener("scroll", onScroll, { passive: true });
     wrap.addEventListener("pointerenter", onEnter);
     wrap.addEventListener("pointerleave", onLeave);
     wrap.addEventListener("pointerdown", stop);
@@ -106,6 +151,8 @@ export function EventStrip() {
 
     return () => {
       stop();
+      window.clearTimeout(settleRef.current);
+      strip.removeEventListener("scroll", onScroll);
       wrap.removeEventListener("pointerenter", onEnter);
       wrap.removeEventListener("pointerleave", onLeave);
       wrap.removeEventListener("pointerdown", stop);
@@ -114,11 +161,9 @@ export function EventStrip() {
       wrap.removeEventListener("focusin", stop);
       wrap.removeEventListener("focusout", schedule);
     };
-  }, [advance, schedule, stop]);
+  }, [advance, loop, normalize, schedule, setWidth, stop]);
 
   return (
-    /* Die Pfeile sind Geschwister des Streifens, nicht Kinder — dessen
-       overflow-x und die rechte Fade-Maske würden sie sonst abschneiden. */
     <div className="event-strip-wrap" ref={wrapRef}>
       <button
         type="button"
@@ -133,8 +178,8 @@ export function EventStrip() {
       </button>
 
       <ul className="event-strip" ref={stripRef}>
-        {events.map((ev, i) => (
-          <li key={i} className="event-card">
+        {items.map((ev, i) => (
+          <li key={i} className="event-card" aria-hidden={loop && i >= events.length}>
             <Image
               className="event-card-img"
               src={ev.image}

@@ -89,12 +89,13 @@ export default function Home() {
           {t.titleTail}
         </h1>
         <div className="content-group">
-          <p className="lead">
-            {t.descBefore}
-            <strong>{t.descBrand}</strong>
-            {t.descLine1}
-            <br />
-            {t.descLine2}
+          <p className="lead lead--split">
+            <span>
+              {t.descBefore}
+              <strong>{t.descBrand}</strong>
+              {t.descLine1}
+            </span>
+            <span>{t.descLine2}</span>
           </p>
           <a
             href="#contact"
