@@ -1,6 +1,228 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/projects/narrenhaeusel-ar",
+      "destination": "/projects/qr-rundgang/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/narrenhaeusel-ar/",
+      "destination": "/projects/qr-rundgang/",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/dina-elektro-ar-assistent",
+      "destination": "/projects/dina-ar-assistent/",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/dina-elektro-ar-assistent/",
+      "destination": "/projects/dina-ar-assistent/",
+      "permanent": true
+    },
+    {
+      "source": "/en/projects/dina-elektro-ar-assistent",
+      "destination": "/projects/dina-ar-assistent/",
+      "permanent": true
+    },
+    {
+      "source": "/en/projects/dina-elektro-ar-assistent/",
+      "destination": "/projects/dina-ar-assistent/",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/multi-user-kit",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/multi-user-kit/",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/:slug",
+      "destination": "/projects/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/:slug/",
+      "destination": "/projects/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/projekte",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/team/:slug",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/team/:slug/",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/events",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/events/:path(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/partner/:path(.*)",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/partners/:path(.*)",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/labels/:path(.*)",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/lables/:path(.*)",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/impressum",
+      "destination": "/legal-note/",
+      "permanent": true
+    },
+    {
+      "source": "/impressum/",
+      "destination": "/legal-note/",
+      "permanent": true
+    },
+    {
+      "source": "/legal",
+      "destination": "/legal-note/",
+      "permanent": true
+    },
+    {
+      "source": "/legal/",
+      "destination": "/legal-note/",
+      "permanent": true
+    },
+    {
+      "source": "/datenschutz",
+      "destination": "https://www.fh-dresden.eu/de/datenschutz/",
+      "permanent": true
+    },
+    {
+      "source": "/datenschutz/",
+      "destination": "https://www.fh-dresden.eu/de/datenschutz/",
+      "permanent": true
+    },
+    {
+      "source": "/en/projects/:path(.*)",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/en/projects",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/en/projekte/:path(.*)",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/en/projekte",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/en/team/:path(.*)",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/en/team",
+      "destination": "/team/",
+      "permanent": true
+    },
+    {
+      "source": "/en/partner/:path(.*)",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/en/partners/:path(.*)",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/en/labels/:path(.*)",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/en/lables/:path(.*)",
+      "destination": "/projects/",
+      "permanent": true
+    },
+    {
+      "source": "/en/legal",
+      "destination": "/legal-note/",
+      "permanent": true
+    },
+    {
+      "source": "/en/legal/",
+      "destination": "/legal-note/",
+      "permanent": true
+    },
+    {
+      "source": "/en/impressum",
+      "destination": "/legal-note/",
+      "permanent": true
+    },
+    {
+      "source": "/en/impressum/",
+      "destination": "/legal-note/",
+      "permanent": true
+    },
+    {
+      "source": "/en/datenschutz",
+      "destination": "https://www.fh-dresden.eu/de/datenschutz/",
+      "permanent": true
+    },
+    {
+      "source": "/en/privacy",
+      "destination": "https://www.fh-dresden.eu/de/datenschutz/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/_next/static/(.*)",
@@ -28,4 +250,3 @@
     }
   ]
 }
-

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# The contact form posts to api.nwdl.org, a separate origin — nothing on this
+# host is private or behind auth, so there is nothing to disallow here.
+
+Sitemap: https://newworkdesignlab.org/sitemap.xml

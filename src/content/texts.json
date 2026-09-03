@@ -1,16 +1,158 @@
 {
   "de": {
-    "badge": "Demnächst verfügbar",
+    "seo": {
+      "homeTitle": "NewWorkDesignLab – Digital Business & New Work an der FH Dresden",
+      "homeDescription": "Das NewWorkDesignLab der Fachhochschule Dresden forscht und entwickelt im Schnittgebiet von User Experience Design, Gamification, Softwareentwicklung und kognitiver Ergonomie – für ein Erlebnis des Flow beim Arbeiten, Denken und Lernen.",
+      "projectsTitle": "Projekte",
+      "projectsDescription": "Projekte des NewWorkDesignLab aus Virtual Reality, Augmented Reality, Forschung und Künstlicher Intelligenz – gemeinsam mit Partnern aus Industrie, Bildung und Wissenschaft.",
+      "teamTitle": "Team",
+      "teamDescription": "Die Menschen hinter dem NewWorkDesignLab: ein transdisziplinäres Team aus Design, Informatik und Kognitionswissenschaft an der Fachhochschule Dresden.",
+      "contactTitle": "Kontakt",
+      "contactDescription": "Kontakt zum NewWorkDesignLab an der Fachhochschule Dresden, Güntzstr. 1, 01069 Dresden. Ansprechpartner: Prof. Dr. Marius Brade.",
+      "legalTitle": "Impressum",
+      "legalDescription": "Impressum des NewWorkDesignLab an der Fachhochschule Dresden (FHD)."
+    },
+    "badge": "NewWorkDesignLab",
     "titleLead": "Wir gestalten",
     "titleAccent": "Flow",
     "titleTail": "beim Arbeiten, Denken & Lernen.",
-    "descBefore": "Das ",
+    "descBefore": "Das transdisziplinäre ",
     "descBrand": "NewWorkDesignLab",
     "descLine1": " forscht und entwickelt im Schnittgebiet von User Experience Design, Gamification, Softwareentwicklung und kognitiver Ergonomie.",
-    "descLine2": "Unsere neue Website entsteht gerade.",
+    "descLine2": "Es ist verbunden mit den Kompetenzfeldern für Digital Business & New Work sowie Bildungsinnovation der Fachhochschule Dresden (FHD).",
     "linkedin": "Folge uns auf LinkedIn",
     "footerImpressum": "Impressum",
     "footerDatenschutz": "Datenschutz",
+    "footer": {
+      "navHeading": "Navigation",
+      "contactHeading": "Kontakt",
+      "mapsLabel": "Auf der Karte ansehen",
+      "fhdLabel": "Fachhochschule Dresden",
+      "copyright": "NewWorkDesignLab · Fachhochschule Dresden",
+      "backToTop": "Zum Seitenanfang"
+    },
+    "nav": {
+      "home": "Home",
+      "projects": "Projekte",
+      "team": "Team",
+      "contact": "Kontakt"
+    },
+    "cta": {
+      "contact": "Nimm Kontakt mit uns auf"
+    },
+    "featured": {
+      "heading": "Projekte",
+      "intro": "Mit unseren wirkungsvollen Projekten treiben wir Veränderungsprozesse aktiv voran. Unser Team arbeitet mit starkem Fokus auf anwendungsbezogene Forschung und Entwicklung im Schnittgebiet von User Experience Design, Gamification, Softwareentwicklung und kognitiver Ergonomie. Unsere Partner kommen aus den unterschiedlichsten Bereichen der Forschung.",
+      "more": "Mehr ansehen"
+    },
+    "teamTeaser": {
+      "heading": "Ein kreatives Team",
+      "intro": "Forschende, Entwickler:innen und Designer:innen — interdisziplinär, neugierig und mit Freude an dem, was Menschen wirklich bewegt.",
+      "more": "Team kennenlernen",
+      "count": "Die Gesichter des Labs"
+    },
+    "events": {
+      "heading": "Wir sind dabei.",
+      "intro": "Ob Messe, Konferenz oder Branchentreffen – wir sind gern vor Ort, zeigen, woran wir arbeiten, und kommen mit Menschen ins Gespräch.",
+      "prev": "Vorherige Events",
+      "next": "Nächste Events"
+    },
+    "homeContact": {
+      "heading": "Lass uns sprechen.",
+      "intro": "Lust auf eine Zusammenarbeit oder eine Frage zu einem unserer Projekte? Wir freuen uns auf deine Nachricht.",
+      "orgName": "NewWorkDesignLab",
+      "orgLines": [
+        "an der Fachhochschule Dresden (FHD)",
+        "Campus Straßburger Platz",
+        "Güntzstr. 1, 01069 Dresden"
+      ],
+      "websiteLabel": "www.fh-dresden.eu",
+      "websiteUrl": "https://www.fh-dresden.eu",
+      "phoneLabel": "Telefonkontakt",
+      "phones": ["+49 351 44 45-409"],
+      "personLabel": "Ansprechpartner",
+      "person": "Prof. Dr. Marius Brade",
+      "email": "contact@nwdl.org",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Dein Name",
+        "email": "E-Mail",
+        "emailPlaceholder": "deine@adresse.de",
+        "message": "Nachricht",
+        "messagePlaceholder": "Worum geht es?",
+        "submit": "Nachricht senden",
+        "sending": "Wird gesendet …",
+        "success": "Danke! Deine Nachricht wurde gesendet.",
+        "error": "Es ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
+        "rateLimit": "Zu viele Anfragen. Bitte versuche es später erneut."
+      }
+    },
+    "pillarsHeading": "Was uns antreibt.",
+    "pillarsIntro": "Hinter Forschung, Transfer und Beratung steht für uns immer dasselbe: Begeisterung für das, was Menschen wirklich weiterbringt. In Projekten zu Erweiterter Realität (VR/AR) und KI geht es uns nie allein um die Technologie, sondern um Erstaunen, Verbindung und echten Wert für Menschen – darum, Flow erlebbar zu machen und Dinge umzusetzen, die am Ende spürbar einen Nutzen bringen.",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Forschung",
+        "body": "Wir unterstützen in Projekten als Forschungs- und Umsetzungspartner bei der Prototypenentwicklung bis zur vorwettbewerblichen Realisierung durch nutzergetriebene, testbasierte Vorgehensweise."
+      },
+      {
+        "num": "02",
+        "title": "Transfer",
+        "body": "Zentrales Ziel unserer Forschungs- und Entwicklungstätigkeit ist es, die Ergebnisse zur Anwendung zu bringen und damit den Transfer von der Idee bis zur Verwertung zu begleiten."
+      },
+      {
+        "num": "03",
+        "title": "Beratung",
+        "body": "Wir beraten zu den Prozessen und Methoden bei der Produktentwicklung hinsichtlich nutzergetriebener, testbasierter Vorgehensweisen für ein zielgruppenkonformes Benutzungserlebnis."
+      }
+    ],
+    "projectsPage": {
+      "title": "Projekte",
+      "intro": "Ein Überblick über unsere Projekte aus Virtual Reality, Augmented Reality, Forschung und Künstlicher Intelligenz."
+    },
+    "projectMeta": {
+      "categories": {
+        "vr": "VR",
+        "ar": "AR",
+        "research": "Forschung",
+        "ai": "KI"
+      },
+      "status": {
+        "ongoing": "Laufend",
+        "completed": "Abgeschlossen"
+      },
+      "fundingTitle": "Gefördert durch",
+      "backToProjects": "Zurück zu den Projekten",
+      "visit": "Projekt-Website öffnen",
+      "by": "von",
+      "createdOn": "Erstellt am",
+      "updatedOn": "Zuletzt geändert am",
+      "awardLabel": "Auszeichnung",
+      "detailsTitle": "Projektdetails",
+      "contributorsTitle": "Projektteam",
+      "partnersTitle": "Projektpartner",
+      "clientsTitle": "Auftraggeber"
+    },
+    "teamPage": {
+      "title": "Team",
+      "introBefore": "Die Menschen hinter dem ",
+      "introBrand": "NewWorkDesignLab",
+      "intro": ". Wir sind ein transdisziplinäres Team aus Design, Informatik und Kognitionswissenschaft – verbunden durch die Begeisterung dafür, Technologie so zu gestalten, dass sie Menschen beim Arbeiten, Denken und Lernen wirklich weiterbringt. Hier findest du die Köpfe, die unsere Projekte voranbringen.",
+      "current": "Aktuelles Team",
+      "alumni": "Ehemalige",
+      "bioMore": "Mehr erfahren",
+      "bioLess": "Weniger anzeigen",
+      "emailLabel": "E-Mail an",
+      "linkedinLabel": "LinkedIn-Profil von"
+    },
+    "contactPage": {
+      "title": "Kontakt",
+      "intro": "Du hast Interesse an einer Zusammenarbeit oder eine Frage zu einem unserer Projekte? Wir freuen uns auf deine Nachricht.",
+      "person": "Prof. Dr. Marius Brade",
+      "role": "Ansprechpartner NewWorkDesignLab",
+      "titleFhd": "Professor für Medieninformatik · Prorektor für Forschung, Innovation und nachhaltigen Transfer",
+      "bio": "Prof. Dr. Marius Brade leitet das NewWorkDesignLab an der Fachhochschule Dresden. Ihn treibt eine Frage an: Wie lässt sich Technologie so gestalten, dass sie uns Menschen wirklich hilft? Seit über einem Jahrzehnt forscht er im Schnittgebiet von Interaktionsdesign, Informatik und Kognitionspsychologie – immer mit dem Blick darauf, wie wir Arbeiten und Zusammenleben im Sinne von New Work neu denken können."
+    },
     "impressum": {
       "title": "Impressum",
       "intro": "Das NewWorkDesignLab befindet sich an der:",
@@ -29,20 +171,168 @@
       "editorTitle": "Redaktionell Verantwortlicher:",
       "editor": "Prof. Dr. Marius Brade",
       "back": "Zurück zur Startseite"
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "lead": "Diese Adresse gibt es nicht (mehr). Vielleicht wurde die Seite verschoben oder der Link ist veraltet.",
+      "linksTitle": "Weiter zu:",
+      "back": "Zurück zur Startseite"
     }
   },
   "en": {
-    "badge": "Coming soon",
+    "seo": {
+      "homeTitle": "NewWorkDesignLab – Digital Business & New Work at FH Dresden",
+      "homeDescription": "The NewWorkDesignLab at the University of Applied Sciences Dresden researches and builds at the intersection of user experience design, gamification, software development and cognitive ergonomics – for an experience of flow while working, thinking and learning.",
+      "projectsTitle": "Projects",
+      "projectsDescription": "Projects of the NewWorkDesignLab across virtual reality, augmented reality, research and artificial intelligence – built with partners from industry, education and science.",
+      "teamTitle": "Team",
+      "teamDescription": "The people behind the NewWorkDesignLab: a transdisciplinary team from design, computer science and cognitive science at the University of Applied Sciences Dresden.",
+      "contactTitle": "Contact",
+      "contactDescription": "Get in touch with the NewWorkDesignLab at the University of Applied Sciences Dresden, Güntzstr. 1, 01069 Dresden. Contact: Prof. Dr. Marius Brade.",
+      "legalTitle": "Legal Note",
+      "legalDescription": "Legal note of the NewWorkDesignLab at the University of Applied Sciences Dresden (FHD)."
+    },
+    "badge": "NewWorkDesignLab",
     "titleLead": "We design",
     "titleAccent": "flow",
     "titleTail": "for working, thinking & learning.",
-    "descBefore": "The ",
+    "descBefore": "The transdisciplinary ",
     "descBrand": "NewWorkDesignLab",
     "descLine1": " researches and builds at the intersection of user experience design, gamification, software development and cognitive ergonomics.",
-    "descLine2": "Our new website is on its way.",
+    "descLine2": "It forms the competency field for Digital Business & New Work at the University of Applied Sciences Dresden (FHD).",
     "linkedin": "Follow us on LinkedIn",
     "footerImpressum": "Legal Note",
     "footerDatenschutz": "Privacy",
+    "footer": {
+      "navHeading": "Navigation",
+      "contactHeading": "Contact",
+      "mapsLabel": "View on map",
+      "fhdLabel": "University of Applied Sciences Dresden",
+      "copyright": "NewWorkDesignLab · University of Applied Sciences Dresden",
+      "backToTop": "Back to top"
+    },
+    "nav": {
+      "home": "Home",
+      "projects": "Projects",
+      "team": "Team",
+      "contact": "Contact"
+    },
+    "cta": {
+      "contact": "Get in touch with us"
+    },
+    "featured": {
+      "heading": "Projects",
+      "intro": "With our impactful projects we actively drive change forward. Our team works with a strong focus on applied research and development at the intersection of user experience design, gamification, software development and cognitive ergonomics. Our partners come from the most diverse fields of research.",
+      "more": "View all"
+    },
+    "teamTeaser": {
+      "heading": "The people behind it.",
+      "intro": "Researchers, developers and designers — interdisciplinary, curious, and driven by what genuinely moves people forward.",
+      "more": "Meet the team",
+      "count": "The faces of the lab"
+    },
+    "events": {
+      "heading": "We're there.",
+      "intro": "Whether it's a trade fair, conference or industry meet-up – we love being on site, showing what we work on and getting into conversation with people.",
+      "prev": "Previous events",
+      "next": "Next events"
+    },
+    "homeContact": {
+      "heading": "Let's talk.",
+      "intro": "Keen to collaborate or have a question about one of our projects? We look forward to hearing from you.",
+      "orgName": "NewWorkDesignLab",
+      "orgLines": [
+        "at the University of Applied Sciences Dresden (FHD)",
+        "Campus Straßburger Platz",
+        "Güntzstr. 1, 01069 Dresden"
+      ],
+      "websiteLabel": "www.fh-dresden.eu",
+      "websiteUrl": "https://www.fh-dresden.eu",
+      "phoneLabel": "Phone",
+      "phones": ["+49 351 44 45-409"],
+      "personLabel": "Contact",
+      "person": "Prof. Dr. Marius Brade",
+      "email": "contact@nwdl.org",
+      "form": {
+        "name": "Name",
+        "namePlaceholder": "Your name",
+        "email": "Email",
+        "emailPlaceholder": "you@address.com",
+        "message": "Message",
+        "messagePlaceholder": "What's it about?",
+        "submit": "Send message",
+        "sending": "Sending …",
+        "success": "Thank you! Your message has been sent.",
+        "error": "Something went wrong. Please try again later.",
+        "rateLimit": "Too many requests. Please try again later."
+      }
+    },
+    "pillarsHeading": "What drives us.",
+    "pillarsIntro": "Behind research, transfer and consulting, the same thing always drives us: a passion for what truly moves people forward. In our AR, VR and AI projects it is never just about the technology, but about wonder, connection and real value for people – about making flow tangible and building things that deliver a genuine, noticeable benefit.",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Research",
+        "body": "We support projects as a research and implementation partner — from prototype development through to pre-competitive realisation using user-driven, test-based approaches."
+      },
+      {
+        "num": "02",
+        "title": "Transfer",
+        "body": "A central goal of our research and development work is to bring results into application — accompanying the transfer from idea to impact."
+      },
+      {
+        "num": "03",
+        "title": "Consulting",
+        "body": "We advise on processes and methods in product development with respect to user-driven, test-based approaches for a target-group-appropriate user experience."
+      }
+    ],
+    "projectsPage": {
+      "title": "Projects",
+      "intro": "An overview of our projects across virtual reality, augmented reality, research and artificial intelligence."
+    },
+    "projectMeta": {
+      "categories": {
+        "vr": "VR",
+        "ar": "AR",
+        "research": "Research",
+        "ai": "AI"
+      },
+      "status": {
+        "ongoing": "Ongoing",
+        "completed": "Completed"
+      },
+      "fundingTitle": "Funded by",
+      "backToProjects": "Back to projects",
+      "visit": "Open project website",
+      "by": "by",
+      "createdOn": "Created on",
+      "updatedOn": "Last updated on",
+      "awardLabel": "Award",
+      "detailsTitle": "Project details",
+      "contributorsTitle": "Project team",
+      "partnersTitle": "Project partners",
+      "clientsTitle": "Client"
+    },
+    "teamPage": {
+      "title": "Team",
+      "introBefore": "The people behind the ",
+      "introBrand": "NewWorkDesignLab",
+      "intro": ". We are a transdisciplinary team from design, computer science and cognitive science – united by a passion for shaping technology so that it genuinely helps people work, think and learn. Meet the minds who drive our projects forward – current and former.",
+      "current": "Current team",
+      "alumni": "Alumni",
+      "bioMore": "Read more",
+      "bioLess": "Show less",
+      "emailLabel": "Email",
+      "linkedinLabel": "LinkedIn profile of"
+    },
+    "contactPage": {
+      "title": "Contact",
+      "intro": "Interested in working together or have a question about one of our projects? We look forward to hearing from you.",
+      "person": "Prof. Dr. Marius Brade",
+      "role": "Contact, NewWorkDesignLab",
+      "titleFhd": "Professor of Media Informatics · Vice-Rector for Research, Innovation and Sustainable Transfer",
+      "bio": "Prof. Dr. Marius Brade heads the NewWorkDesignLab at the University of Applied Sciences Dresden. He is driven by one question: how can technology be designed so that it genuinely helps people? For more than a decade he has been researching at the intersection of interaction design, computer science and cognitive psychology – always with an eye on how we might rethink the way we work and live together in the spirit of New Work."
+    },
     "impressum": {
       "title": "Legal Note",
       "intro": "The NewWorkDesignLab is located at:",
@@ -61,7 +351,12 @@
       "editorTitle": "Responsible for content:",
       "editor": "Prof. Dr. Marius Brade",
       "back": "Back to home"
+    },
+    "notFound": {
+      "title": "Page not found",
+      "lead": "This address does not exist (any more). The page may have moved, or the link is out of date.",
+      "linksTitle": "Continue to:",
+      "back": "Back to home"
     }
   }
 }
-
