@@ -14,14 +14,16 @@ import { team } from "../content/team";
  * split collapses into one column anyway, so the section is centered and
  * spaced like every other one (see the media query in globals.css).
  *
- * Members still on a placeholder silhouette are left out of the face cluster.
+ * Der Teaser zeigt nur die Mitarbeitenden — studentische Hilfskräfte bleiben
+ * der /team-Seite vorbehalten. Members still on a placeholder silhouette are
+ * left out of the face cluster.
  */
 export function TeamTeaser() {
   const { lang } = useLang();
   const t = texts[lang].teamTeaser;
 
-  const current = team.filter((m) => m.status === "current");
-  const faces = current.filter((m) => !m.photo.includes("placeholder"));
+  const staff = team.filter((m) => m.status === "current" && !m.studentAssistant);
+  const faces = staff.filter((m) => !m.photo.includes("placeholder"));
 
   return (
     <section className="home-team">

@@ -91,6 +91,9 @@ export interface Member {
   /** /team/<name>.jpg */
   photo: string;
   status: "current" | "alumni";
+  /** Studentische Hilfskraft — auf /team regulär gelistet, aber nicht im
+   *  Team-Teaser der Startseite (dort nur die Mitarbeitenden). */
+  studentAssistant?: boolean;
   linkedin?: string;
   /** mailto-Adresse, z. B. "j.ludorf@fh-dresden.eu" */
   email?: string;

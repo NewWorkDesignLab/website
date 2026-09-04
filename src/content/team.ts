@@ -106,8 +106,9 @@ export const team: Member[] = [
    {
     name: "Philip Ahlers",
     role: { de: "Studentische Hilfskraft", en: "Student Assistant" },
-    photo: "/team/placeholder.svg",
+    photo: "/team/philip-ahlers.jpg", // ← Datei liegt unter public/team/philip-ahlers.jpg
     status: "current",
+    studentAssistant: true,
     linkedin: "https://www.linkedin.com/in/philip-ahlers-a915b0341/",
     email: "MID23.PAhlers@stud.fh-dresden.eu",
     specialty: { de: "XR-Entwickler, Web-Apps", en: "XR developer, web apps" },
@@ -118,6 +119,7 @@ export const team: Member[] = [
     role: { de: "Studentische Hilfskraft", en: "Student Assistant" },
     photo: "/team/philipp-wittig.jpg",
     status: "current",
+    studentAssistant: true,
     email: "MID24.PWittig@stud.fh-dresden.eu",
     specialty: { de: "Unity/XR-Experte", en: "Unity/XR expert" },
     tags: ["Unity", "XR", "UX", "3D", "Games"],
@@ -127,6 +129,7 @@ export const team: Member[] = [
     role: { de: "Studentische Hilfskraft", en: "Student Assistant" },
     photo: "/team/susanne-pieter.jpg",
     status: "current",
+    studentAssistant: true,
     email: "GD24.SPieter@stud.fh-dresden.eu",
     specialty: { de: "Grafikdesignerin", en: "Graphic Designer" },
     tags: ["Visual Design", "Branding", "UI", "UX"],
